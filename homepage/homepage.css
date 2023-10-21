@@ -83,8 +83,6 @@ section {
     border-radius: 5px;
     text-align: center;
 
-
-
 }
 
 
@@ -157,12 +155,12 @@ button {
 }
 
 #programming {
-    cursor: pointer;
-}
 
+}
 
 .floating-wrapper {
     transition: transform 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 .floating-wrapper:hover {

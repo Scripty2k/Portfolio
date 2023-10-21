@@ -12,7 +12,23 @@ body {
     border-radius: 50%;
 }
 
+.floating-wrapper {
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
 
+.floating-wrapper:hover {
+    animation: floatUpDown 2s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
 
 
 header {
