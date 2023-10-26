@@ -8,6 +8,10 @@ body {
 
 }
 
+a {
+    color: #087A7AFF;
+}
+
 .round {
     border-radius: 50%;
 }

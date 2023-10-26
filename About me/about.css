@@ -47,6 +47,10 @@ nav a {
 
 }
 
+a {
+    color: #087A7AFF;
+}
+
 #logo img {
     max-width: 100px;
 }

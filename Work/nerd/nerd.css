@@ -12,7 +12,9 @@ body {
     border-radius: 50%;
 }
 
-
+a {
+    color: #087A7AFF;
+}
 
 
 header {

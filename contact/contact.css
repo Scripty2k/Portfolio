@@ -132,6 +132,10 @@ button {
     font-size: 13px;
 }
 
+a {
+    color: #087A7AFF;
+}
+
 #contact {
     text-align: center;
     justify-content: space-evenly;

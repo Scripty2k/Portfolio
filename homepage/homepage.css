@@ -150,6 +150,10 @@ button {
 
 }
 
+a {
+    color: #087A7AFF;
+}
+
 .checked {
     color: orange;
 }
