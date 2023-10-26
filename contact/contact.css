@@ -132,19 +132,32 @@ button {
     font-size: 13px;
 }
 
-#skills {
-    width: 400px;
-    height: 200px;
+#contact {
     text-align: center;
-    flex-direction: row;
-    margin-left: 461px;
-    margin-top: -369px;
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 100px;
 }
 
-#ghost  {
-
-}
 
 .checked {
     color: orange;
+}
+
+.floating-wrapper {
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.floating-wrapper:hover {
+    animation: floatUpDown 2s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
