@@ -81,7 +81,7 @@ section {
     margin-bottom: 20px;
     border-radius: 5px;
     text-align: center;
-    animation: slideIn 1s ease; /* Use an animation on page load */
+    animation: slideIn 1s ease;
 }
 
 @keyframes slideIn {
