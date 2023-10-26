@@ -68,22 +68,31 @@ nav a {
     text-align: center;
     flex-direction: row;
     margin-left: auto;
-    margin-right: 30px;
+    margin-right: 53px;
     margin-top: -210px;
 }
 
 
 
 section {
-
     border: 100px solid transparent;
     border-image: url('../img/xp.png') 30 / 30px round;
     background-color: #fff;
     margin-bottom: 20px;
     border-radius: 5px;
     text-align: center;
-
+    animation: slideIn 1s ease; /* Use an animation on page load */
 }
+
+@keyframes slideIn {
+    from {
+        margin-bottom: -473px;
+    }
+    to {
+        margin-bottom: 20px;
+    }
+}
+
 
 
 ul {
