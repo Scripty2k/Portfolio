@@ -81,16 +81,6 @@ section {
     margin-bottom: 20px;
     border-radius: 5px;
     text-align: center;
-    animation: slideIn 1s ease;
-}
-
-@keyframes slideIn {
-    from {
-        margin-bottom: -473px;
-    }
-    to {
-        margin-bottom: 20px;
-    }
 }
 
 

@@ -95,7 +95,7 @@ nav a {
 
 @keyframes slideIn {
     from {
-        height: 700px;
+        height: 550px;
     }
     to {
         height: 500px;

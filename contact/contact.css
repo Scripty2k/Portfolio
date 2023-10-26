@@ -165,3 +165,13 @@ a {
         transform: translateY(-20px);
     }
 }
+
+#info {
+
+    background-color: #ffffff;
+    margin: 10px 500px 50px 500px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
