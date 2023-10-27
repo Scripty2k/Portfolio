@@ -158,3 +158,11 @@ button {
 .checked {
     color: orange;
 }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #abbaba;
+    color: #000;
+    margin-top: 1900px;
+}

@@ -175,3 +175,10 @@ a {
     text-align: center;
 }
 
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #abbaba;
+    color: #000;
+    margin-top: 500px;
+}

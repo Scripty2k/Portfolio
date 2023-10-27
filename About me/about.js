@@ -12,3 +12,8 @@ function showPopup() {
     var popup = document.getElementById('myPopup');
     popup.style.display = 'block';
 }
+
+type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
