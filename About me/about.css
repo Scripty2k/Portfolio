@@ -58,12 +58,12 @@ a {
 
 #profile {
     padding: 20px;
-    width: 500px;
+    width: 1140px;
     height: 200px;
     text-align: center;
     margin: auto;
     display: flex;
-    align-items: flex-start;
+    align-items: baseline;
     flex-direction: row;
     justify-content: space-evenly;
 }
