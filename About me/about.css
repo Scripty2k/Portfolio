@@ -62,16 +62,18 @@ a {
     height: 200px;
     text-align: center;
     margin: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 #row {
-    width: 400px;
-    height: 200px;
-    text-align: center;
+
+    display: flex;
+    align-items: center;
     flex-direction: row;
-    margin-left: auto;
-    margin-right: 30px;
-    margin-top: -210px;
+    justify-content: space-evenly;
 }
 
 
@@ -146,24 +148,6 @@ button {
     font-size: 13px;
 }
 
-#skills {
-    margin-top: -200px;
-    margin-left: auto;
-    padding: 20px;
-    width: 400px;
-    height: 10px;
-    text-align: center;
-    font-size: 10px;
-}
-
-#skills2 {
-    margin-right: auto;
-    padding: 20px;
-    width: 400px;
-    height: 10px;
-    text-align: center;
-    font-size: 10px;
-}
 
 #ghost  {
 
