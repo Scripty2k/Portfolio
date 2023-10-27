@@ -147,7 +147,22 @@ button {
 }
 
 #skills {
+    margin-top: -200px;
+    margin-left: auto;
+    padding: 20px;
+    width: 400px;
+    height: 10px;
+    text-align: center;
+    font-size: 10px;
+}
 
+#skills2 {
+    margin-right: auto;
+    padding: 20px;
+    width: 400px;
+    height: 10px;
+    text-align: center;
+    font-size: 10px;
 }
 
 #ghost  {
@@ -158,3 +173,6 @@ button {
     color: orange;
 }
 
+h2 {
+    font-size: 15px;
+}
