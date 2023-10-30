@@ -162,5 +162,17 @@ footer {
     padding: 10px;
     background-color: #abbaba;
     color: #000;
-    margin-top: 2100px;
+    margin-top: 2700px;
+}
+
+video {
+    margin-left: -55px;
+}
+
+#script {
+    width: 1000px;
+    height: 346px;
+    margin-left: -348px;
+    border-image: url('../../img/xp.png') 60 / 40px round;
+
 }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript1</title>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/xp.css">
+    <link rel="stylesheet" href="nerd.css"/>
+    <script src="nerd.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <div id="row">
+
+    <section>
+
+        <h1>Webshop</h1>
+        <p>I made a webshop where I had to test my javascript skills. In this project I had to make a cart system where everything
+            will get added and removed. My code is kinda messy but I was never good in javascript. I haven't got a grade back. I think it's fine</p>
+
+        <p></p>
+
+
+        <p>I used Webstorm for this. HTML CSS and Javascript</p>
+
+        <video width="400" controls>
+            <source src="../../img/Webshop.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+        </video>
+
+
+
+
+    </section>
+
+    <section id="script">
+
+        <h1>Javascript File</h1>
+        <p> const cart = [];
+            const maxQuantity = 3; // set max
+        </p>
+        <p>
+            // keep track
+            const inventory = {
+            'camera': { stock: maxQuantity, price: 119.90 },
+            'lens': { stock: maxQuantity, price: 59.99 },
+            'sdcard': { stock: maxQuantity, price: 2.99 },
+            };
+
+        </p>
+        <p>
+            // update
+            updateCart();
+
+            function addToCart(itemName) {
+            const stockElement = document.getElementById(`stock-${itemName}`);
+            const cartElement = document.getElementById(`cart-${itemName}`);
+
+            if (inventory[itemName].stock > 0) {
+            const item = { name: itemName, price: inventory[itemName].price };
+            cart.push(item);
+            inventory[itemName].stock -= 1; // Reduce the available quantity
+        </p>
+        <p>
+            // Update the cart display
+            cartElement.textContent = `${cart.filter(i => i.name === itemName).length} in cart`;
+
+            if (inventory[itemName].stock === 0) {
+            // Disable the button and show out of stock
+            const addButton = document.querySelector(`[data-product="${itemName}"]`);
+            addButton.disabled = true;
+            addButton.textContent = 'OUT OF STOCK';
+            }
+        </p>
+        <p>
+            // Update  stock display
+            stockElement.textContent = `Stock: ${inventory[itemName].stock}`;
+
+            updateCart();
+            } else {
+            alert(`${itemName} is out of stock.`);
+            }
+            }
+        </p>
+        <p>
+            function updateCart() {
+            const cartDiv = document.getElementById("cart");
+            cartDiv.innerHTML = "";
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+            cartDiv.innerHTML += `<.div>${item.name} - $${item.price} <.button onclick="removeFromCart(${index}, '${item.name}')">Removebutton>div>`;
+        totalPrice += item.price;
+        });
+        </p>
+        <p>
+        cartDiv.innerHTML += `<.div><.strong>Total Price: $${totalPrice.toFixed(2)}strong>div>`;
+        }
+
+        function removeFromCart(index, itemName) {
+        const removedItem = cart.splice(index, 1)[0];
+        inventory[itemName].stock += 1; // Increase the quantity
+        updateCart();
+        // Restore add to cart
+        const addButton = document.querySelector(`[data-product="${itemName}"]`);
+        addButton.disabled = false;
+        addButton.textContent = 'Add to Cart';
+        }
+    </p>
+
+    <a href="nerd.html"><button>Back</button></a>
+
+
+
+    </section>
+
+    </div>
+
+    <footer class="footer">
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </footer>
+
+</body>
+</html>
