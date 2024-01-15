@@ -5,7 +5,6 @@ body {
     font-family: "Arial", sans-serif;
     background-color: #087a7a;
     background-image: url("../../img/backgreen.png");
-
 }
 
 a {
@@ -164,5 +163,5 @@ footer {
     padding: 10px;
     background-color: #abbaba;
     color: #000;
-    margin-top: 3500px;
+    margin-top: 4700px;
 }
