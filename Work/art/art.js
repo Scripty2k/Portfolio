@@ -13,5 +13,4 @@ function showPopup() {
     popup.style.display = 'block';
 }
 
-
 setTimeout(showPopup, 20000);
