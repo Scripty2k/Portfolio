@@ -159,9 +159,11 @@ button {
 }
 
 footer {
-    text-align: center;
+    background-color: #333333;
+    color: #fff;
     padding: 10px;
-    background-color: #abbaba;
-    color: #000;
-    margin-top: 4000px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
