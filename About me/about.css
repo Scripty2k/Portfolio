@@ -170,3 +170,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 999; /* Ensure it appears above other content */
+}
