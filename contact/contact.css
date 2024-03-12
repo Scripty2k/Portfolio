@@ -12,9 +12,6 @@ body {
     border-radius: 50%;
 }
 
-
-
-
 header {
     background-color: #333;
     color: #fff;
@@ -23,6 +20,7 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
 
 nav ul {
     list-style-type: none;
@@ -167,7 +165,6 @@ a {
 }
 
 #info {
-
     background-color: #ffffff;
     margin: 10px 500px 50px 500px;
     padding: 10px;

@@ -192,3 +192,30 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.above {
+    float: left; /* or right depending on your layout */
+    margin: 0 20%; /* Adjust the margin as needed */
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+#info {
+    border: 50px solid transparent;
+    border-image: url('../img/xp.png') 40 / 50px round;
+
+    background-color: #ffffff;
+    margin: 20px 550px 10px 550px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+}
