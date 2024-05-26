@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript1</title>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/xp.css">
+    <link rel="stylesheet" href="nerd.css"/>
+    <script src="nerd.js"></script>
+
+    <script src="../../node_modules/prismjs/prism.js"></script>
+
+</head>
+<body>
+
+
+<pre>
+   <code class="language-c#">
+
+using Internal;
+using System;
+
+Roll();
+
+void Roll()
+{
+    int roll1;
+    int roll2;
+    int roll3;
+    string answer;
+
+    Random rnd = new Random();
+
+    roll1 = rnd.Next(1, 21);
+    Console.WriteLine("| You rolled: " + roll1 + "          |");
+    Console.ReadLine();
+
+    roll2 = rnd.Next(1, 21);
+    Console.WriteLine("| You rolled: " + roll2 + "          |");
+    Console.ReadLine();
+
+    roll3 = rnd.Next(1, 21);
+    Console.WriteLine("| You rolled: " + roll3 + "          |");
+    Console.ReadLine();
+    if (roll1 > roll2  roll1 == roll2)
+                {
+    if (roll1 > roll3)
+    {
+        Console.WriteLine("| " + roll1 + " is the highest roll. |");
+        Console.WriteLine("---------------------------");
+    }
+    else
+    {
+        Console.WriteLine("| " + roll3 + " is the highest roll. |");
+        Console.WriteLine("---------------------------");
+    }
+}
+                else if (roll2 > roll1  roll1 == roll2)
+                {
+    if (roll2 > roll3)
+    {
+        Console.WriteLine("| " + roll2 + " is the highest roll. |");
+        Console.WriteLine("---------------------------");
+    }
+    else
+    {
+        Console.WriteLine("| " + roll3 + " is the highest roll. |");
+        Console.WriteLine("---------------------------");
+    }
+}
+
+answer = Console.ReadLine();
+if (answer == "close" || answer == "stop")
+{
+
+}
+else
+{
+    Roll();
+}
+   </code>
+</pre>
+
+</body>
+</html>

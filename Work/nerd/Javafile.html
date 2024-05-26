@@ -10,30 +10,23 @@
     <link rel="stylesheet" href="nerd.css"/>
     <script src="nerd.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../node_modules/prismjs/prism.js"></script>
 
 </head>
 <body>
 
-    <div id="row">
 
+<pre>
+   <code class="language-js">
 
-    <section id="script">
-
-        <h1>Javascript File</h1>
-        <p> const cart = [];
+            const cart = [];
             const maxQuantity = 3; // set max
-        </p>
-        <p>
             // keep track
             const inventory = {
             'camera': { stock: maxQuantity, price: 119.90 },
             'lens': { stock: maxQuantity, price: 59.99 },
             'sdcard': { stock: maxQuantity, price: 2.99 },
             };
-
-        </p>
-        <p>
             // update
             updateCart();
 
@@ -45,8 +38,6 @@
             const item = { name: itemName, price: inventory[itemName].price };
             cart.push(item);
             inventory[itemName].stock -= 1; // Reduce the available quantity
-        </p>
-        <p>
             // Update the cart display
             cartElement.textContent = `${cart.filter(i => i.name === itemName).length} in cart`;
 
@@ -56,8 +47,6 @@
             addButton.disabled = true;
             addButton.textContent = 'OUT OF STOCK';
             }
-        </p>
-        <p>
             // Update  stock display
             stockElement.textContent = `Stock: ${inventory[itemName].stock}`;
 
@@ -66,8 +55,6 @@
             alert(`${itemName} is out of stock.`);
             }
             }
-        </p>
-        <p>
             function updateCart() {
             const cartDiv = document.getElementById("cart");
             cartDiv.innerHTML = "";
@@ -77,39 +64,29 @@
             cartDiv.innerHTML += `<.div>${item.name} - $${item.price} <.button onclick="removeFromCart(${index}, '${item.name}')">Removebutton>div>`;
         totalPrice += item.price;
         });
-        </p>
-        <p>
         cartDiv.innerHTML += `<.div><.strong>Total Price: $${totalPrice.toFixed(2)}strong>div>`;
-        }
-
-        function removeFromCart(index, itemName) {
-        const removedItem = cart.splice(index, 1)[0];
-        inventory[itemName].stock += 1; // Increase the quantity
-        updateCart();
-        // Restore add to cart
-        const addButton = document.querySelector(`[data-product="${itemName}"]`);
-        addButton.disabled = false;
-        addButton.textContent = 'Add to Cart';
-        }
-    </p>
-
-    <a href="nerd.html"><button>Back</button></a>
 
 
 
-    </section>
 
-    </div>
 
-    <footer class="footer">
-        <div id="google_translate_element"></div>
-        <script type="text/javascript">
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-            }
-        </script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </code>
+</pre>
 
 </body>
 </html>
