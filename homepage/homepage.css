@@ -219,3 +219,9 @@ footer {
 h2 {
     font-size: 20px;
 }
+
+#quote {
+    margin-left: auto;
+    text-align: right;
+
+}

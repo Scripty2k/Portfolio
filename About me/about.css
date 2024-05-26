@@ -182,7 +182,7 @@ footer {
 
 .fixed-button {
     position: fixed;
-    bottom: 20px; /* Adjust as needed */
+    bottom: 25px; /* Adjust as needed */
     right: 20px; /* Adjust as needed */
     z-index: 999; /* Ensure it appears above other content */
 }
