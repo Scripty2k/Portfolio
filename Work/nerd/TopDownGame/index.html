@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Shrikhand&display=swap"
+        rel="stylesheet">
+    <title>point and click adventure</title>
+    <a href="https://scripty2k.github.io/Portfolio/Work/nerd/nerd.html"><h1>Go back</h1></a>
+</head>
+
+<body>
+    <div id="title">
+        <h1 id="mainTitle"></h1>
+    </div>
+    <div id="gameWindow">
+        <!--dialog bar-->
+        <div id="dialogBar" class="foreground">
+            <div id="setMainDialog">
+                <img id="dude" class="foreground" src="img/character.png" alt="portrait">
+                <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
+
+                <div id="backtalk" class="foreground speech-bubble">...</div>
+                <img id="counterCharacter" class="foreground" src="img/portairStatue.png" alt="The other person">
+                <div id="brownBar"></div>
+            </div>
+        </div>
+
+        <!-- inventory -->
+        <div id="invetoryBox" class="foreground">
+            <p>Inventory</p>
+            <ul id="inventoryList">
+
+            </ul>
+        </div>
+
+
+        <!--Foreground-->
+        <div id="platform" class="foreground">
+            <img src="img/platform.png" alt="platform with rune">
+        </div>
+        <div id="tree1" class="foreground">
+            <img id="tree" src="img/tree1.png" alt="It's a tree">
+        </div>
+        <div id="stone" class="foreground"></div>
+        <div id="signToLeft" class="foreground"></div>
+        <div id="door1" class="foreground"></div>
+        <div id="door2" class="foreground"></div>
+        <div id="statue" class="foreground"></div>
+        <div id="grave" class="foreground"></div>
+
+        <!-- Character -->
+        <div id="mainCharacter" class="character">
+            <img src="img/character.png" alt="main character">
+        </div>
+
+
+        <!-- Background -->
+        <div id="tilemap" class="background">
+            <img id="tilemapIMG" draggable="false" src="img/tilemap1.jpg" alt="tilemap 1">
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

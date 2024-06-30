@@ -1,0 +1,116 @@
+body {
+    background-color: #000;
+    color: #FFF;
+    display: grid;
+    grid-template-columns: auto 800px auto;
+}
+
+#mainTitle {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    text-align: center;
+}
+
+
+#dialogueBar {
+    bottom: 0px;
+    left: 0px;
+    width: 800px;
+    height: 64px;
+}
+
+#dialogueContent {
+    position: relative;
+    width: 800px;
+    height: 64px;
+}
+
+#mainCharacterSpeech {
+    top: 0px;
+    left: 80px;
+}
+
+#brownBar {
+    position: absolute;
+    background-color: #442c1c;
+    width: 800px;
+    height: 32px;
+    bottom: 0px;
+}
+
+#backtalk {
+    top: 0px;
+    right: 80px;
+}
+
+#counterCharacter {
+    top: 0px;
+    right: 0px;
+    opacity: 0;
+}
+
+
+#gameWindow {
+    width: 800px;
+    height: 608px;
+    background-color: rgb(89, 89, 234);
+    grid-row-start: 2;
+    grid-column-start: 2;
+    position: relative;
+}
+
+#mainCharacter {
+    left: 400px;
+    top: 170px;
+}
+
+#door1 {
+    width: 32px;
+    height: 64px;
+    left: 177px;
+    top: 288px;
+}
+
+#door2 {
+    width: 32px;
+    height: 64px;
+    left: 497px;
+    top: 64px;
+}
+
+#statue {
+    width: 32px;
+    height: 64px;
+    left: 704px;
+    top: 285px;
+}
+
+
+.gameObject {
+    position: absolute;
+    transition: all 1s ease-in-out;
+
+}
+
+.foreground {
+    z-index: 1000;
+}
+
+.character {
+    z-index: 100;
+}
+
+.background {
+    z-index: 0;
+}
+
+.speech-bubble {
+    background: #ffffff;
+    border-radius: 60px;
+    color: #000;
+    padding: 5px 5px 5px 20px;
+    font-size: 12px;
+    opacity: 0;
+    width: 300px;
+    transition: all 1s ease-in-out;
+}
