@@ -1,0 +1,190 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #087a7a;
+    background-image: url('https://static.tumblr.com/716d7c367672ce93bdb81126b3db41d8/mkleh5h/cllpz6aby/tumblr_static_c96bekr4y00g84o84wcg84kos.png');
+
+}
+
+.round {
+    border-radius: 50%;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#logo {
+    padding: 0px 20px 0px 20px;
+}
+
+#logo2 {
+
+}
+
+a {
+    color: #087A7AFF;
+}
+
+#logo img {
+    max-width: 100px;
+}
+
+
+#profile {
+    padding: 20px;
+    width: 1140px;
+    height: 200px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#row {
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+
+#main {
+
+    border: 100px solid transparent;
+    border-image: url('../img/xp.png') 38 / 40px round;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+li {
+    display: inline-block;
+    margin: 10px;
+}
+
+
+
+a:hover {
+    background-color: #733a3a;
+    text-anchor: end;
+}
+
+#bordering {
+    border: 100px solid transparent;
+    padding: 15px;
+    border-image: url('../img/xp.png') 30 / 30px round;
+}
+
+iframe{
+    position: sticky;
+}
+
+.readme {
+    color: #087a7a;
+}
+
+
+
+.winXP-btn {
+    padding: 3px 15px 3px 15px;
+    border: 2px solid transparent;
+    background: transparent;
+}
+
+.winXP-btn:hover,
+.winXP-btn:focus {
+    outline: 0;
+    border: 2px solid #B9D0F0;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+button {
+    padding: 10px 20px 10px 20px;
+    font-size: 13px;
+}
+
+
+#ghost  {
+
+}
+
+.checked {
+    color: orange;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+footer {
+    background-color: #333333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 25px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    z-index: 999; /* Ensure it appears above other content */
+}
+
