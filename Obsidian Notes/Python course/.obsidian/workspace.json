@@ -35,8 +35,12 @@
             "id": "5b1a20281191a8e7",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Basics/Functions.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
@@ -106,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Beginner/Calculator version 1.md",
+                "file": "Basics/Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Beginner/Calculator version 1.md",
+                "file": "Basics/Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Beginner/Calculator version 1.md"
+                "file": "Basics/Functions.md"
               }
             }
           }
@@ -170,6 +174,7 @@
   },
   "active": "5b1a20281191a8e7",
   "lastOpenFiles": [
+    "Basics/If statements.md",
     "Basics/Lists.md",
     "Beginner/Calculator version 1.md",
     "Python.md",
@@ -177,7 +182,6 @@
     "Prompts/Basics.md",
     "Prompts/Beginner.md",
     "Basics/Functions.md",
-    "Basics/If statements.md",
     "Basics/Importing.md",
     "Basics/Input.md",
     "Basics/Numbers.md",
