@@ -1,0 +1,44 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "Scripty",
+      "color": {
+        "a": 1,
+        "rgb": 6079190
+      }
+    },
+    {
+      "query": "Hobbies",
+      "color": {
+        "a": 1,
+        "rgb": 14048454
+      }
+    },
+    {
+      "query": "Skills",
+      "color": {
+        "a": 1,
+        "rgb": 7001692
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.359375,
+  "repelStrength": 7.29166666666667,
+  "linkStrength": 0.588541666666667,
+  "linkDistance": 50,
+  "scale": 0.7132754626224439,
+  "close": true
+}

@@ -1,0 +1,11 @@
+[[Schools]]
+[[Hobbies]]
+[[Intelligence]]
+[[Likes]]
+[[Places I've went to]]
+[[Coding skills]]
+[[Previous part-time Jobs]]
+[[Previous full-time Jobs]]
+[[Gigs]]
+[[Places I want to move in to]]
+

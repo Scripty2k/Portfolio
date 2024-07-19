@@ -1,0 +1,148 @@
+{
+  "main": {
+    "id": "ce474d27dc6107a5",
+    "type": "split",
+    "children": [
+      {
+        "id": "f32ba62036458b2b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b1d97eafcb3bfd2a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f79a119a42111b2d",
+    "type": "split",
+    "children": [
+      {
+        "id": "32c703d3dfa7ff7b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "14f7b8e2a79a016a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ddaff3c879a3f0ac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "db6dd71825e16a01",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "dfd34a41de2341de",
+    "type": "split",
+    "children": [
+      {
+        "id": "441c05283c874413",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a4dd17ad9b35dbaf",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a9e9d7bc234b546d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9085933ded22b075",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "8091dae3c757bc22",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "b1d97eafcb3bfd2a",
+  "lastOpenFiles": [
+    "Jobs and Gigs/Gigs/Rhion.md",
+    "Scripty.md",
+    "Intelligence/Intelligence.md",
+    "Intelligence/Logic Smart I.md"
+  ]
+}
