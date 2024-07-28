@@ -13,31 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Beginner/Calculator version 2.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3e3549f42e0687a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Basics/Lists.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5b1a20281191a8e7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Basics/Functions.md",
+                "file": "Basics/Dictionaries.md",
                 "mode": "source",
                 "source": false
               }
@@ -109,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python.md",
+                "file": "Basics/Dictionaries.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Python.md",
+                "file": "Basics/Dictionaries.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Python.md"
+                "file": "Basics/Dictionaries.md"
               }
             }
           }
@@ -171,48 +147,14 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "floating": {
-    "id": "321e3ef2a65e1fc7",
-    "type": "floating",
-    "children": [
-      {
-        "id": "076a15e5498fbff9",
-        "type": "window",
-        "children": [
-          {
-            "id": "fa9232b8141754f4",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "3d8c8e712944a7c3",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Python.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 510,
-        "y": 532,
-        "width": 900,
-        "height": 500,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "3d8c8e712944a7c3",
+  "active": "ac716a7cec99a1bc",
   "lastOpenFiles": [
+    "Basics/If statements.md",
+    "Basics/Dictionaries.md",
+    "Beginner/Calculator version 2.md",
+    "Python.md",
     "Prompts/Beginner.md",
     "Prompts/Basics.md",
-    "Beginner/Calculator version 2.md",
     "Beginner/Calculator version 1.md",
     "Basics/Variables.md",
     "Basics/Numbers.md",
@@ -222,8 +164,6 @@
     "Basics/Functions.md",
     "Export",
     "New folder",
-    "Basics/If statements.md",
-    "Python.md",
     "Pyth",
     "Basics/Functions.html",
     "Prompts",
