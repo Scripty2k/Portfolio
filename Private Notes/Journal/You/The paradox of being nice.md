@@ -1,0 +1,5 @@
+I used to have this phase of being nice when I was young. I cared a lot of getting approval from others so much that I started forgetting who I am. I became such a people pleaser because I had no other way to make people value me. I thought that if I just remain nice this way, I wouldn't end up being a loner. Funny because I had a lot of friends but still felt lonely. 
+
+I guess that no one saw the real me. The real person behind the nice guy ego. I've became so obsessed and started developing the fear of being left out. This really held me onto a rope to just continue being nice. I thought to myself, what good does it do to reveal the true me? Maybe I start hurting other's feelings. Then I got towards the point where I started forgetting who I was. "Tell me about yourself", they ask. It really got to the point where I had to actually ponder about who I really am. Because I've been in this nice guy mask for so long, I forgot who I was. It damaged me. I changed and reduced who I was at every turn. To appease my father, friends, teachers.
+
+That's not a good person. That's not a bad person. It's just not much of a person at all. 

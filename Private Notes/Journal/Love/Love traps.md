@@ -1,0 +1,5 @@
+Loving someone more than yourself is dangerous, isn't it? Yet that some don't realize it is happening to them right now. I feel empathy seeing people watching their hearts getting sucked out of their souls. Allowing their hearts to be consumed by their loved ones. And yet they take the part of your heart away. But the universe is big and unpredictable. We can't force ourselves to find love. We can't steer that type of wind. Make one mistake from that and you'll be falling in love with your own solitude for a lifetime. Just to recover and cope, forgetting what it's like to be gentle with yourself. Talking to myself in kind words. Just by seeing someone you love be happy. Love is a big sacrifice to yourself. Slowly draining yourself for someone else is dangerous. It makes you blind so you don't know when you're slowly destroying yourself. If you can't love yourself first, you can't love anyone else.
+
+Maybe it's a good thing when the universe chose to decline our love to someone. 
+
+#y2023 #remastered 

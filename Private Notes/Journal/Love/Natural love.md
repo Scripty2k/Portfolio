@@ -1,0 +1,3 @@
+You can't force someone to love you. I spent so much time fighting for one sided effections. Trying to be prove my love to people who clearly didn't see the proof of worth I was giving them. I always thought that if I was caring enough, that they would've end up caring for me too. But you can't beg for love. You can't force love. It is all natural work. 
+
+I've not yet to love myself. Even though I need to. I want to. Without having to love myself, I can't share that love to anyone else. Because love doesn't exist if you don't love yourself

@@ -1,39 +1,52 @@
 {
   "main": {
-    "id": "2bf3f1298afd9f29",
+    "id": "1ddc4ec6d397d1eb",
     "type": "split",
     "children": [
       {
-        "id": "5a8701250ce9ce22",
+        "id": "e2f4f9f825af34a3",
         "type": "tabs",
         "children": [
           {
-            "id": "ac716a7cec99a1bc",
+            "id": "e6f961fca6ced247",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Basics/Dictionaries.md",
+                "file": "Love/Natural love.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "237bbdb5631db165",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "You/The paradox of being nice.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "a8e92cc07ff190f3",
+    "id": "c9b85bc90bf45a80",
     "type": "split",
     "children": [
       {
-        "id": "7fc45b305606505c",
+        "id": "aef1c457fa497de1",
         "type": "tabs",
         "children": [
           {
-            "id": "1f7320af6e46292d",
+            "id": "3ae33e33cdab7c9e",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +56,7 @@
             }
           },
           {
-            "id": "8ca4b446d8f2f893",
+            "id": "f4d3b52348bbd214",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +71,7 @@
             }
           },
           {
-            "id": "2a0e703c7ba251a7",
+            "id": "530f2025af0748c0",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,20 +85,20 @@
     "width": 300
   },
   "right": {
-    "id": "ff919b2132e91bb6",
+    "id": "a9ad4c4db8db10fc",
     "type": "split",
     "children": [
       {
-        "id": "f435203f80ad327a",
+        "id": "4c0cfd04f968551c",
         "type": "tabs",
         "children": [
           {
-            "id": "848cebd81f73b22c",
+            "id": "ab0d6d5d75745056",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Basics/Dictionaries.md",
+                "file": "You/The paradox of being nice.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +110,19 @@
             }
           },
           {
-            "id": "1069d73a98189c01",
+            "id": "3eea555a85e43f68",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Basics/Dictionaries.md",
+                "file": "You/The paradox of being nice.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "5a2fa068bb5913ed",
+            "id": "d19dcbf0edef1865",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,12 +133,12 @@
             }
           },
           {
-            "id": "750887ac7aea9bd6",
+            "id": "4da6df39ab2a6ebc",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Basics/Dictionaries.md"
+                "file": "You/The paradox of being nice.md"
               }
             }
           }
@@ -143,32 +156,32 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "webpage-html-export:Export Vault to HTML": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "ac716a7cec99a1bc",
+  "active": "3ae33e33cdab7c9e",
   "lastOpenFiles": [
-    "Beginner/Calculator version 2.md",
-    "Beginner/Calculator version 1.md",
-    "Basics/Variables.md",
-    "Basics/Numbers.md",
-    "Basics/Lists.md",
-    "Basics/Input.md",
-    "Basics/Importing.md",
-    "Basics/If statements.md",
-    "Basics/Dictionaries.md",
-    "Python.md",
-    "Prompts/Beginner.md",
-    "Prompts/Basics.md",
-    "Basics/Functions.md",
-    "Export",
-    "New folder",
-    "Pyth",
-    "Basics/Functions.html",
-    "Prompts",
-    "Beginner",
-    "Basics",
-    "Welcome.md"
+    "You/Self-expression.md",
+    "You/The paradox of being nice.md",
+    "You/The path is you.md",
+    "You/We're all emotional.md",
+    "The universe and mother nature/Control.md",
+    "Links/Time.md",
+    "Time/Growing up.md",
+    "Links/You.md",
+    "Love/Natural love.md",
+    "Love/Love traps.md",
+    "Time/Time is limited.md",
+    "Links/The universe and mother nature.md",
+    "Links/Love.md",
+    "Untitled",
+    "The universe and mother nature",
+    "Love",
+    "[Time is limited.md",
+    "Links",
+    "Time",
+    "You",
+    "Subjects",
+    "create a link.md"
   ]
 }

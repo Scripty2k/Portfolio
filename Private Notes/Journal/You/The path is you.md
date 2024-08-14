@@ -1,0 +1,5 @@
+You have to make yourself you again. YOU are the path. The things you have is not you but the things we progress in is. From what I think, the thing that makes you the most comfortable and happy in makes it really you. I think that some people think it wrong because the path is actually becoming yourself instead of your goals and aspirations. 
+
+In many philosophical and psychological traditions, the "self" is considered the core of our identity. It’s not just who we are on the surface—our roles, titles, or possessions—but the essence of who we are deep down, beyond external labels.
+
+The idea that "YOU are the path" suggests that life is not about reaching a specific destination but about continuously uncovering and understanding who you are. This aligns with the concept of self-actualization, where the journey itself is seen as a process of becoming the most authentic version of yourself.

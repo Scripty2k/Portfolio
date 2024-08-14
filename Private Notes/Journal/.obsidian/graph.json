@@ -1,0 +1,51 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "section:(Love)",
+      "color": {
+        "a": 1,
+        "rgb": 16749819
+      }
+    },
+    {
+      "query": "Time",
+      "color": {
+        "a": 1,
+        "rgb": 14069084
+      }
+    },
+    {
+      "query": "You",
+      "color": {
+        "a": 1,
+        "rgb": 5067519
+      }
+    },
+    {
+      "query": "Nature",
+      "color": {
+        "a": 1,
+        "rgb": 9237388
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1.0000000000000113,
+  "close": true
+}
