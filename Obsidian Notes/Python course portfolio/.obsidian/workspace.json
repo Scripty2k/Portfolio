@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Basics/Dictionaries.md",
+                "file": "Beginner/Guess the number.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Basics/Dictionaries.md",
+                "file": "Beginner/Guess the number.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Basics/Dictionaries.md",
+                "file": "Beginner/Guess the number.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Basics/Dictionaries.md"
+                "file": "Beginner/Guess the number.md"
               }
             }
           }
@@ -149,19 +149,20 @@
   },
   "active": "ac716a7cec99a1bc",
   "lastOpenFiles": [
-    "Beginner/Calculator version 2.md",
-    "Beginner/Calculator version 1.md",
-    "Basics/Variables.md",
-    "Basics/Numbers.md",
-    "Basics/Lists.md",
-    "Basics/Input.md",
-    "Basics/Importing.md",
+    "Basics/Functions.md",
+    "Beginner/Guess the number.md",
     "Basics/If statements.md",
-    "Basics/Dictionaries.md",
-    "Python.md",
+    "Basics/Importing.md",
+    "Basics/Input.md",
+    "Basics/Lists.md",
+    "Basics/Numbers.md",
+    "Basics/Variables.md",
     "Prompts/Beginner.md",
     "Prompts/Basics.md",
-    "Basics/Functions.md",
+    "Basics/Dictionaries.md",
+    "Beginner/Calculator version 2.md",
+    "Beginner/Calculator version 1.md",
+    "Python.md",
     "Export",
     "New folder",
     "Pyth",
