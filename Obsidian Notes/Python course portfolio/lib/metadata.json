@@ -1,0 +1,848 @@
+{
+  "vaultName": "Python course",
+  "lastExport": 1724747788023,
+  "pluginVersion": "1.8.01",
+  "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title show-ribbon",
+  "useCustomHeadContent": false,
+  "useCustomFavicon": false,
+  "files": [
+    "Basics/Dictionaries.md",
+    "Basics/Functions.md",
+    "Basics/If statements.md",
+    "Basics/Importing.md",
+    "Basics/Input.md",
+    "Basics/Lists.md",
+    "Basics/Numbers.md",
+    "Basics/Variables.md",
+    "Beginner/Calculator version 1.md",
+    "Beginner/Calculator version 2.md",
+    "Beginner/Guess the number.md",
+    "Export/basics/dictionaries.html",
+    "Export/basics/functions.html",
+    "Export/basics/if-statements.html",
+    "Export/basics/importing.html",
+    "Export/basics/input.html",
+    "Export/basics/lists.html",
+    "Export/basics/numbers.html",
+    "Export/basics/variables.html",
+    "Export/beginner/calculator-version-1.html",
+    "Export/beginner/calculator-version-2.html",
+    "Export/export/basics/functions.html",
+    "Export/export/basics/if-statements.html",
+    "Export/export/basics/importing.html",
+    "Export/export/basics/input.html",
+    "Export/export/basics/lists.html",
+    "Export/export/basics/numbers.html",
+    "Export/export/basics/variables.html",
+    "Export/export/beginner/calculator-version-1.html",
+    "Export/export/beginner/calculator-version-2.html",
+    "Export/export/lib/fonts/2d5198822ab091ce4305.woff2",
+    "Export/export/lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "Export/export/lib/fonts/05b618077343fbbd92b7.ttf",
+    "Export/export/lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "Export/export/lib/fonts/70cc7ff27245e82ad414.ttf",
+    "Export/export/lib/fonts/94f2f163d4b698242fef.otf",
+    "Export/export/lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "Export/export/lib/fonts/72505e6a122c6acd5471.woff2",
+    "Export/export/lib/fonts/454577c22304619db035.ttf",
+    "Export/export/lib/fonts/b5f0f109bc88052d4000.woff2",
+    "Export/export/lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "Export/export/lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "Export/export/lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "Export/export/lib/media/3d6c1bdc4d87cde4de67.svg",
+    "Export/export/lib/media/874d8b8e340f75575caa.svg",
+    "Export/export/lib/metadata.json",
+    "Export/export/lib/rss.xml",
+    "Export/export/prompts/basics.html",
+    "Export/export/prompts/beginner.html",
+    "Export/export/python.html",
+    "Export/lib/fonts/2d5198822ab091ce4305.woff2",
+    "Export/lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "Export/lib/fonts/05b618077343fbbd92b7.ttf",
+    "Export/lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "Export/lib/fonts/70cc7ff27245e82ad414.ttf",
+    "Export/lib/fonts/94f2f163d4b698242fef.otf",
+    "Export/lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "Export/lib/fonts/72505e6a122c6acd5471.woff2",
+    "Export/lib/fonts/454577c22304619db035.ttf",
+    "Export/lib/fonts/b5f0f109bc88052d4000.woff2",
+    "Export/lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "Export/lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "Export/lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "Export/lib/html/file-tree.html",
+    "Export/lib/media/3d6c1bdc4d87cde4de67.svg",
+    "Export/lib/media/874d8b8e340f75575caa.svg",
+    "Export/lib/media/favicon.png",
+    "Export/lib/scripts/graph-data.js",
+    "Export/lib/scripts/graph-render-worker.js",
+    "Export/lib/scripts/graph-view.js",
+    "Export/lib/scripts/graph-wasm.js",
+    "Export/lib/scripts/graph-wasm.wasm",
+    "Export/lib/scripts/minisearch.js",
+    "Export/lib/scripts/pixi.js",
+    "Export/lib/scripts/tinycolor.js",
+    "Export/lib/scripts/webpage.js",
+    "Export/lib/styles/global-variable-styles.css",
+    "Export/lib/styles/main-styles.css",
+    "Export/lib/styles/obsidian.css",
+    "Export/lib/metadata.json",
+    "Export/lib/rss.xml",
+    "Export/lib/search-index.json",
+    "Export/python.html",
+    "Prompts/Basics.md",
+    "Prompts/Beginner.md",
+    "Python.md",
+    "lib/scripts/graph-wasm.wasm",
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "lib/html/file-tree.html",
+    "lib/scripts/webpage.js",
+    "lib/scripts/graph-view.js",
+    "lib/scripts/graph-wasm.js",
+    "lib/scripts/graph-render-worker.js",
+    "lib/scripts/tinycolor.js",
+    "lib/scripts/pixi.js",
+    "lib/scripts/minisearch.js",
+    "lib/media/favicon.png",
+    "lib/scripts/graph-data.js",
+    "lib/styles/obsidian.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/main-styles.css"
+  ],
+  "mainDependencies": [
+    "lib/scripts/graph-wasm.wasm",
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "lib/html/file-tree.html",
+    "lib/scripts/webpage.js",
+    "lib/scripts/graph-view.js",
+    "lib/scripts/graph-wasm.js",
+    "lib/scripts/graph-render-worker.js",
+    "lib/scripts/tinycolor.js",
+    "lib/scripts/pixi.js",
+    "lib/scripts/minisearch.js",
+    "lib/media/favicon.png",
+    "lib/scripts/graph-data.js",
+    "lib/styles/obsidian.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/main-styles.css"
+  ],
+  "fileInfo": {
+    "Basics/Dictionaries.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 460,
+      "exportedPath": "basics/dictionaries.html",
+      "dependencies": []
+    },
+    "Basics/Functions.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 216,
+      "exportedPath": "basics/functions.html",
+      "dependencies": []
+    },
+    "Basics/If statements.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 824,
+      "exportedPath": "basics/if-statements.html",
+      "dependencies": []
+    },
+    "Basics/Importing.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 133,
+      "exportedPath": "basics/importing.html",
+      "dependencies": []
+    },
+    "Basics/Input.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 170,
+      "exportedPath": "basics/input.html",
+      "dependencies": []
+    },
+    "Basics/Lists.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 631,
+      "exportedPath": "basics/lists.html",
+      "dependencies": []
+    },
+    "Basics/Numbers.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 294,
+      "exportedPath": "basics/numbers.html",
+      "dependencies": []
+    },
+    "Basics/Variables.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 85,
+      "exportedPath": "basics/variables.html",
+      "dependencies": []
+    },
+    "Beginner/Calculator version 1.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 1033,
+      "exportedPath": "beginner/calculator-version-1.html",
+      "dependencies": []
+    },
+    "Beginner/Calculator version 2.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 423,
+      "exportedPath": "beginner/calculator-version-2.html",
+      "dependencies": []
+    },
+    "Beginner/Guess the number.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 654,
+      "exportedPath": "beginner/guess-the-number.html",
+      "dependencies": []
+    },
+    "Export/basics/dictionaries.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 16581,
+      "exportedPath": "export/basics/dictionaries.html",
+      "dependencies": []
+    },
+    "Export/basics/functions.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 14804,
+      "exportedPath": "export/basics/functions.html",
+      "dependencies": []
+    },
+    "Export/basics/if-statements.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 18360,
+      "exportedPath": "export/basics/if-statements.html",
+      "dependencies": []
+    },
+    "Export/basics/importing.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 14376,
+      "exportedPath": "export/basics/importing.html",
+      "dependencies": []
+    },
+    "Export/basics/input.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 15082,
+      "exportedPath": "export/basics/input.html",
+      "dependencies": []
+    },
+    "Export/basics/lists.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 16710,
+      "exportedPath": "export/basics/lists.html",
+      "dependencies": []
+    },
+    "Export/basics/numbers.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 16274,
+      "exportedPath": "export/basics/numbers.html",
+      "dependencies": []
+    },
+    "Export/basics/variables.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 14614,
+      "exportedPath": "export/basics/variables.html",
+      "dependencies": []
+    },
+    "Export/beginner/calculator-version-1.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 17896,
+      "exportedPath": "export/beginner/calculator-version-1.html",
+      "dependencies": []
+    },
+    "Export/beginner/calculator-version-2.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 16828,
+      "exportedPath": "export/beginner/calculator-version-2.html",
+      "dependencies": []
+    },
+    "Export/export/basics/functions.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 221232,
+      "exportedPath": "export/export/basics/functions.html",
+      "dependencies": []
+    },
+    "Export/export/basics/if-statements.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 224810,
+      "exportedPath": "export/export/basics/if-statements.html",
+      "dependencies": []
+    },
+    "Export/export/basics/importing.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 220804,
+      "exportedPath": "export/export/basics/importing.html",
+      "dependencies": []
+    },
+    "Export/export/basics/input.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 221510,
+      "exportedPath": "export/export/basics/input.html",
+      "dependencies": []
+    },
+    "Export/export/basics/lists.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 223149,
+      "exportedPath": "export/export/basics/lists.html",
+      "dependencies": []
+    },
+    "Export/export/basics/numbers.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 222746,
+      "exportedPath": "export/export/basics/numbers.html",
+      "dependencies": []
+    },
+    "Export/export/basics/variables.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 221042,
+      "exportedPath": "export/export/basics/variables.html",
+      "dependencies": []
+    },
+    "Export/export/beginner/calculator-version-1.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 224346,
+      "exportedPath": "export/export/beginner/calculator-version-1.html",
+      "dependencies": []
+    },
+    "Export/export/beginner/calculator-version-2.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 223256,
+      "exportedPath": "export/export/beginner/calculator-version-2.html",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/2d5198822ab091ce4305.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 104332,
+      "exportedPath": "export/export/lib/fonts/2d5198822ab091ce4305.woff2",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 7876,
+      "exportedPath": "export/export/lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/05b618077343fbbd92b7.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 155288,
+      "exportedPath": "export/export/lib/fonts/05b618077343fbbd92b7.ttf",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/52ac8f3034507f1d9e53.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 191568,
+      "exportedPath": "export/export/lib/fonts/52ac8f3034507f1d9e53.ttf",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/70cc7ff27245e82ad414.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 192740,
+      "exportedPath": "export/export/lib/fonts/70cc7ff27245e82ad414.ttf",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/94f2f163d4b698242fef.otf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 66800,
+      "exportedPath": "export/export/lib/fonts/94f2f163d4b698242fef.otf",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/535a6cf662596b3bd6a6.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 111708,
+      "exportedPath": "export/export/lib/fonts/535a6cf662596b3bd6a6.woff2",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/72505e6a122c6acd5471.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 104232,
+      "exportedPath": "export/export/lib/fonts/72505e6a122c6acd5471.woff2",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/454577c22304619db035.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 161376,
+      "exportedPath": "export/export/lib/fonts/454577c22304619db035.ttf",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/b5f0f109bc88052d4000.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 105804,
+      "exportedPath": "export/export/lib/fonts/b5f0f109bc88052d4000.woff2",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/c8ba52b05a9ef10f4758.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 98868,
+      "exportedPath": "export/export/lib/fonts/c8ba52b05a9ef10f4758.woff2",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/cb10ffd7684cd9836a05.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 106876,
+      "exportedPath": "export/export/lib/fonts/cb10ffd7684cd9836a05.woff2",
+      "dependencies": []
+    },
+    "Export/export/lib/fonts/cbe0ae49c52c920fd563.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 106108,
+      "exportedPath": "export/export/lib/fonts/cbe0ae49c52c920fd563.woff2",
+      "dependencies": []
+    },
+    "Export/export/lib/media/3d6c1bdc4d87cde4de67.svg": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 279,
+      "exportedPath": "export/export/lib/media/3d6c1bdc4d87cde4de67.svg",
+      "dependencies": []
+    },
+    "Export/export/lib/media/874d8b8e340f75575caa.svg": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 317,
+      "exportedPath": "export/export/lib/media/874d8b8e340f75575caa.svg",
+      "dependencies": []
+    },
+    "Export/export/lib/metadata.json": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 7030,
+      "exportedPath": "export/export/lib/metadata.json",
+      "dependencies": []
+    },
+    "Export/export/lib/rss.xml": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 10998,
+      "exportedPath": "export/export/lib/rss.xml",
+      "dependencies": []
+    },
+    "Export/export/prompts/basics.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 221104,
+      "exportedPath": "export/export/prompts/basics.html",
+      "dependencies": []
+    },
+    "Export/export/prompts/beginner.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 220594,
+      "exportedPath": "export/export/prompts/beginner.html",
+      "dependencies": []
+    },
+    "Export/export/python.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 220486,
+      "exportedPath": "export/export/python.html",
+      "dependencies": []
+    },
+    "Export/lib/fonts/2d5198822ab091ce4305.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 104332,
+      "exportedPath": "export/lib/fonts/2d5198822ab091ce4305.woff2",
+      "dependencies": []
+    },
+    "Export/lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 7876,
+      "exportedPath": "export/lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+      "dependencies": []
+    },
+    "Export/lib/fonts/05b618077343fbbd92b7.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 155288,
+      "exportedPath": "export/lib/fonts/05b618077343fbbd92b7.ttf",
+      "dependencies": []
+    },
+    "Export/lib/fonts/52ac8f3034507f1d9e53.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 191568,
+      "exportedPath": "export/lib/fonts/52ac8f3034507f1d9e53.ttf",
+      "dependencies": []
+    },
+    "Export/lib/fonts/70cc7ff27245e82ad414.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 192740,
+      "exportedPath": "export/lib/fonts/70cc7ff27245e82ad414.ttf",
+      "dependencies": []
+    },
+    "Export/lib/fonts/94f2f163d4b698242fef.otf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 66800,
+      "exportedPath": "export/lib/fonts/94f2f163d4b698242fef.otf",
+      "dependencies": []
+    },
+    "Export/lib/fonts/535a6cf662596b3bd6a6.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 111708,
+      "exportedPath": "export/lib/fonts/535a6cf662596b3bd6a6.woff2",
+      "dependencies": []
+    },
+    "Export/lib/fonts/72505e6a122c6acd5471.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 104232,
+      "exportedPath": "export/lib/fonts/72505e6a122c6acd5471.woff2",
+      "dependencies": []
+    },
+    "Export/lib/fonts/454577c22304619db035.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 161376,
+      "exportedPath": "export/lib/fonts/454577c22304619db035.ttf",
+      "dependencies": []
+    },
+    "Export/lib/fonts/b5f0f109bc88052d4000.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 105804,
+      "exportedPath": "export/lib/fonts/b5f0f109bc88052d4000.woff2",
+      "dependencies": []
+    },
+    "Export/lib/fonts/c8ba52b05a9ef10f4758.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 98868,
+      "exportedPath": "export/lib/fonts/c8ba52b05a9ef10f4758.woff2",
+      "dependencies": []
+    },
+    "Export/lib/fonts/cb10ffd7684cd9836a05.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 106876,
+      "exportedPath": "export/lib/fonts/cb10ffd7684cd9836a05.woff2",
+      "dependencies": []
+    },
+    "Export/lib/fonts/cbe0ae49c52c920fd563.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 106108,
+      "exportedPath": "export/lib/fonts/cbe0ae49c52c920fd563.woff2",
+      "dependencies": []
+    },
+    "Export/lib/html/file-tree.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 21962,
+      "exportedPath": "export/lib/html/file-tree.html",
+      "dependencies": []
+    },
+    "Export/lib/media/3d6c1bdc4d87cde4de67.svg": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 279,
+      "exportedPath": "export/lib/media/3d6c1bdc4d87cde4de67.svg",
+      "dependencies": []
+    },
+    "Export/lib/media/874d8b8e340f75575caa.svg": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 317,
+      "exportedPath": "export/lib/media/874d8b8e340f75575caa.svg",
+      "dependencies": []
+    },
+    "Export/lib/media/favicon.png": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 1105,
+      "exportedPath": "export/lib/media/favicon.png",
+      "dependencies": []
+    },
+    "Export/lib/scripts/graph-data.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 911,
+      "exportedPath": "export/lib/scripts/graph-data.js",
+      "dependencies": []
+    },
+    "Export/lib/scripts/graph-render-worker.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 5179,
+      "exportedPath": "export/lib/scripts/graph-render-worker.js",
+      "dependencies": []
+    },
+    "Export/lib/scripts/graph-view.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 15519,
+      "exportedPath": "export/lib/scripts/graph-view.js",
+      "dependencies": []
+    },
+    "Export/lib/scripts/graph-wasm.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 14021,
+      "exportedPath": "export/lib/scripts/graph-wasm.js",
+      "dependencies": []
+    },
+    "Export/lib/scripts/graph-wasm.wasm": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 23377,
+      "exportedPath": "export/lib/scripts/graph-wasm.wasm",
+      "dependencies": []
+    },
+    "Export/lib/scripts/minisearch.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 29422,
+      "exportedPath": "export/lib/scripts/minisearch.js",
+      "dependencies": []
+    },
+    "Export/lib/scripts/pixi.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 449511,
+      "exportedPath": "export/lib/scripts/pixi.js",
+      "dependencies": []
+    },
+    "Export/lib/scripts/tinycolor.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 29832,
+      "exportedPath": "export/lib/scripts/tinycolor.js",
+      "dependencies": []
+    },
+    "Export/lib/scripts/webpage.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 47290,
+      "exportedPath": "export/lib/scripts/webpage.js",
+      "dependencies": []
+    },
+    "Export/lib/styles/global-variable-styles.css": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 236,
+      "exportedPath": "export/lib/styles/global-variable-styles.css",
+      "dependencies": []
+    },
+    "Export/lib/styles/main-styles.css": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 23130,
+      "exportedPath": "export/lib/styles/main-styles.css",
+      "dependencies": []
+    },
+    "Export/lib/styles/obsidian.css": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 130483,
+      "exportedPath": "export/lib/styles/obsidian.css",
+      "dependencies": []
+    },
+    "Export/lib/metadata.json": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 17855,
+      "exportedPath": "export/lib/metadata.json",
+      "dependencies": []
+    },
+    "Export/lib/rss.xml": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 11690,
+      "exportedPath": "export/lib/rss.xml",
+      "dependencies": []
+    },
+    "Export/lib/search-index.json": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 16050,
+      "exportedPath": "export/lib/search-index.json",
+      "dependencies": []
+    },
+    "Export/python.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 14057,
+      "exportedPath": "export/python.html",
+      "dependencies": []
+    },
+    "Prompts/Basics.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 93,
+      "exportedPath": "prompts/basics.html",
+      "dependencies": []
+    },
+    "Prompts/Beginner.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 53,
+      "exportedPath": "prompts/beginner.html",
+      "dependencies": []
+    },
+    "Python.md": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 25,
+      "exportedPath": "python.html",
+      "dependencies": []
+    },
+    "lib/scripts/graph-wasm.wasm": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 23377,
+      "exportedPath": "lib/scripts/graph-wasm.wasm",
+      "dependencies": []
+    },
+    "lib/fonts/94f2f163d4b698242fef.otf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 66800,
+      "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
+      "dependencies": []
+    },
+    "lib/fonts/72505e6a122c6acd5471.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 104232,
+      "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/2d5198822ab091ce4305.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 104332,
+      "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 98868,
+      "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cb10ffd7684cd9836a05.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 106876,
+      "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/b5f0f109bc88052d4000.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 105804,
+      "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cbe0ae49c52c920fd563.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 106108,
+      "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/535a6cf662596b3bd6a6.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 111708,
+      "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/70cc7ff27245e82ad414.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 192740,
+      "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/454577c22304619db035.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 161376,
+      "exportedPath": "lib/fonts/454577c22304619db035.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/52ac8f3034507f1d9e53.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 191568,
+      "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/05b618077343fbbd92b7.ttf": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 155288,
+      "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 7876,
+      "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+      "dependencies": []
+    },
+    "lib/media/874d8b8e340f75575caa.svg": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 317,
+      "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
+      "dependencies": []
+    },
+    "lib/media/3d6c1bdc4d87cde4de67.svg": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 279,
+      "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
+      "dependencies": []
+    },
+    "lib/html/file-tree.html": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 7047,
+      "exportedPath": "lib/html/file-tree.html",
+      "dependencies": []
+    },
+    "lib/scripts/webpage.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 47290,
+      "exportedPath": "lib/scripts/webpage.js",
+      "dependencies": []
+    },
+    "lib/scripts/graph-view.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 15519,
+      "exportedPath": "lib/scripts/graph-view.js",
+      "dependencies": []
+    },
+    "lib/scripts/graph-wasm.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 14021,
+      "exportedPath": "lib/scripts/graph-wasm.js",
+      "dependencies": []
+    },
+    "lib/scripts/graph-render-worker.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 5179,
+      "exportedPath": "lib/scripts/graph-render-worker.js",
+      "dependencies": []
+    },
+    "lib/scripts/tinycolor.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 29832,
+      "exportedPath": "lib/scripts/tinycolor.js",
+      "dependencies": []
+    },
+    "lib/scripts/pixi.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 449509,
+      "exportedPath": "lib/scripts/pixi.js",
+      "dependencies": []
+    },
+    "lib/scripts/minisearch.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 29422,
+      "exportedPath": "lib/scripts/minisearch.js",
+      "dependencies": []
+    },
+    "lib/media/favicon.png": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 1105,
+      "exportedPath": "lib/media/favicon.png",
+      "dependencies": []
+    },
+    "lib/scripts/graph-data.js": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 965,
+      "exportedPath": "lib/scripts/graph-data.js",
+      "dependencies": []
+    },
+    "lib/styles/obsidian.css": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 130471,
+      "exportedPath": "lib/styles/obsidian.css",
+      "dependencies": []
+    },
+    "lib/styles/global-variable-styles.css": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 236,
+      "exportedPath": "lib/styles/global-variable-styles.css",
+      "dependencies": []
+    },
+    "lib/styles/main-styles.css": {
+      "modifiedTime": 1724747788023,
+      "sourceSize": 23130,
+      "exportedPath": "lib/styles/main-styles.css",
+      "dependencies": []
+    }
+  }
+}

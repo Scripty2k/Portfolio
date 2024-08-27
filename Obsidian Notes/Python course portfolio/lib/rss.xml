@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Python course]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>Python course</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 27 Aug 2024 08:36:29 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 27 Aug 2024 08:36:28 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[Dictionaries]]></title><description><![CDATA[ 
+ <br>A simple thing with this function is that you can specify something by something else<br>For example, like this:<br>monthconvert = {  
+    'jan': 'January',  
+    'feb': 'February',  
+    'mar': 'March',  
+    'apr': 'April',  
+    'May': 'May',  
+    'June': 'June',  
+    'July': 'July',  
+    'aug': 'August',  
+    'sept': 'September',  
+    'oct': 'October',  
+    'nov': 'November',  
+    'dec': 'December'  
+}  
+  
+print(monthconvert['sept'])
+Copy]]></description><link>basics\dictionaries.html</link><guid isPermaLink="false">Basics/Dictionaries.md</guid><pubDate>Sun, 28 Jul 2024 09:22:59 GMT</pubDate></item><item><title><![CDATA[Functions]]></title><description><![CDATA[<a class="tag" href="?query=tag:Basics" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Basics</a> 
+ <br><a href=".?query=tag:Basics" class="tag" target="_blank" rel="noopener">#Basics</a> <br>This is a basic function:<br>def say_hi():  
+    print("Hi there")  
+  
+#now call the function  
+say_hi()
+Copy<br>Here I've made a function called say_hi. Whenever it's done. You can call it afterwards!]]></description><link>basics\functions.html</link><guid isPermaLink="false">Basics/Functions.md</guid><pubDate>Tue, 16 Jul 2024 11:29:49 GMT</pubDate></item><item><title><![CDATA[If statements]]></title><description><![CDATA[<a class="tag" href="?query=tag:Basics" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Basics</a> 
+ <br><a href=".?query=tag:Basics" class="tag" target="_blank" rel="noopener">#Basics</a> <br>is_male = True  
+is_female = False  
+  
+if is_male and is_female:  
+    print("Male")  
+    print("Female")  
+  
+if is_male and not is_female:  
+    print("Male")  
+  
+if is_female and not is_male:  
+    print("Female")
+Copy<br>This is really basic, but we can add an else function to make it shorter.<br>This one is better:<br>is_male = True  
+is_female = False  
+  
+if is_male:  
+    print("Male")  
+else:  
+    print("Female")
+Copy<br>This code checks which number is the biggest, then prints it out<br>with return statements:<br>def max_num(num1, num2, num3):  
+    if num1 &gt;= num2 and num1 &gt;= num3:  
+        return num1  
+  
+    elif num2 &gt;= num1 and num2 &gt;= num3:  
+        return num2  
+  
+    elif num3 &gt;= num1 and num3 &gt;= num2:  
+        return num3  
+  
+print(max_num(3, 5, 3))
+Copy]]></description><link>basics\if-statements.html</link><guid isPermaLink="false">Basics/If statements.md</guid><pubDate>Tue, 16 Jul 2024 10:45:03 GMT</pubDate></item><item><title><![CDATA[Importing]]></title><description><![CDATA[<a class="tag" href="?query=tag:Basics" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Basics</a> 
+ <br><a href=".?query=tag:Basics" class="tag" target="_blank" rel="noopener">#Basics</a><br>In python you can import external code:<br>This allows to do stuff like sqrt (Square root)<br>from math import *
+Copy]]></description><link>basics\importing.html</link><guid isPermaLink="false">Basics/Importing.md</guid><pubDate>Tue, 16 Jul 2024 11:01:45 GMT</pubDate></item><item><title><![CDATA[Input]]></title><description><![CDATA[<a class="tag" href="?query=tag:Basics" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Basics</a> 
+ <br><a href=".?query=tag:Basics" class="tag" target="_blank" rel="noopener">#Basics</a><br>Input name and age:<br>name = input("Enter you name:")  
+print("Hello " + name)  
+
+age = input("Enter your age:")  
+print("Your age is " + str(age))
+Copy]]></description><link>basics\input.html</link><guid isPermaLink="false">Basics/Input.md</guid><pubDate>Sun, 07 Jul 2024 10:16:56 GMT</pubDate></item><item><title><![CDATA[Lists]]></title><description><![CDATA[<a class="tag" href="?query=tag:Basics" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Basics</a> 
+ <br><a href=".?query=tag:Basics" class="tag" target="_blank" rel="noopener">#Basics</a><br>
+You can make a list (basically an array like other languages) like this:<br>list = [abc, 123, erq, wds]
+
+friends = [Jackie, Alan, Yuri]
+
+# then you can print them like this:
+print(friends)
+Copy<br>cool stuff:<br>#adds new in the list
+friends.append("Bodie")
+
+#replaces someone new for example Jackie replaced by Kelly
+friends.insert(1, "Kelly")
+
+#removes jim from the list
+friends.remove("Alan")
+
+#makes list empty
+friends.clear()
+
+#gets rid of the last element of the list
+friends.pop()
+
+#Prints if Kevin is in the list or not (prints out error if false, 0 value if true)
+print(friends.index("Kevin"))
+Copy]]></description><link>basics\lists.html</link><guid isPermaLink="false">Basics/Lists.md</guid><pubDate>Sun, 07 Jul 2024 10:18:18 GMT</pubDate></item><item><title><![CDATA[Numbers]]></title><description><![CDATA[<a class="tag" href="?query=tag:Basics" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Basics</a> 
+ <br><a href=".?query=tag:Basics" class="tag" target="_blank" rel="noopener">#Basics</a><br>Rounds up to 5<br>print(round(4.6))
+Copy<br>Prints out the smallest value<br>print(min(4.6))
+Copy<br>Prints out the biggest value<br>print(max(4.6))
+Copy<br>Always rounds UP (for example 4)<br>print(ceil(3.7))
+Copy<br>Square root (wortel)<br>print(sqrt(36))
+Copy]]></description><link>basics\numbers.html</link><guid isPermaLink="false">Basics/Numbers.md</guid><pubDate>Tue, 16 Jul 2024 11:01:39 GMT</pubDate></item><item><title><![CDATA[Variables]]></title><description><![CDATA[<a class="tag" href="?query=tag:Basics" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Basics</a> 
+ <br><a href=".?query=tag:Basics" class="tag" target="_blank" rel="noopener">#Basics</a><br>Example<br>string = Hello World
+number = 5
+
+
+
+print(number)
+print()
+Copy]]></description><link>basics\variables.html</link><guid isPermaLink="false">Basics/Variables.md</guid><pubDate>Sat, 29 Jun 2024 11:47:11 GMT</pubDate></item><item><title><![CDATA[Calculator version 1]]></title><description><![CDATA[<a class="tag" href="?query=tag:Beginner" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Beginner</a> 
+ <br><a href=".?query=tag:Beginner" class="tag" target="_blank" rel="noopener">#Beginner</a><br>So I started doing this at first:<br>Example 1:<br>num1 = input("Enter a number: ")  
+num2 = input("Enter another number: ")  
+  
+result = num1 + num2  
+  
+print(result)
+Copy<br>Here in example 1, you can see that the user can enter 2 prompted numbers. For example: The user will enter 2 and 5 as their chosen numbers. The print will be 25.<br>And that's not what I wanted to achieve so I did this:<br>Example 2<br>num1 = input("Enter a number: ")  
+num2 = input("Enter another number: ")  
+  
+result = int(num1) + int(num2)  
+  
+print(result)
+Copy<br>In this example, the numbers will be converted into integers. It eventually does the math the correct way by adding up.<br>If the user enters 2 and 5, the answer would be 7.<br>But there's one thing and that is that whenever I use decimal numbers, the code will break.<br>So I decided to convert it to float:<br>num1 = input("Enter a number: ")  
+num2 = input("Enter another number: ")  
+  
+result = float(num1) + float(num2)  
+  
+print(result)
+Copy<br>The final script]]></description><link>beginner\calculator-version-1.html</link><guid isPermaLink="false">Beginner/Calculator version 1.md</guid><pubDate>Tue, 16 Jul 2024 11:01:21 GMT</pubDate></item><item><title><![CDATA[Calculator version 2]]></title><description><![CDATA[<a class="tag" href="?query=tag:Beginner" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Beginner</a> 
+ <br><a href=".?query=tag:Beginner" class="tag" target="_blank" rel="noopener">#Beginner</a> <br>Just like the previous calculator, but a little better!<br>num1 = float(input("Enter first number: "))  
+op = input("Enter operation: ")  
+num2 = float(input("Enter second number: "))  
+  
+if op == "+":  
+    print(num1 + num2)  
+elif op == "-":  
+    print(num1 - num2)  
+elif op == "*":  
+    print(num1 * num2)  
+elif op == "/":  
+    print(num1 / num2)  
+else:  
+    print("Invalid operation")
+Copy]]></description><link>beginner\calculator-version-2.html</link><guid isPermaLink="false">Beginner/Calculator version 2.md</guid><pubDate>Tue, 16 Jul 2024 10:54:10 GMT</pubDate></item><item><title><![CDATA[Guess the number]]></title><description><![CDATA[ 
+ <br>I've made a game called guess the number where the computer generates a random number from 1 to 10. The player needs to guess the right number and the computer tells if the player guessed it right:<br>import random
+
+# Generate a random number between 1 and 10
+number = random.randint(1, 10)
+
+print("Guess the number (between 1 and 10)")
+
+# Get the user's guess and convert it to an integer
+guess = int(input("Enter your number: "))
+
+# Compare the guess to the actual number
+if guess == number:
+    print("Congratulations! You guessed the correct number!")
+else:
+    print(f"Sorry, the correct number was {number}. Better luck next time!")
+
+Copy]]></description><link>beginner\guess-the-number.html</link><guid isPermaLink="false">Beginner/Guess the number.md</guid><pubDate>Fri, 16 Aug 2024 21:35:41 GMT</pubDate></item><item><title><![CDATA[Basics]]></title><description><![CDATA[ 
+ <br><a data-href="Numbers" href="basics\numbers.html" class="internal-link" target="_self" rel="noopener">Numbers</a><br>
+<a data-href="Variables" href="basics\variables.html" class="internal-link" target="_self" rel="noopener">Variables</a><br>
+<a data-href="Importing" href="basics\importing.html" class="internal-link" target="_self" rel="noopener">Importing</a><br>
+<a data-href="Input" href="basics\input.html" class="internal-link" target="_self" rel="noopener">Input</a><br>
+<a data-href="Lists" href="basics\lists.html" class="internal-link" target="_self" rel="noopener">Lists</a><br>
+<a data-href="Functions" href="basics\functions.html" class="internal-link" target="_self" rel="noopener">Functions</a><br>
+<a data-href="If statements" href="basics\if-statements.html" class="internal-link" target="_self" rel="noopener">If statements</a>]]></description><link>prompts\basics.html</link><guid isPermaLink="false">Prompts/Basics.md</guid><pubDate>Tue, 16 Jul 2024 10:46:58 GMT</pubDate></item><item><title><![CDATA[Beginner]]></title><description><![CDATA[ 
+ <br><a data-href="Calculator version 1" href="beginner\calculator-version-1.html" class="internal-link" target="_self" rel="noopener">Calculator version 1</a><br>
+<a data-href="Calculator version 2" href="beginner\calculator-version-2.html" class="internal-link" target="_self" rel="noopener">Calculator version 2</a>]]></description><link>prompts\beginner.html</link><guid isPermaLink="false">Prompts/Beginner.md</guid><pubDate>Tue, 16 Jul 2024 10:56:46 GMT</pubDate></item><item><title><![CDATA[Python]]></title><description><![CDATA[ 
+ <br><a data-href="Basics" href="prompts\basics.html" class="internal-link" target="_self" rel="noopener">Basics</a><br>
+<a data-href="Beginner" href="prompts\beginner.html" class="internal-link" target="_self" rel="noopener">Beginner</a>]]></description><link>python.html</link><guid isPermaLink="false">Python.md</guid><pubDate>Sat, 29 Jun 2024 11:49:28 GMT</pubDate></item></channel></rss>
