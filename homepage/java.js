@@ -22,3 +22,13 @@ document.getElementById('programming').addEventListener('click', function() {
     window.location.href = "../Work/work.html";
 });
 
+// Create a new Audio object with the path to your sound file
+const clickSound = new Audio('click.wav');
+
+// Function to play the sound
+function playClickSound() {
+    clickSound.play();
+}
+
+// Attach the click event listener to the entire document
+document.addEventListener('click', playClickSound);

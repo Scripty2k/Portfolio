@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Beginner/Guess the number.md",
+                "file": "Basics/If statements.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python.md",
+                "file": "Basics/If statements.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Python.md",
+                "file": "Basics/If statements.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Python.md"
+                "file": "Basics/If statements.md"
               }
             }
           }
@@ -147,48 +147,12 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "floating": {
-    "id": "a936db807d81cb29",
-    "type": "floating",
-    "children": [
-      {
-        "id": "4b0e7becb4197653",
-        "type": "window",
-        "children": [
-          {
-            "id": "60c87e9bbb5214e3",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "f0c390f0e0a0106a",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Python.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 317,
-        "y": 316,
-        "width": 902,
-        "height": 500,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "f0c390f0e0a0106a",
+  "active": "ac716a7cec99a1bc",
   "lastOpenFiles": [
+    "Beginner/Guess the number.md",
+    "Python.md",
     "Prompts/Beginner.md",
     "Prompts/Basics.md",
-    "Beginner/Guess the number.md",
     "Beginner/Calculator version 2.md",
     "Beginner/Calculator version 1.md",
     "Basics/Variables.md",
@@ -214,7 +178,6 @@
     "Export/lib/media/874d8b8e340f75575caa.svg",
     "Export/lib/media/3d6c1bdc4d87cde4de67.svg",
     "Basics/Functions.md",
-    "Python.md",
     "Welcome.md"
   ]
 }

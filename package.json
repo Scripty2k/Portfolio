@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@ngx-translate/core": "^15.0.0",
     "prismjs": "^1.29.0"
   }
 }
