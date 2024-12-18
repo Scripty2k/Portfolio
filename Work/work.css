@@ -78,6 +78,17 @@ nav a {
     animation: slideIn 1s ease;
 }
 
+@media (max-width: 850px) {
+    #row {
+        flex-direction: column;
+        height: auto;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+}
+
 @keyframes slideIn {
     from {
         height: 550px;
