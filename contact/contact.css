@@ -51,13 +51,25 @@ nav a {
     max-width: 100px;
 }
 
-
 #profile {
     padding: 20px;
     position: relative;
-    width: 400px;
-    height: 200px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     text-align: center;
+}
+
+@media (max-width: 850px) {
+    #contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #profile {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 
