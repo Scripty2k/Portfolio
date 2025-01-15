@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -19,18 +18,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
-
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center the navigation items */
 }
 
 nav ul li {
     display: inline;
     margin-right: 20px;
+    margin-bottom: 10px; /* Add margin to the bottom for spacing when wrapped */
 }
 
 nav a {
@@ -64,6 +67,7 @@ nav a {
     #contact {
         flex-direction: column;
         align-items: center;
+        margin-top: 20px; /* Adjust margin-top for spacing */
     }
 
     #profile {
