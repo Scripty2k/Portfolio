@@ -76,6 +76,35 @@ nav a {
     }
 }
 
+#email-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#email-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #087a7a;
+    color: #000; /* Change text color to black */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#email-button button:hover {
+    background-color: #065a5a;
+}
+
+@media (max-width: 850px) {
+    #email-button {
+        margin-top: 20px;
+    }
+
+    #email-button button {
+        width: 90%;
+        font-size: 14px;
+    }
+}
 
 section {
 
