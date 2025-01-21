@@ -82,7 +82,9 @@
 </div>
 </div>
 
-
+<div id="blackScreen">
+    <p>Screen resolution is too low. Maybe switch to desktop mode!</p>
+</div>
 
 <div id="row">
     <section class="floating-wrapper" onclick="window.open('https://scripty2k.github.io/Portfolio/Work/nerd/nerd.html','Youtube');" style="cursor: pointer;">
@@ -110,7 +112,7 @@
             href="https://soundcloud.com/scripty2k"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       title="Scripty2k" target="_blank" style="color: #cccccc; text-decoration: none;">Scripty2k</a> · <a href="https://soundcloud.com/scripty2k/let-u-go-2"
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   title="Let U Go 2" target="_blank" style="color: #cccccc; text-decoration: none;">Let U Go 2</a></div>
-        <p>Non-profit producer/DJ most of the time</p>
+        <p>Non-profit producer most of the time</p>
     </section>
     <br>
     <br>
@@ -122,8 +124,28 @@
 </footer>
 
 <script src="homepage/java.js"></script>
+<script>
+    function checkScreenWidth() {
+        let blackScreen = document.getElementById('blackScreen');
+        if (window.innerWidth < 900) {
+            blackScreen.style.display = 'flex';
+            setTimeout(() => {
+                blackScreen.style.opacity = '1';
+            }, 10); // Small delay to ensure display change is applied
+        } else {
+            blackScreen.style.opacity = '0';
+            setTimeout(() => {
+                blackScreen.style.display = 'none';
+            }, 500); // Match the transition duration
+        }
+    }
+
+    window.addEventListener('resize', checkScreenWidth);
+    window.addEventListener('load', checkScreenWidth);
+</script>
 
 <br>
 <br>
 
 </body>
+</html>
