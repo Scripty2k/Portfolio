@@ -1,2 +1,0 @@
-[[Sintlucas Eindhoven]]
-[[Kandinsky Molenhoek]]

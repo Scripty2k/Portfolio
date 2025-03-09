@@ -1,4 +1,0 @@
-[[Istanbul]]
-[[Izmir]]
-[[Bodrum]]
-[[Didim]]

@@ -1,6 +1,0 @@
-[[Lua]]
-[[CSHARP]]
-[[Python]]
-[[HTML]]
-[[CSS]]
-[[Javascript]]
