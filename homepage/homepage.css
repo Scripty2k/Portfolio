@@ -17,7 +17,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -160,14 +160,6 @@ a {
 
 }
 
-.floating-wrapper {
-    transition: transform 0.5s ease-in-out; /* Smoother transition */
-    cursor: pointer;
-}
-
-.floating-wrapper:hover {
-    transform: translateY(-20px); /* Directly apply transform on hover */
-}
 
 iframe {
     margin-left: -10px;
