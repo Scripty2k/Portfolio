@@ -4,7 +4,7 @@ body {
     font-family: "Arial", sans-serif;
     background-color: #087a7a;
     background-image: url('https://static.tumblr.com/716d7c367672ce93bdb81126b3db41d8/mkleh5h/cllpz6aby/tumblr_static_c96bekr4y00g84o84wcg84kos.png');
-
+    /* cursor: url('../img/cursor.png'), auto; */
 }
 
 .round {
