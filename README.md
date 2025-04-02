@@ -50,4 +50,4 @@ For any inquiries or feedback, please reach out via email at `scripty2k@gmail.co
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the Creative Commons license.
