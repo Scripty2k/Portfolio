@@ -249,3 +249,53 @@ h2 {
     transition: opacity 0.5s ease, display 0s 0.5s; /* Added display transition */
 }
 
+#cookieConsent {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space between text and buttons */
+    height: 100px; /* Reduced height */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px; /* Reduced width */
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    border: 100px solid transparent;
+    border-image: url('../img/xp.png') 30 / 35px round;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#cookieConsent p {
+    margin-bottom: 20px;
+}
+
+#cookieButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    justify-content: space-evenly; /* Ensure buttons are next to each other with even spacing */
+}
+
+#cookieConsent button {
+    padding: 10px 10px;
+    background-color: #087a7a;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#cookieConsent button:hover {
+    background-color: #065e5e;
+}
+
+
+

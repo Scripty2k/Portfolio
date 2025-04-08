@@ -88,6 +88,8 @@
     </div>
 </div>
 
+
+
 <div id="row">
     <section class="floating-wrapper" onclick="window.open('https://scripty2k.github.io/Portfolio/Work/nerd/nerd.html','Youtube');" style="cursor: pointer;">
         <h1>Programming</h1>
@@ -120,6 +122,21 @@
     <br>
 </div>
 
+<!-- Cookie Consent Window -->
+<div id="cookieConsent">
+    <p>This website uses cookies to ensure you get the best experience. Do you accept?</p>
+    <div id="cookieButtons">
+        <button id="acceptCookies">Accept</button>
+        <button id="declineCookies">Decline</button>
+        <button id="cookieSettings">Read more</button>
+    </div>
+</div>
+
+<footer>
+    <pre><code>Updated 05/04/2025</code></pre>
+</footer>
+
+
 <script src="homepage/java.js"></script>
 <script>
     function checkScreenWidth() {
@@ -139,6 +156,41 @@
 
     window.addEventListener('resize', checkScreenWidth);
     window.addEventListener('load', checkScreenWidth);
+
+    // Cookie Consent Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const cookieConsent = document.getElementById('cookieConsent');
+        const acceptButton = document.getElementById('acceptCookies');
+        const declineButton = document.getElementById('declineCookies');
+        const cookieSettingsButton = document.getElementById('cookieSettings'); // Added reference
+
+        // Show the cookie consent window
+        cookieConsent.style.display = 'flex';
+        setTimeout(() => {
+            cookieConsent.style.opacity = '1';
+        }, 10);
+
+        // Handle button clicks
+        acceptButton.addEventListener('click', () => {
+            cookieConsent.style.opacity = '0';
+            setTimeout(() => {
+                cookieConsent.style.display = 'none';
+            }, 500);
+            console.log('Cookies accepted');
+        });
+
+        declineButton.addEventListener('click', () => {
+            cookieConsent.style.opacity = '0';
+            setTimeout(() => {
+                cookieConsent.style.display = 'none';
+            }, 500);
+            console.log('Cookies declined');
+        });
+
+        cookieSettingsButton.addEventListener('click', () => {
+            window.location.href = 'cookies.html'; // Redirect to cookies.html
+        });
+    });
 </script>
 
 <br>
