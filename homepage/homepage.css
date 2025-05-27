@@ -44,9 +44,6 @@ nav a {
     padding: 0px 20px 0px 20px;
 }
 
-#logo2 {
-
-}
 
 #logo img {
     max-width: 100px;
@@ -140,13 +137,6 @@ button {
     font-size: 13px;
 }
 
-#skills {
-
-}
-
-#ghost  {
-
-}
 
 a {
     color: #087A7AFF;
@@ -154,10 +144,6 @@ a {
 
 .checked {
     color: orange;
-}
-
-#programming {
-
 }
 
 
