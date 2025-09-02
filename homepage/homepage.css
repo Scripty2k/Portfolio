@@ -7,12 +7,10 @@ body {
     /* cursor: url('../img/cursor.png'), auto; */
 }
 
+
 .round {
     border-radius: 50%;
 }
-
-
-
 
 header {
     background-color: #333;
@@ -130,6 +128,10 @@ iframe{
 
 h1 {
     font-size: 20px;
+  /* font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; */
 }
 
 button {
@@ -282,6 +284,3 @@ h2 {
 #cookieConsent button:hover {
     background-color: #065e5e;
 }
-
-
-
