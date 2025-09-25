@@ -164,27 +164,38 @@
         const declineButton = document.getElementById('declineCookies');
         const cookieSettingsButton = document.getElementById('cookieSettings'); // Added reference
 
-        // Show the cookie consent window
-        cookieConsent.style.display = 'flex';
-        setTimeout(() => {
-            cookieConsent.style.opacity = '1';
-        }, 10);
+        // Check if user has already made a choice
+        const cookieChoice = localStorage.getItem('cookieConsent');
+        
+        // Only show the cookie consent window if user hasn't made a choice
+        if (!cookieChoice) {
+            cookieConsent.style.display = 'flex';
+            setTimeout(() => {
+                cookieConsent.style.opacity = '1';
+            }, 10);
+        }
 
         // Handle button clicks
         acceptButton.addEventListener('click', () => {
+            // Save user's choice to localStorage
+            localStorage.setItem('cookieConsent', 'accepted');
+            
             cookieConsent.style.opacity = '0';
             setTimeout(() => {
                 cookieConsent.style.display = 'none';
             }, 500);
-            console.log('Cookies accepted');
+            console.log('Cookies accepted and saved to localStorage');
         });
 
         declineButton.addEventListener('click', () => {
+            // Save user's choice to localStorage
+            localStorage.setItem('cookieConsent', 'declined');
+            
             cookieConsent.style.opacity = '0';
             setTimeout(() => {
                 cookieConsent.style.display = 'none';
             }, 500);
-            console.log('Cookies declined');
+            console.log('Cookies declined and saved to localStorage');
         });
 
         cookieSettingsButton.addEventListener('click', () => {
