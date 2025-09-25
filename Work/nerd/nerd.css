@@ -171,7 +171,8 @@ footer {
 }
 
 video {
-    margin-left: -55px;
+    margin: 0 auto;
+    display: block;
 }
 
 #script {
