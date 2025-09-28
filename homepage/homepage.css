@@ -29,11 +29,15 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center the navigation items */
 }
 
 nav ul li {
     display: inline;
     margin-right: 20px;
+    margin-bottom: 10px; /* Add margin to the bottom for spacing when wrapped */
 }
 
 nav a {
@@ -105,7 +109,7 @@ a:hover {
 #bordering {
     border: 100px solid transparent;
     padding: 15px;
-    border-image: url('../img/xp.png') 30 / 30px round;
+    border-image: url('../img/xp.png') 30 / 30px stretch;
 }
 
 iframe{
@@ -181,7 +185,7 @@ footer {
 
 #info {
     border: 50px solid transparent;
-    border-image: url('../img/xp.png') 40 / 50px round;
+    border-image: url('../img/xp.png') 40 / 50px stretch;
 
     background-color: #ffffff;
     margin: 20px 550px 10px 550px;
@@ -200,47 +204,6 @@ h2 {
 
 }
 
-.sticker1 {
-    position: absolute;
-    top: 235px;
-    right: 1085px;
-    background-color: rgba(255, 255, 255, 0);
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transform: rotate(-15deg);
-}
-
-.sticker2 {
-    position: absolute;
-    top: 1146px;
-    right: 329px;
-    background-color: rgba(255, 255, 255, 0);
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transform: rotate(5deg);
-}
-
-#blackScreen {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    font-size: 24px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column; /* Ensure items are stacked vertically */
-    z-index: 10000;
-    opacity: 0;
-    transition: opacity 0.5s ease, display 0s 0.5s; /* Added display transition */
-}
-
 #cookieConsent {
     display: flex;
     flex-direction: column; /* Stack content vertically */
@@ -255,7 +218,7 @@ h2 {
     background-color: #fff;
     color: #333;
     border: 100px solid transparent;
-    border-image: url('../img/xp.png') 30 / 35px round;
+    border-image: url('../img/xp.png') 30 / 35px stretch;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -287,4 +250,126 @@ h2 {
 
 #cookieConsent button:hover {
     background-color: #065e5e;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 900px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header #logo {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    #profile {
+        width: 100%;
+        max-width: 90vw;
+        height: auto;
+        margin: 20px auto;
+        position: relative;
+    }
+
+    #profile section {
+        padding: 20px;
+        border: 50px solid transparent;
+        border-image: url('../img/xp.png') 30 / 20px stretch;
+    }
+
+    #skills {
+        margin-top: 20px;
+    }
+
+    #skills section {
+        padding: 20px;
+        border: 50px solid transparent;
+        border-image: url('../img/xp.png') 30 / 20px stretch;
+    }
+
+    #row {
+        width: 100%;
+        max-width: 90vw;
+        height: auto;
+        margin: 20px auto 0 auto;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #row section {
+        width: 100%;
+        max-width: 350px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 50px solid transparent;
+        border-image: url('../img/xp.png') 30 / 20px stretch;
+    }
+
+    #row iframe {
+        width: 100% !important;
+        height: 200px !important;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* Make cookie consent responsive */
+    #cookieConsent {
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+        border: 50px solid transparent;
+        border-image: url('../img/xp.png') 30 / 20px stretch;
+    }
+
+    #cookieButtons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #cookieConsent button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* Hide ghost image on mobile for better space usage */
+    #ghost {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Adjust progress bars */
+    progress {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    section {
+        border: 50px solid transparent;
+        border-image: url('../img/xp.png') 30 / 20px round;
+        padding: 15px;
+    }
 }

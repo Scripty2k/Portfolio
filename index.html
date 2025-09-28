@@ -83,15 +83,6 @@
 </div>
 </div>
 
-<div id="blackScreen">
-    <p>Sorry! But the homescreen is not supported yet for mobile (you'll understand why).</p>
-    <p>In a hurry? Check out my work by pressing the button here.</p>
-    <div style="text-align: center;">
-        <button onclick="window.location.href='Work/work.html'">Go see my stuff</button>
-    </div>
-</div>
-
-
 
 <div id="row">
     <section class="floating-wrapper" onclick="window.open('https://scripty2k.github.io/Portfolio/Work/nerd/nerd.html','Youtube');" style="cursor: pointer;">
@@ -137,24 +128,6 @@
 
 <script src="homepage/java.js"></script>
 <script>
-    function checkScreenWidth() {
-        let blackScreen = document.getElementById('blackScreen');
-        if (window.innerWidth < 900) {
-            blackScreen.style.display = 'flex';
-            setTimeout(() => {
-                blackScreen.style.opacity = '1';
-            }, 10); // Small delay to ensure display change is applied
-        } else {
-            blackScreen.style.opacity = '0';
-            setTimeout(() => {
-                blackScreen.style.display = 'none';
-            }, 500); // Match the transition duration
-        }
-    }
-
-    window.addEventListener('resize', checkScreenWidth);
-    window.addEventListener('load', checkScreenWidth);
-
     // Cookie Consent Logic
     document.addEventListener('DOMContentLoaded', () => {
         const cookieConsent = document.getElementById('cookieConsent');

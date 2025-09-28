@@ -30,11 +30,15 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center the navigation items */
 }
 
 nav ul li {
     display: inline;
     margin-right: 20px;
+    margin-bottom: 10px; /* Add margin to the bottom for spacing when wrapped */
 }
 
 nav a {
@@ -82,7 +86,7 @@ a {
 section {
 
     border: 100px solid transparent;
-    border-image: url('../img/xp.png') 38 / 40px round;
+    border-image: url('../img/xp.png') 38 / 40px stretch;
     background-color: #fff;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -115,7 +119,7 @@ a:hover {
 #bordering {
     border: 100px solid transparent;
     padding: 15px;
-    border-image: url('../img/xp.png') 30 / 30px round;
+    border-image: url('../img/xp.png') 30 / 30px stretch;
 }
 
 iframe{
@@ -181,5 +185,106 @@ footer {
     bottom: 25px; /* Adjust as needed */
     right: 20px; /* Adjust as needed */
     z-index: 999; /* Ensure it appears above other content */
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 900px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header #logo {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    #profile {
+        width: 100%;
+        max-width: 95vw;
+        height: auto;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #profile section {
+        width: 100%;
+        max-width: 350px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 50px solid transparent;
+        border-image: url('../img/xp.png') 30 / 20px stretch;
+        height: auto;
+    }
+
+    section {
+        border: 50px solid transparent;
+        border-image: url('../img/xp.png') 30 / 20px stretch;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Adjust progress bars for mobile */
+    progress {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Adjust images for mobile */
+    img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .round {
+        width: 80px;
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 10px 0;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    /* Make sure fixed button is mobile friendly */
+    .fixed-button {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .fixed-button button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
 }
 
