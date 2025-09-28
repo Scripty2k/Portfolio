@@ -5,12 +5,16 @@ setTimeout(showPopup, 20000);
 // Function to close the popup
 function closePopup() {
     let popup = document.getElementById('myPopup');
-    popup.style.display = 'none';
+    if (popup) {
+        popup.style.display = 'none';
+    }
 }
 
 function showPopup() {
     let popup = document.getElementById('myPopup');
-    popup.style.display = 'block';
+    if (popup) {
+        popup.style.display = 'block';
+    }
 }
 
 setTimeout(showPopup, 20000);

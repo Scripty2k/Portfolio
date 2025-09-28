@@ -12,12 +12,16 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(to bottom, #1212ad, #000080); /* Windows XP blue gloss effect */
     color: #fff;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 2px solid #1c4f91; /* Blue border */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: inset 0 1px 0 #5858ff, inset 0 -1px 0 #4242ff; /* Glossy effect */
+    font-family: "Tahoma", sans-serif; /* Windows XP font */
 }
 
 nav ul {
