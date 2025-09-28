@@ -40,11 +40,15 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center the navigation items */
 }
 
 nav ul li {
     display: inline;
     margin-right: 20px;
+    margin-bottom: 10px; /* Add margin to the bottom for spacing when wrapped */
 }
 
 nav a {
@@ -181,4 +185,30 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 900px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header #logo {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
 }
