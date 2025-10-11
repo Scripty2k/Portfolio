@@ -1,53 +1,102 @@
-# Scripty2k Portfolio
+# Portfolio Website
 
-## Overview
-
-This is the portfolio website of Scripty2k, showcasing various works and providing contact information. The website is designed to be responsive and visually appealing, with a retro theme inspired by Windows XP.
-
-## Pages
-
-### Home
-- **Path:** `/index.html`
-- **Description:** The landing page of the portfolio, providing an introduction and navigation to other sections.
-
-### My Work
-- **Path:** `/Work/work.html`
-- **Description:** Displays different categories of work including Software, Videos, and Music. Each category has a section with an image and a link to more detailed pages.
-
-### About Me
-- **Path:** `/About%20me/about.html`
-- **Description:** Provides information about Scripty2k, including background, skills, and interests.
-
-### Contact
-- **Path:** `/contact/contact.html`
-- **Description:** Contains links to social media profiles and a button to send an email to `scripty2k@gmail.com`.
+A modern, responsive portfolio website built with Vue 3, Vue Router, and Vite.
 
 ## Features
 
-- **Responsive Design:** The website is designed to be responsive, ensuring it looks good on both desktop and mobile devices.
-- **Retro Theme:** The design is inspired by Windows XP, giving it a nostalgic feel.
-- **Interactive Elements:** Sections have hover effects and clickable areas that link to external profiles or detailed pages.
-- **Fixed Footer:** The footer remains fixed at the bottom of the page, providing consistent navigation.
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
+- **Single Page Application**: Smooth navigation with Vue Router
+- **Modern UI**: Clean and professional design with CSS animations
+- **Portfolio Sections**: 
+  - Home: Hero section with introduction
+  - About: Personal information and skills
+  - Projects: Showcase of your work
+  - Contact: Contact form and information
 
-## Technologies Used
+## Tech Stack
 
-- **HTML:** For structuring the content.
-- **CSS:** For styling the website, including responsive design.
-- **JavaScript:** For adding interactivity.
-- **External Libraries:** 
-  - `xp.css` for the retro theme.
-  - `Font Awesome` for icons.
+- **Vue 3**: Progressive JavaScript framework
+- **Vue Router**: Official router for Vue.js
+- **Vite**: Fast build tool and development server
+- **CSS3**: Modern styling with flexbox and grid
 
-## How to Use
+## Getting Started
 
-1. **Navigation:** Use the navigation bar at the top of each page to move between different sections of the website.
-2. **Interactive Sections:** Click on the sections in the "My Work" and "Contact" pages to explore more content or visit external profiles.
-3. **Contact:** Click the email button on the contact page to send an email to `scripty2k@gmail.com`.
+### Prerequisites
 
-## Contact
+- Node.js (version 16 or higher)
+- npm or yarn
 
-For any inquiries or feedback, please reach out via email at `scripty2k@gmail.com`.
+### Installation
 
-## License
+1. Clone the repository or download the project
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-This project is licensed under the Creative Commons license.
+### Development
+
+Start the development server:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173/`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Customization
+
+To customize this portfolio for your own use:
+
+1. **Update Personal Information**: 
+   - Edit the content in `src/views/Home.vue`, `src/views/About.vue`, and `src/views/Contact.vue`
+   - Replace placeholder text with your actual information
+
+2. **Add Your Projects**: 
+   - Update the projects array in `src/views/Projects.vue`
+   - Add your actual project details, links, and technologies
+
+3. **Styling**: 
+   - Modify the CSS in each component to match your preferred design
+   - Update colors, fonts, and layouts as needed
+
+4. **Add Images**: 
+   - Replace placeholder project images with actual screenshots
+   - Add your profile photo to the About section
+
+## Project Structure
+
+```
+src/
+├── components/
+│   └── Navbar.vue          # Navigation component
+├── views/
+│   ├── Home.vue            # Home page
+│   ├── About.vue           # About page
+│   ├── Projects.vue        # Projects showcase
+│   └── Contact.vue         # Contact page
+├── router/
+│   └── index.js            # Vue Router configuration
+├── App.vue                 # Main application component
+└── main.js                 # Application entry point
+```
+
+## Learn More
+
+- [Vue 3 Documentation](https://vuejs.org/)
+- [Vue Router Documentation](https://router.vuejs.org/)
+- [Vite Documentation](https://vitejs.dev/)
