@@ -82,7 +82,7 @@
                   ></a>
                 </div>
                 
-                <!-- Instagram Video Background -->
+                <!-- Instagram Video Background -->                                                              
                 <div 
                   v-else-if="project.media.type === 'instagram'" 
                   class="project-instagram-bg"
@@ -93,6 +93,19 @@
                     scrolling="no"
                     allowtransparency="true"
                     class="instagram-iframe"
+                  ></iframe>
+                </div>
+                
+                <!-- SoundCloud Audio Background -->
+                <div 
+                  v-else-if="project.media.type === 'soundcloud'" 
+                  class="project-soundcloud-bg"
+                >
+                  <iframe
+                    :src="`https://w.soundcloud.com/player/?url=${encodeURIComponent(project.media.src)}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true`"
+                    frameborder="0"
+                    allow="autoplay"
+                    class="soundcloud-iframe"
                   ></iframe>
                 </div>
                 
@@ -186,6 +199,40 @@ export default {
     
     const projects = ref([
       {
+        id: 21,
+        title: 'Bound',
+        description: 'A music track I produced - Bound',
+        technologies: ["Music Production", "Audio Engineering"],
+        year: '2024',
+        type: 'Music',
+        status: '',
+        featured: false,
+        media: {
+          type: 'soundcloud',
+          src: 'https://soundcloud.com/scripty2k/incomplete', // Full SoundCloud URL
+          thumbnail: 'fallback-image-url.jpg'
+        },
+        liveUrl: 'https://soundcloud.com/scripty2k/incomplete',
+        githubUrl: '#'
+      },
+      {
+        id: 20,
+        title: 'Bound',
+        description: 'A music track I produced - Bound',
+        technologies: ["Music Production", "Audio Engineering"],
+        year: '2024',
+        type: 'Music',
+        status: '',
+        featured: false,
+        media: {
+          type: 'soundcloud',
+          src: 'https://soundcloud.com/scripty2k/bound', // Full SoundCloud URL
+          thumbnail: 'fallback-image-url.jpg'
+        },
+        liveUrl: 'https://soundcloud.com/scripty2k/bound',
+        githubUrl: '#'
+      },
+      {
         id: 1,
         title: 'Three.JS portfolio inspiration',
         description: 'This was meant for school. But I was kinda proud of it really. This is just a simple portfolio website made with Three.JS. I looked into a lot of inspiration from other portfolios. But I made it all by myself. I used Three.JS, HTML and CSS for this project.',
@@ -193,10 +240,10 @@ export default {
         year: '2025',
         type: 'Software',
         status: '',
-        featured: false,
+        featured: true,
         media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'Pntq3SkYDwU', // image URL, YouTube video ID, or Behance project ID
+          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
+          src: 'Pntq3SkYDwU', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
         liveUrl: '#',
@@ -414,7 +461,7 @@ export default {
         year: '2022',
         type: 'Videos',
         status: '',
-        featured: false,
+        featured: true,
         media: {
           type: 'youtube', // 'image' or 'youtube'
           src: 'GdFD5vfXDNo', // image URL or YouTube video ID
@@ -814,6 +861,29 @@ export default {
   pointer-events: auto;
   border-radius: 8px;
   background: white;
+}
+
+.project-soundcloud-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ff5500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soundcloud-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: none;
+  pointer-events: auto;
+  border-radius: 8px;
+  background: transparent;
 }
 
 .project-default-bg {
