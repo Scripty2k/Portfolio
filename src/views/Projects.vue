@@ -237,7 +237,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 4,
         title: 'Python Youtube link downloader',
         description: 'A Python script that downloads videos from YouTube.',
         technologies: ["Python", "YouTube API"],
@@ -254,7 +254,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 5,
         title: 'Siobhan',
         description: 'A paper Y2K stop motion video I made for a friend named Siobhan!',
         technologies: ["After Effects",],
@@ -271,7 +271,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 6,
         title: 'Interlinked.',
         description: 'Touch Designer project made for a school assignment.',
         technologies: ['Premiere Pro', "After Effects", "Touch Designer"],
@@ -288,7 +288,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 7,
         title: 'Scrolling Addiction',
         description: 'Short video about how people are addicted to scrolling on their phones.',
         technologies: ['Premiere Pro', "After Effects"],
@@ -305,7 +305,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 8,
         title: 'Promo video Rhion',
         description: 'First Promotional video I made for a company called Rhion. This was my first ever paid video project.',
         technologies: ['Premiere Pro',],
@@ -322,7 +322,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 9,
         title: 'First ever video trailer',
         description: 'I was pursuing my passion to be a Youtuber. So I made a trailer for my channel. This was my first ever video project.',
         technologies: ['Premiere Pro',],
@@ -339,7 +339,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 10,
         title: 'Drug Abuse Awareness (School Project)',
         description: 'A short video made to raise awareness about the dangers of drug abuse.',
         technologies: ['Premiere Pro',],
@@ -356,7 +356,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 2,
+        id: 11,
         title: 'Stealing costs money (School Project)',
         description: 'A short video made to raise awareness about the dangers of kleptomania.',
         technologies: ['Adobe Creative Suite', 'Figma', 'UI/UX Design'],
@@ -373,7 +373,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 12,
         title: 'VR Archery Game',
         description: 'A virtual reality archery game developed for Oculus Quest.',
         technologies: ['Unity', 'C#', 'Oculus SDK'],
@@ -390,7 +390,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 13,
         title: 'Happy New Year 2023',
         description: 'Another short clip with my friends',
         technologies: ['Premiere Pro', 'My friends :3',],
@@ -407,7 +407,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 14,
         title: 'First cinematographify video',
         description: 'I slowly leaned into this style of video making. Kinda liked it.',
         technologies: ['Premiere Pro', 'My friends :3',],
@@ -424,7 +424,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 15,
         title: 'Mobile top down game',
         description: 'My first ever mobile game. This was just especially to aim to the functionality of the game ',
         technologies: ['Game Development', 'C#',],
@@ -441,7 +441,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 1,
+        id: 16,
         title: 'Personality assignment',
         description: 'I made a game for the subject called personality I had from previous year. This game was to show everything I was proud of.',
         technologies: ['Game Development', 'C#', 'After Effects',],
@@ -458,7 +458,7 @@ export default {
         githubUrl: '#'
       },
         {
-        id: 2,
+        id: 17,
         title: 'Summer 2022',
         description: 'Summer 2022 changed me. I made a video about it. I realized that friends are temporarily. So I made this video at first for myself to remind myself that I need to appreciate my time. A couple days later, my friends were upset about their enviorment, school, situations, etc. So I showed them this. They loved it.',
         technologies: ['Premiere Pro',],
@@ -475,7 +475,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 3,
+        id: 18,
         title: 'Raspberry Pi Bad USB',
         description: 'A tool that turns a Raspberry Pi into a Bad USB device for penetration testing and security research. But this time harmless.',
         technologies: ['Raspberry Pi', 'Physical Computing', 'Python',],
@@ -492,7 +492,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 4,
+        id: 19,
         title: 'First video project',
         description: 'My first ever video project with no plans, no experience, just looking back at life',
         technologies: ['Video Editing', 'Premiere Pro'],
