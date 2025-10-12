@@ -101,14 +101,9 @@ export function useRetroTheme() {
     // Apply/remove retro theme class
     if (isRetroMode.value) {
       document.documentElement.classList.add('retro-theme')
-      notificationMessage.value = 'RETRO MODE ENABLED. PRESS K TO MUTE AUDIO'
+      notificationMessage.value = 'Changed to retro mode'
       
-      // Play audio when entering retro mode
-      if (retroAudio) {
-        retroAudio.play().catch(error => {
-          console.log('Audio play failed:', error)
-        })
-      }
+      // Audio removed - no longer plays when entering retro mode
     } else {
       document.documentElement.classList.remove('retro-theme')
       notificationMessage.value = 'EXITED RETRO MODE'
