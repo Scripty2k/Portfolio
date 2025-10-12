@@ -60,6 +60,12 @@
                 <span class="role">Internship: Odoo Developer</span>
                 <span class="company">NHMB Software</span>
               </div>
+
+              <div class="experience-item">
+                <span class="year">2022</span>
+                <span class="role">Internship: Odoo Developer</span>
+                <span class="company">NHMB Software</span>
+              </div>
             </div>
 
             <div class="info-card">
