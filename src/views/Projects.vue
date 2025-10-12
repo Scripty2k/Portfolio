@@ -200,10 +200,10 @@ export default {
     const projects = ref([
       {
         id: 21,
-        title: 'Bound',
-        description: 'A music track I produced - Bound',
+        title: 'Incomplete',
+        description: 'A music track I produced - Incomplete',
         technologies: ["Music Production", "Audio Engineering"],
-        year: '2024',
+        year: '2025',
         type: 'Music',
         status: '',
         featured: false,
@@ -220,7 +220,7 @@ export default {
         title: 'Bound',
         description: 'A music track I produced - Bound',
         technologies: ["Music Production", "Audio Engineering"],
-        year: '2024',
+        year: '2025',
         type: 'Music',
         status: '',
         featured: false,
