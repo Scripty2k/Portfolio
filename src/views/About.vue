@@ -46,10 +46,8 @@
             <div class="info-card">
               <h3>What I'm busy with right now</h3>
               <ul>
-                <li>Making my next album (no spoilers)</li>
-                <li>Making a videography project about routines</li>
-                <li>Learning motion design in After Effects</li>
-                <li>Teaching myself how to mix better with Fruity Limiter</li>
+                <li>Producing my next album</li>
+                <li>Musixx project development</li>
               </ul>
             </div>
 
@@ -62,9 +60,9 @@
               </div>
 
               <div class="experience-item">
-                <span class="year">2022</span>
-                <span class="role">Internship: Odoo Developer</span>
-                <span class="company">NHMB Software</span>
+                <span class="year">2023</span>
+                <span class="role">Promotional video for Rhion</span>
+                <span class="company">Rhion</span>
               </div>
             </div>
 
