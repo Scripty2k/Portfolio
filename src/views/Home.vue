@@ -41,7 +41,7 @@
         <div class="intro-grid">
           <div class="intro-text reveal-left">
             <h2 class="section-title">About me</h2>
-            <p class="intro-paragraph">Hi everyone. My name is Amal and I'm a passionate developer who loves to create 
+            <p class="intro-paragraph">I'm a passionate developer who loves to create 
               stuff with my creativity and coding skills. I have a knack for developing but also designing online projects!
               I enjoy making creative projects like music and videos in my free time.
             </p>
