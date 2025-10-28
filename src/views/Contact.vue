@@ -31,7 +31,7 @@
               <div class="contact-method">
                 <span class="method-label">Email</span>
                 <a href="mailto:your.email@example.com" class="method-value">
-                  Scripty2k@gmail.com
+                  amalrahimli06@gmail.com
                 </a>
               </div>
               

@@ -130,10 +130,7 @@
                 </div>
               </div>
               <div class="project-status" v-if="project.status">
-                <span class="status-badge" :class="project.status.toLowerCase()">
-                  <span class="status-dot" v-if="project.status === 'WIP'"></span>
-                  {{ project.status === 'WIP' ? 'Work in Progress' : project.status }}
-                </span>
+                <span class="status-badge" :class="project.status.toLowerCase()">{{ project.status }}</span>
               </div>
             </div>
             
@@ -145,9 +142,6 @@
               
               <h3 class="project-title hover-target">{{ project.title }}</h3>
               <p class="project-description">{{ project.description }}</p>
-              <a v-if="project.projectLink" :href="project.projectLink" target="_blank" class="project-link hover-target">
-                View Project Repository →
-              </a>
               
               <div class="project-tech">
                 <span 
@@ -204,58 +198,6 @@ export default {
     const filters = ['All', 'Software', 'Videos', 'Music', 'Extras']
     
     const projects = ref([
-        {
-        id: 21,
-        title: 'Musixx (Music sharing platform)',
-        description: 'A music sharing platform where users can upload, share, and discover music tracks by other artists.',
-        technologies: ['SQLite', 'Vue.js', 'HTML/CSS/JAVASCRIPT', 'Flask'],
-        year: '2025',
-        type: 'Software',
-        status: 'WIP',
-        featured: false,
-        media: {
-          type: 'youtube',
-          src: '9U6u32QvY6s', // YouTube video ID (from URL: youtube.com/watch?v=dQw4w9WgXcQ)
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // YouTube thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: 'https://github.com/Scripty2k/Musixx',
-        projectLink: 'https://github.com/Sint-Lucas/sd4-p13-ambitieproject-2526-Scripty2k'
-      },
-      {
-        id: 21,
-        title: 'Incomplete',
-        description: 'A music track I produced - Incomplete',
-        technologies: ["Music Production", "Audio Engineering"],
-        year: '2025',
-        type: 'Music',
-        status: '',
-        featured: false,
-        media: {
-          type: 'soundcloud',
-          src: 'https://soundcloud.com/scripty2k/incomplete', // Full SoundCloud URL
-          thumbnail: 'fallback-image-url.jpg'
-        },
-        liveUrl: 'https://soundcloud.com/scripty2k/incomplete',
-        githubUrl: '#'
-      },
-      {
-        id: 20,
-        title: 'Bound',
-        description: 'A music track I produced - Bound',
-        technologies: ["Music Production", "Audio Engineering"],
-        year: '2025',
-        type: 'Music',
-        status: '',
-        featured: false,
-        media: {
-          type: 'soundcloud',
-          src: 'https://soundcloud.com/scripty2k/bound', // Full SoundCloud URL
-          thumbnail: 'fallback-image-url.jpg'
-        },
-        liveUrl: 'https://soundcloud.com/scripty2k/bound',
-        githubUrl: '#'
-      },
       {
         id: 21,
         title: 'Incomplete',
@@ -292,29 +234,16 @@ export default {
       },
       {
         id: 1,
-<<<<<<< Updated upstream
         title: 'Three.JS portfolio inspiration',
         description: 'This was meant for school. But I was kinda proud of it really. This is just a simple portfolio website made with Three.JS. I looked into a lot of inspiration from other portfolios. But I made it all by myself. I used Three.JS, HTML and CSS for this project.',
         technologies: ["HTML", "CSS", "Vue", "Three.js"],
         year: '2025',
         type: 'Software',
-=======
-        title: 'Hugging is healthy',
-        description: 'Just a short video made for someone',
-        technologies: ["Friends", "My camcorder", "After Effects", "Premiere Pro"],
-        year: '2025',
-        type: 'Videos',
->>>>>>> Stashed changes
         status: '',
         featured: true,
         media: {
-<<<<<<< Updated upstream
           type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
           src: 'Pntq3SkYDwU', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-=======
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'n5809vp8osw', // image URL, YouTube video ID, or Behance project ID
->>>>>>> Stashed changes
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
         liveUrl: '#',
@@ -322,23 +251,6 @@ export default {
       },
       {
         id: 2,
-        title: 'Three.JS portfolio inspiration',
-        description: 'This was meant for school. But I was kinda proud of it really. This is just a simple portfolio website made with Three.JS. I looked into a lot of inspiration from other portfolios. But I made it all by myself. I used Three.JS, HTML and CSS for this project.',
-        technologies: ["HTML", "CSS", "Vue", "Three.js"],
-        year: '2025',
-        type: 'Software',
-        status: '',
-        featured: true,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: 'Pntq3SkYDwU', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 3,
         title: 'Albert Heijn Team Project',
         description: 'This is somewhat of a team project I made for school. This was pretty hard to make since this was my first time working with threejs. I learned a lot from this project. I used Three.JS, HTML and CSS but also Vue.',
         technologies: ["HTML", "CSS", "Vue", "Three.js"],
@@ -355,7 +267,7 @@ export default {
         githubUrl: '#'
       },
       {
-        id: 4,
+        id: 3,
         title: 'Y2K Webshop template',
         description: 'A template for a webshop inspired by Y2K aesthetics.',
         technologies: ["HTML", "CSS", "JavaScript"],
@@ -372,15 +284,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 4,
-=======
-<<<<<<< HEAD
-        id: 5,
-=======
-        id: 4,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Python Youtube link downloader',
         description: 'A Python script that downloads videos from YouTube.',
         technologies: ["Python", "YouTube API"],
@@ -397,17 +301,9 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 5,
-=======
-<<<<<<< HEAD
-        id: 6,
-=======
-        id: 5,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Siobhan',
-        description: 'A paper Y2K stop motion video I made for a friend.',
+        description: 'A paper Y2K stop motion video I made for a friend named Siobhan!',
         technologies: ["After Effects",],
         year: '2025',
         type: 'Videos',
@@ -422,15 +318,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 6,
-=======
-<<<<<<< HEAD
-        id: 7,
-=======
-        id: 6,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Interlinked.',
         description: 'Touch Designer project made for a school assignment.',
         technologies: ['Premiere Pro', "After Effects", "Touch Designer"],
@@ -447,15 +335,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 7,
-=======
-<<<<<<< HEAD
-        id: 8,
-=======
-        id: 7,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Scrolling Addiction',
         description: 'Short video about how people are addicted to scrolling on their phones.',
         technologies: ['Premiere Pro', "After Effects"],
@@ -472,15 +352,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 8,
-=======
-<<<<<<< HEAD
-        id: 9,
-=======
-        id: 8,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Promo video Rhion',
         description: 'First Promotional video I made for a company called Rhion. This was my first ever paid video project.',
         technologies: ['Premiere Pro',],
@@ -497,15 +369,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 9,
-=======
-<<<<<<< HEAD
-        id: 10,
-=======
-        id: 9,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'First ever video trailer',
         description: 'I was pursuing my passion to be a Youtuber. So I made a trailer for my channel. This was my first ever video project.',
         technologies: ['Premiere Pro',],
@@ -522,15 +386,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 10,
-=======
-<<<<<<< HEAD
-        id: 11,
-=======
-        id: 10,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Drug Abuse Awareness (School Project)',
         description: 'A short video made to raise awareness about the dangers of drug abuse.',
         technologies: ['Premiere Pro',],
@@ -547,15 +403,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 11,
-=======
-<<<<<<< HEAD
-        id: 12,
-=======
-        id: 11,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Stealing costs money (School Project)',
         description: 'A short video made to raise awareness about the dangers of kleptomania.',
         technologies: ['Adobe Creative Suite', 'Figma', 'UI/UX Design'],
@@ -572,15 +420,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 12,
-=======
-<<<<<<< HEAD
-        id: 13,
-=======
-        id: 12,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'VR Archery Game',
         description: 'A virtual reality archery game developed for Oculus Quest.',
         technologies: ['Unity', 'C#', 'Oculus SDK'],
@@ -597,15 +437,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 13,
-=======
-<<<<<<< HEAD
-        id: 14,
-=======
-        id: 13,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Happy New Year 2023',
         description: 'Another short clip with my friends',
         technologies: ['Premiere Pro', 'My friends :3',],
@@ -622,15 +454,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 14,
-=======
-<<<<<<< HEAD
-        id: 15,
-=======
-        id: 14,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'First cinematographify video',
         description: 'I slowly leaned into this style of video making. Kinda liked it.',
         technologies: ['Premiere Pro', 'My friends :3',],
@@ -647,15 +471,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 15,
-=======
-<<<<<<< HEAD
-        id: 16,
-=======
-        id: 15,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Mobile top down game',
         description: 'My first ever mobile game. This was just especially to aim to the functionality of the game ',
         technologies: ['Game Development', 'C#',],
@@ -672,15 +488,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 16,
-=======
-<<<<<<< HEAD
-        id: 17,
-=======
-        id: 16,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Personality assignment',
         description: 'I made a game for the subject called personality I had from previous year. This game was to show everything I was proud of.',
         technologies: ['Game Development', 'C#', 'After Effects',],
@@ -697,15 +505,7 @@ export default {
         githubUrl: '#'
       },
         {
-<<<<<<< Updated upstream
         id: 17,
-=======
-<<<<<<< HEAD
-        id: 18,
-=======
-        id: 17,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Summer 2022',
         description: 'Summer 2022 changed me. I made a video about it. I realized that friends are temporarily. So I made this video at first for myself to remind myself that I need to appreciate my time. A couple days later, my friends were upset about their enviorment, school, situations, etc. So I showed them this. They loved it.',
         technologies: ['Premiere Pro',],
@@ -722,15 +522,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 18,
-=======
-<<<<<<< HEAD
-        id: 19,
-=======
-        id: 18,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'Raspberry Pi Bad USB',
         description: 'A tool that turns a Raspberry Pi into a Bad USB device for penetration testing and security research. But this time harmless.',
         technologies: ['Raspberry Pi', 'Physical Computing', 'Python',],
@@ -747,15 +539,7 @@ export default {
         githubUrl: '#'
       },
       {
-<<<<<<< Updated upstream
         id: 19,
-=======
-<<<<<<< HEAD
-        id: 20,
-=======
-        id: 19,
->>>>>>> 415164032f5b784eb5e662a88c42c443198cdfb8
->>>>>>> Stashed changes
         title: 'First video project',
         description: 'My first ever video project with no plans, no experience, just looking back at life',
         technologies: ['Video Editing', 'Premiere Pro'],
@@ -1301,83 +1085,5 @@ export default {
   .projects-grid {
     grid-template-columns: 1fr;
   }
-}
-
-.project-status {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 10;
-}
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.status-badge.wip {
-  background: rgba(76, 175, 80, 0.15);
-  color: #2e7d32;
-  border: 1px solid rgba(76, 175, 80, 0.3);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #4caf50;
-  animation: blink 1.5s ease-in-out infinite;
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 4px #4caf50;
-  }
-  50% {
-    opacity: 0.3;
-    box-shadow: 0 0 0px #4caf50;
-  }
-}
-
-.project-link {
-  display: inline-block;
-  color: #0066cc;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.project-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #0066cc;
-  transition: width 0.3s ease;
-}
-
-.project-link:hover {
-  color: #004499;
-}
-
-.project-link:hover::after {
-  width: 100%;
 }
 </style>
