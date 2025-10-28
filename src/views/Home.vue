@@ -4,13 +4,11 @@
       <div class="container">
         <div class="hero-content reveal">
           <h1 class="hero-title">
-            <span class="title-line animate-fade-in-up">Amal</span>
-            <span class="title-line animate-fade-in-up animate-delay-200">Rahimli</span>
+            <span class="title-line animate-fade-in-up">SCRIPTY2K</span>
           </h1>
           <p class="hero-subtitle animate-fade-in-up animate-delay-400">Creative Developer</p>
           <div class="hero-description animate-fade-in-up animate-delay-600">
-            <p>Crafting digital experiences with precision and creativity. 
-               Specializing in modern web development and user interface design. But I do more than that :)</p>
+            <p>Crafting digital experiences with precision and creativity. Specializing in modern web development and user interface design. But I do more than that :)</p>
           </div>
           <div class="hero-actions animate-fade-in-up animate-delay-800">
             <router-link to="/projects" class="btn btn-primary hover-lift">
@@ -285,7 +283,7 @@ export default {
 
 .hero-description {
   max-width: 500px;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }

@@ -143,6 +143,13 @@
               <h3 class="project-title hover-target">{{ project.title }}</h3>
               <p class="project-description">{{ project.description }}</p>
               
+              <a v-if="project.githubUrl && project.githubUrl !== '#'" :href="project.githubUrl" target="_blank" rel="noopener noreferrer" class="project-github-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                View on GitHub
+              </a>
+              
               <div class="project-tech">
                 <span 
                   v-for="tech in project.technologies" 
@@ -199,37 +206,71 @@ export default {
     
     const projects = ref([
       {
-        id: 21,
-        title: 'Incomplete',
-        description: 'A music track I produced - Incomplete',
-        technologies: ["Music Production", "Audio Engineering"],
+        id: 23,
+        title: 'Musixx (a music sharing platform)',
+        description: 'A music sharing platform made for musicians to share their music with others.',
+        technologies: ["Vue.js", "SQLite", "Node.js"],
         year: '2025',
-        type: 'Music',
+        type: 'Software',
+        status: 'Work in progress',
+        featured: false,
+        media: {
+          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
+          src: '9U6u32QvY6s', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
+          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
+        },
+        liveUrl: '#',
+        githubUrl: 'https://github.com/Sint-Lucas/sd4-p13-ambitieproject-2526-Scripty2k'
+      },
+      {
+        id: 22,
+        title: 'Moving art collage',
+        description: 'Some experimental video I made.',
+        technologies: ["After Effects"],
+        year: '2025',
+        type: 'Videos',
         status: '',
         featured: false,
         media: {
-          type: 'soundcloud',
-          src: 'https://soundcloud.com/scripty2k/incomplete', // Full SoundCloud URL
-          thumbnail: 'fallback-image-url.jpg'
+          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
+          src: 'C0b4vRg2Phc', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
+          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
-        liveUrl: 'https://soundcloud.com/scripty2k/incomplete',
+        liveUrl: '#',
+        githubUrl: '#'
+      },
+      {
+        id: 21,
+        title: 'Vonnie',
+        description: 'Another short video made for fun. This will have a remaster soon.',
+        technologies: ["After Effects", "My camcorder", "Friends"],
+        year: '2025',
+        type: 'Videos',
+        status: '',
+        featured: false,
+        media: {
+          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
+          src: 'F69JaJSa11Q', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
+          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
+        },
+        liveUrl: '#',
         githubUrl: '#'
       },
       {
         id: 20,
-        title: 'Bound',
-        description: 'A music track I produced - Bound',
-        technologies: ["Music Production", "Audio Engineering"],
+        title: 'Hugging is Healthy',
+        description: 'This was a video I made just for fun.',
+        technologies: ["After Effects", "My camcorder", "Friends"],
         year: '2025',
-        type: 'Music',
+        type: 'Videos',
         status: '',
         featured: false,
         media: {
-          type: 'soundcloud',
-          src: 'https://soundcloud.com/scripty2k/bound', // Full SoundCloud URL
-          thumbnail: 'fallback-image-url.jpg'
+          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
+          src: 'n5809vp8osw', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
+          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
-        liveUrl: 'https://soundcloud.com/scripty2k/bound',
+        liveUrl: '#',
         githubUrl: '#'
       },
       {
@@ -240,7 +281,7 @@ export default {
         year: '2025',
         type: 'Software',
         status: '',
-        featured: true,
+        featured: false,
         media: {
           type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
           src: 'Pntq3SkYDwU', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
@@ -986,7 +1027,34 @@ export default {
 .project-description {
   color: #666;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #000;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.project-github-link:hover {
+  color: #666;
+  border-bottom-color: #666;
+}
+
+.project-github-link svg {
+  transition: transform 0.2s ease;
+}
+
+.project-github-link:hover svg {
+  transform: translateX(2px);
 }
 
 .project-tech {
@@ -1028,6 +1096,54 @@ export default {
   margin-bottom: 2rem;
   color: #666;
   font-size: 1.1rem;
+}
+
+.project-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #2d2d2d;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.status-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-badge.work.in.progress {
+  color: #10b981;
+}
+
+.status-badge.work.in.progress::before {
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
 }
 
 @media (max-width: 768px) {
