@@ -150,6 +150,13 @@
                 View on GitHub
               </a>
               
+              <a v-if="project.youtubeUrl && project.youtubeUrl !== '#'" :href="project.youtubeUrl" target="_blank" rel="noopener noreferrer" class="project-youtube-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                {{ project.youtubeText || 'View on YouTube' }}
+              </a>
+              
               <div class="project-tech">
                 <span 
                   v-for="tech in project.technologies" 
@@ -237,7 +244,9 @@ export default {
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
         liveUrl: '#',
-        githubUrl: '#'
+        githubUrl: '#',
+        youtubeUrl: 'https://www.youtube.com/watch?v=C724xlKPBAw',
+        youtubeText: 'See timelapse here'
       },
       {
         id: 21,
@@ -254,7 +263,9 @@ export default {
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
         liveUrl: '#',
-        githubUrl: '#'
+        githubUrl: '#',
+        youtubeUrl: 'https://www.youtube.com/watch?v=cDkq7Mj3o6k',
+        youtubeText: 'See timelapse here'
       },
       {
         id: 20,
@@ -1054,6 +1065,33 @@ export default {
 }
 
 .project-github-link:hover svg {
+  transform: translateX(2px);
+}
+
+.project-youtube-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.project-youtube-link:hover {
+  color: #cc0000;
+  border-bottom-color: #cc0000;
+}
+
+.project-youtube-link svg {
+  transition: transform 0.2s ease;
+}
+
+.project-youtube-link:hover svg {
   transform: translateX(2px);
 }
 
