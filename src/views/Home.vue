@@ -4,8 +4,8 @@
       <div class="container">
         <div class="hero-content reveal">
           <h1 class="hero-title">
-            <span class="title-line animate-fade-in-up">Amal</span>
-            <span class="title-line animate-fade-in-up animate-delay-200">Rahimli</span>
+            <span class="title-line animate-fade-in-up">SCRIPTY2K</span>
+            <span class="title-line animate-fade-in-up animate-delay-200"></span>
           </h1>
           <p class="hero-subtitle animate-fade-in-up animate-delay-400">Creative Developer</p>
           <div class="hero-description animate-fade-in-up animate-delay-600">
@@ -27,9 +27,9 @@
       
       <!-- Floating Elements -->
       <div class="floating-elements">
-        <div class="floating-shape shape-1 animate-float"></div>
-        <div class="floating-shape shape-2 animate-float animate-delay-300"></div>
-        <div class="floating-shape shape-3 animate-float animate-delay-600"></div>
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
       </div>
       
       <div class="scroll-indicator animate-pulse">
@@ -43,7 +43,7 @@
         <div class="intro-grid">
           <div class="intro-text reveal-left">
             <h2 class="section-title">About me</h2>
-            <p class="intro-paragraph">Hi everyone. My name is Amal and I'm a passionate developer who loves to create 
+            <p class="intro-paragraph">Hi everyone. I'm a passionate developer who loves to create 
               stuff with my creativity and coding skills. I have a knack for developing but also designing online projects!
               I enjoy making creative projects like music and videos in my free time.
             </p>
@@ -80,6 +80,7 @@
             </ul>
           </div>
         </div>
+        <p class="skills-note">the skill lines are randomized because I don't claim myself as good or bad. I'm just experienced at them</p>
       </div>
     </section>
 
@@ -89,12 +90,13 @@
 </template>
 
 <script>
-import { onMounted, onActivated, reactive, nextTick } from 'vue'
+import { onMounted, onActivated, onBeforeUnmount, reactive, nextTick } from 'vue'
 import { useScrollAnimations } from '../composables/useAnimations.js'
 
 export default {
   name: 'Home',
   setup() {
+    let scrollHandler = null
     const stats = reactive([
       { number: 40, label: 'Songs produced' },
       { number: 50, label: 'Videos edited' },
@@ -184,6 +186,30 @@ export default {
       })
     }
 
+    const initScrollAnimation = () => {
+      // Remove previous listener if exists
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler)
+      }
+
+      const floatingShapes = document.querySelectorAll('.floating-shape')
+      
+      scrollHandler = () => {
+        const scrolled = window.pageYOffset
+        
+        floatingShapes.forEach((shape, index) => {
+          const speed = 0.3 + (index * 0.1)
+          const yPos = -(scrolled * speed)
+          const rotation = scrolled * (0.05 + index * 0.02)
+          const scale = 1 + (scrolled * 0.0005)
+          
+          shape.style.transform = `translateY(${yPos}px) rotate(${rotation}deg) scale(${Math.min(scale, 1.3)})`
+        })
+      }
+      
+      window.addEventListener('scroll', scrollHandler, { passive: true })
+    }
+
     const initializeAnimations = () => {
       resetAnimations()
       
@@ -191,6 +217,9 @@ export default {
         // Re-initialize scroll animations
         const { initScrollAnimations } = useScrollAnimations()
         initScrollAnimations()
+
+        // Initialize floating shapes scroll animation
+        initScrollAnimation()
 
         // Animate stats when they come into view
         const observer = new IntersectionObserver((entries) => {
@@ -219,6 +248,12 @@ export default {
     // This hook is called every time the component is reactivated (when navigating back)
     onActivated(() => {
       initializeAnimations()
+    })
+
+    onBeforeUnmount(() => {
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler)
+      }
     })
 
     return {
@@ -349,6 +384,8 @@ export default {
   position: absolute;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
   border-radius: 50%;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
 }
 
 .shape-1 {
@@ -510,6 +547,15 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3rem;
+}
+
+.skills-note {
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  font-style: italic;
+  line-height: 1.6;
 }
 
 .skill-category {
