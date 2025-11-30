@@ -243,7 +243,7 @@ export default {
 
 <style scoped>
 .contact {
-  background: #fff;
+  background: #fff0df;
   position: relative;
 }
 
@@ -298,13 +298,13 @@ export default {
 
 .hero-section {
   padding: 8rem 0 4rem;
-  background: #f8f8f8;
+  background: #fff0df;
 }
 
 .hero-content h1 {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
-  color: #000;
+  color: #292524;
   margin-bottom: 1rem;
   letter-spacing: -0.03em;
 }
@@ -335,7 +335,7 @@ export default {
 .info-block h2 {
   font-size: 2rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 1.5rem;
 }
 
@@ -367,7 +367,7 @@ export default {
 
 .method-value {
   font-size: 1.1rem;
-  color: #000;
+  color: #292524;
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s ease;
@@ -380,7 +380,7 @@ export default {
 .social-section h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -405,18 +405,18 @@ export default {
 }
 
 .social-link:hover {
-  color: #000;
+  color: #292524;
 }
 
 .contact-form-container {
-  background: #f8f8f8;
+  background: #f5e5d4;
   padding: 3rem;
 }
 
 .contact-form h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 2rem;
 }
 
@@ -426,7 +426,7 @@ export default {
 
 .form-group label {
   display: block;
-  color: #000;
+  color: #292524;
   margin-bottom: 0.75rem;
   font-weight: 500;
   font-size: 0.9rem;
@@ -439,8 +439,8 @@ export default {
   width: 100%;
   padding: 1rem;
   border: 1px solid #ddd;
-  background: #fff;
-  color: #000;
+  background: #fff0df;
+  color: #292524;
   font-size: 1rem;
   font-family: inherit;
   transition: border-color 0.2s ease;
@@ -450,7 +450,7 @@ export default {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #000;
+  border-color: #292524;
 }
 
 .form-group input::placeholder,
@@ -477,7 +477,7 @@ export default {
 
 .availability-section {
   padding: 4rem 0;
-  background: #f8f8f8;
+  background: #fff0df;
   text-align: center;
 }
 
@@ -493,7 +493,7 @@ export default {
   gap: 0.75rem;
   margin-bottom: 1rem;
   font-weight: 500;
-  color: #000;
+  color: #292524;
 }
 
 .status-dot {

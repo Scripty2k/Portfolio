@@ -491,12 +491,12 @@ export default {
 
 <style scoped>
 .project-detail {
-  background: #fff;
+  background: #fff0df;
 }
 
 .project-hero {
   padding: 8rem 0 4rem;
-  background: #f8f8f8;
+  background: #fff0df;
 }
 
 .hero-content {
@@ -525,7 +525,7 @@ export default {
 }
 
 .back-link:hover {
-  color: #000;
+  color: #292524;
 }
 
 .meta-info {
@@ -542,7 +542,7 @@ export default {
 }
 
 .project-type {
-  color: #000;
+  color: #292524;
   font-weight: 500;
 }
 
@@ -571,7 +571,7 @@ export default {
 .hero-content h1 {
   font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 900;
-  color: #000;
+  color: #292524;
   margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -601,7 +601,7 @@ export default {
 
 .project-showcase {
   padding: 4rem 0;
-  background: #fff;
+  background: #fff0df;
 }
 
 .showcase-image {
@@ -610,7 +610,7 @@ export default {
 }
 
 .project-window {
-  background: #fff;
+  background: #fff0df;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
@@ -685,7 +685,7 @@ export default {
 .section h2 {
   font-size: 2rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 1rem;
 }
 
@@ -723,7 +723,7 @@ export default {
 
 .tech-stack,
 .project-info {
-  background: #f8f8f8;
+  background: #f5e5d4;
   padding: 2rem;
   border-radius: 12px;
 }
@@ -732,7 +732,7 @@ export default {
 .project-info h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 1.5rem;
 }
 
@@ -743,7 +743,7 @@ export default {
 }
 
 .tech-tag {
-  background: #fff;
+  background: #fff0df;
   color: #666;
   padding: 0.6rem 1rem;
   font-size: 0.85rem;
@@ -753,9 +753,9 @@ export default {
 }
 
 .tech-tag:hover {
-  background: #000;
-  color: #fff;
-  border-color: #000;
+  background: #292524;
+  color: #fff0df;
+  border-color: #292524;
 }
 
 .info-item {
@@ -766,7 +766,7 @@ export default {
 }
 
 .info-item strong {
-  color: #000;
+  color: #292524;
   font-weight: 500;
 }
 
@@ -776,14 +776,14 @@ export default {
 
 .project-gallery {
   padding: 6rem 0;
-  background: #f8f8f8;
+  background: #fff0df;
 }
 
 .section-title {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 3rem;
 }
 
@@ -797,7 +797,7 @@ export default {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  background: #fff;
+  background: #fff0df;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
@@ -830,8 +830,8 @@ export default {
 
 .next-project {
   padding: 6rem 0;
-  background: #000;
-  color: #fff;
+  background: #292524;
+  color: #fff0df;
 }
 
 .next-project-content {
@@ -865,12 +865,12 @@ export default {
 }
 
 .next-project-info .btn {
-  background: #fff;
-  color: #000;
+  background: #fff0df;
+  color: #292524;
 }
 
 .next-project-info .btn:hover {
-  background: #f8f8f8;
+  background: #f8f5f1;
 }
 
 .next-project-image {
@@ -905,7 +905,7 @@ export default {
   width: 50px;
   height: 50px;
   border: 3px solid #f3f3f3;
-  border-top: 3px solid #000;
+  border-top: 3px solid #292524;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }

@@ -100,7 +100,7 @@ export default {
 
 <style scoped>
 .navbar {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 240, 223, 0.95);
   backdrop-filter: blur(20px);
   padding: 1.5rem 0;
   position: fixed;
@@ -109,14 +109,14 @@ export default {
   right: 0;
   width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(41, 37, 36, 0.05);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar-scrolled {
   padding: 1rem 0;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 240, 223, 0.98);
+  border-bottom: 1px solid rgba(41, 37, 36, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -134,7 +134,7 @@ export default {
 .nav-logo {
   font-size: 1.8rem;
   font-weight: 900;
-  color: #000;
+  color: #292524;
   text-decoration: none;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -172,7 +172,7 @@ export default {
 }
 
 .nav-link {
-  color: #000;
+  color: #292524;
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9rem;
@@ -198,7 +198,7 @@ export default {
   left: 0;
   width: 0;
   height: 1px;
-  background: #000;
+  background: #292524;
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -211,7 +211,7 @@ export default {
 }
 
 .nav-link.router-link-active {
-  color: #000;
+  color: #292524;
 }
 
 .nav-link.router-link-active .nav-link-hover {
@@ -235,7 +235,7 @@ export default {
 .bar {
   width: 24px;
   height: 2px;
-  background: #000;
+  background: #292524;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
 }
@@ -259,7 +259,7 @@ export default {
     left: -100%;
     top: 0;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 240, 223, 0.98);
     backdrop-filter: blur(30px);
     width: 100%;
     height: 100vh;

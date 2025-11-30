@@ -2,9 +2,9 @@
 import Navbar from './components/Navbar.vue'
 import RetroToggleButton from './components/RetroToggleButton.vue'
 import RetroNotification from './components/RetroNotification.vue'
-import { useScrollAnimations, useScrollProgress, useMouseTracker } from './composables/useAnimations.js'
+import { useScrollAnimations, useScrollProgress } from './composables/useAnimations.js'
 import { useRetroTheme } from './composables/useRetroTheme.js'
-import { onMounted, ref, nextTick } from 'vue'
+import { onMounted } from 'vue'
 
 // Initialize scroll animations
 useScrollAnimations()
@@ -12,14 +12,8 @@ useScrollAnimations()
 // Get scroll progress for progress bar
 const { scrollProgress } = useScrollProgress()
 
-// Mouse tracking for custom cursor
-const { mouseX, mouseY } = useMouseTracker()
-
 // Retro theme functionality
 const { isRetroMode, showNotification, notificationMessage } = useRetroTheme()
-
-const cursor = ref(null)
-const cursorDot = ref(null)
 
 // Scroll to top function
 const scrollToTop = () => {
@@ -29,59 +23,13 @@ const scrollToTop = () => {
   })
 }
 
-// Add smooth scrolling behavior and cursor tracking
-onMounted(async () => {
-  // Wait for next tick to ensure refs are available
-  await nextTick()
-  
+// Add smooth scrolling behavior
+onMounted(() => {
   // Smooth scroll for anchor links
   document.documentElement.style.scrollBehavior = 'smooth'
   
   // Add loading animation to body
   document.body.classList.add('loaded')
-  
-  // Custom cursor tracking
-  if (cursor.value && cursorDot.value) {
-    const updateCursor = () => {
-      if (cursor.value && cursorDot.value) {
-        cursor.value.style.left = mouseX.value + 'px'
-        cursor.value.style.top = mouseY.value + 'px'
-        cursorDot.value.style.left = mouseX.value + 'px'
-        cursorDot.value.style.top = mouseY.value + 'px'
-      }
-    }
-    
-    // Update cursor position
-    const animateCursor = () => {
-      updateCursor()
-      requestAnimationFrame(animateCursor)
-    }
-    animateCursor()
-    
-    // Add hover effects for interactive elements
-    const addCursorHover = () => {
-      const interactiveElements = document.querySelectorAll('a, button, .hover-target')
-      
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          if (cursor.value) {
-            cursor.value.style.transform = 'scale(1.5)'
-            cursor.value.style.borderColor = 'rgba(0, 0, 0, 0.5)'
-          }
-        })
-        
-        el.addEventListener('mouseleave', () => {
-          if (cursor.value) {
-            cursor.value.style.transform = 'scale(1)'
-            cursor.value.style.borderColor = 'rgba(0, 0, 0, 0.2)'
-          }
-        })
-      })
-    }
-    
-    // Initialize hover effects
-    setTimeout(addCursorHover, 500)
-  }
 })
 </script>
 
@@ -102,10 +50,6 @@ onMounted(async () => {
         :style="{ width: scrollProgress + '%' }"
       ></div>
     </div>
-    
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" ref="cursor"></div>
-    <div class="custom-cursor-dot" ref="cursorDot"></div>
     
     <Navbar />
     <main class="main-content">
@@ -144,13 +88,12 @@ onMounted(async () => {
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.4;
-  color: #000;
-  background: #ffffff;
+  color: #292524;
+  background: #fff0df;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  cursor: none; /* Hide default cursor for custom cursor */
 }
 
 body.loaded {
@@ -180,33 +123,9 @@ body.loaded {
 
 .scroll-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #000 0%, #333 100%);
+  background: linear-gradient(90deg, #292524 0%, #333 100%);
   transition: width 0.1s ease-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Custom Cursor */
-.custom-cursor {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transition: all 0.1s ease;
-  mix-blend-mode: difference;
-}
-
-.custom-cursor-dot {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  background: #000;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.05s ease;
 }
 
 /* Back to Top Button */
@@ -216,8 +135,8 @@ body.loaded {
   right: 2rem;
   width: 50px;
   height: 50px;
-  background: #000;
-  color: #fff;
+  background: #292524;
+  color: #fff0df;
   border: none;
   border-radius: 50%;
   font-size: 1.2rem;
@@ -274,8 +193,8 @@ p {
 
 /* Selection */
 ::selection {
-  background: rgba(0, 0, 0, 0.1);
-  color: #000;
+  background: rgba(41, 37, 36, 0.1);
+  color: #292524;
 }
 
 /* Global Utilities */
@@ -288,15 +207,6 @@ p {
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
-  }
-  
-  body {
-    cursor: auto; /* Restore default cursor on mobile */
-  }
-  
-  .custom-cursor,
-  .custom-cursor-dot {
-    display: none;
   }
 }
 
@@ -316,42 +226,28 @@ p {
   overflow: hidden;
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.btn:hover::before {
-  left: 100%;
-}
-
 .btn-primary {
-  background: #000;
-  color: #fff;
-  border: 1px solid #000;
+  background: #292524;
+  color: #fff0df;
+  border: 1px solid #292524;
 }
 
 .btn-primary:hover {
   background: #333;
+  color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #000;
-  border: 1px solid #000;
+  color: #292524;
+  border: 1px solid #292524;
 }
 
 .btn-secondary:hover {
-  background: #000;
-  color: #fff;
+  background: #292524;
+  color: #fff0df;
   transform: translateY(-1px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -385,22 +281,29 @@ p {
   outline-offset: 2px;
 }
 
-/* Enhanced Scrollbar */
+/* Custom Minimalistic Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  transition: background 0.2s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 }
 
 /* Preloader */
@@ -410,7 +313,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #fff0df;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -427,7 +330,7 @@ p {
   width: 40px;
   height: 40px;
   border: 2px solid #f3f3f3;
-  border-top: 2px solid #000;
+  border-top: 2px solid #292524;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }

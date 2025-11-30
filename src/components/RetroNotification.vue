@@ -57,8 +57,8 @@ defineEmits(['close'])
 }
 
 .notification-window {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 240, 223, 0.95);
+  border: 1px solid rgba(41, 37, 36, 0.1);
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);

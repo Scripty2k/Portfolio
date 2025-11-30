@@ -229,7 +229,7 @@ export default {
 
 <style scoped>
 .home {
-  background: #fff;
+  background: #fff0df;
   position: relative;
   overflow: hidden;
 }
@@ -240,7 +240,7 @@ export default {
   align-items: center;
   position: relative;
   padding: 2rem 0;
-  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #f5e5d4 0%, #fff0df 100%);
 }
 
 .hero-content {
@@ -252,7 +252,7 @@ export default {
 .hero-title {
   font-size: clamp(3rem, 10vw, 8rem);
   font-weight: 900;
-  color: #000;
+  color: #292524;
   line-height: 0.9;
   margin-bottom: 1rem;
   letter-spacing: -0.04em;
@@ -408,7 +408,7 @@ export default {
 
 .intro-section {
   padding: 8rem 0;
-  background: #f8f8f8;
+  background: #fff0df;
   position: relative;
 }
 
@@ -421,7 +421,7 @@ export default {
 
 .section-title {
   margin-bottom: 2rem;
-  color: #000;
+  color: #292524;
   position: relative;
 }
 
@@ -432,7 +432,7 @@ export default {
   left: 0;
   width: 50px;
   height: 2px;
-  background: #000;
+  background: #292524;
   animation: expandLine 1s ease-out;
 }
 
@@ -458,25 +458,25 @@ export default {
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: #f5e5d4;
   border-radius: 10px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(41, 37, 36, 0.05);
   transition: all 0.3s ease;
 }
 
 .stat:hover {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: rgba(0, 0, 0, 0.1);
+  background: #f5e5d4;
+  border-color: rgba(41, 37, 36, 0.1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .stat-number {
   font-size: 3rem;
   font-weight: 900;
-  color: #000;
+  color: #292524;
   line-height: 1;
-  background: linear-gradient(135deg, #000 0%, #333 100%);
+  background: linear-gradient(135deg, #292524 0%, #333 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -491,7 +491,7 @@ export default {
 
 .skills-section {
   padding: 8rem 0;
-  background: #fff;
+  background: #fff0df;
   position: relative;
 }
 
@@ -513,7 +513,7 @@ export default {
 .skill-category {
   text-align: center;
   padding: 3rem 2rem;
-  background: #f8f8f8;
+  background: #f5e5d4;
   border-radius: 15px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -537,7 +537,7 @@ export default {
 }
 
 .skill-category:hover {
-  background: #fff;
+  background: #f5e5d4;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
 }
@@ -550,7 +550,7 @@ export default {
 
 .skill-category h3 {
   margin-bottom: 2rem;
-  color: #000;
+  color: #292524;
   font-weight: 600;
 }
 
@@ -575,7 +575,7 @@ export default {
 }
 
 .skill-item:hover .skill-text {
-  color: #000;
+  color: #292524;
 }
 
 .skill-bar {
@@ -588,7 +588,7 @@ export default {
 
 .skill-progress {
   height: 100%;
-  background: linear-gradient(90deg, #000 0%, #333 100%);
+  background: linear-gradient(90deg, #292524 0%, #333 100%);
   width: 0%;
   transition: width 1s ease-out;
   position: relative;

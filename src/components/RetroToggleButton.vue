@@ -38,8 +38,8 @@ const { isRetroMode, isTransitioning, toggleRetroMode } = useRetroTheme()
   height: 60px;
   border-radius: 50%;
   border: none;
-  background: #000;
-  color: white;
+  background: #292524;
+  color: #fff0df;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -196,8 +196,8 @@ const { isRetroMode, isTransitioning, toggleRetroMode } = useRetroTheme()
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
+  background: rgba(41, 37, 36, 0.8);
+  color: #fff0df;
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 12px;

@@ -701,18 +701,18 @@ export default {
 
 <style scoped>
 .projects {
-  background: #fff;
+  background: #fff0df;
 }
 
 .hero-section {
   padding: 8rem 0 4rem;
-  background: #f8f8f8;
+  background: #fff0df;
 }
 
 .hero-content h1 {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
-  color: #000;
+  color: #292524;
   margin-bottom: 1rem;
   letter-spacing: -0.03em;
 }
@@ -752,9 +752,9 @@ export default {
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: #000;
-  color: #fff;
-  border-color: #000;
+  background: #292524;
+  color: #fff0df;
+  border-color: #292524;
   transform: translateY(-1px);
 }
 
@@ -785,13 +785,16 @@ export default {
   overflow: hidden;
   cursor: pointer;
   border-radius: 12px;
+  padding: 1rem;
+  background: #fff0df;
 }
 
 .project-media-container {
-  position: absolute;
-  inset: 0;
+  position: relative;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .project-image-bg {
@@ -1009,6 +1012,10 @@ export default {
   height: 300px;
 }
 
+.project-content {
+  padding: 1.5rem;
+}
+
 .project-meta {
   display: flex;
   gap: 1rem;
@@ -1023,14 +1030,14 @@ export default {
 }
 
 .project-type {
-  color: #000;
+  color: #292524;
   font-weight: 500;
 }
 
 .project-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
@@ -1045,7 +1052,7 @@ export default {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #000;
+  color: #292524;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -1104,7 +1111,7 @@ export default {
 }
 
 .tech-tag {
-  background: #f8f8f8;
+  background: #f5e5d4;
   color: #666;
   padding: 0.6rem 1.2rem;
   font-size: 0.85rem;
@@ -1114,20 +1121,20 @@ export default {
 }
 
 .tech-tag:hover {
-  background: #000;
-  color: #fff;
-  border-color: #000;
+  background: #292524;
+  color: #fff0df;
+  border-color: #292524;
 }
 
 .cta-section {
   padding: 6rem 0;
-  background: #f8f8f8;
+  background: #fff0df;
   text-align: center;
 }
 
 .cta-content h2 {
   margin-bottom: 1rem;
-  color: #000;
+  color: #292524;
 }
 
 .cta-content p {

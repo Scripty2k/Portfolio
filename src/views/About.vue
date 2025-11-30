@@ -136,18 +136,18 @@ export default {
 
 <style scoped>
 .about {
-  background: #fff;
+  background: #fff0df;
 }
 
 .hero-section {
   padding: 8rem 0 4rem;
-  background: #f8f8f8;
+  background: #fff0df;
 }
 
 .hero-content h1 {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
-  color: #000;
+  color: #292524;
   margin-bottom: 1rem;
   letter-spacing: -0.03em;
 }
@@ -178,7 +178,7 @@ export default {
 .text-block h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 1.5rem;
 }
 
@@ -196,14 +196,14 @@ export default {
 
 .info-card {
   padding: 2rem;
-  background: #f8f8f8;
+  background: #f5e5d4;
   border-radius: 0;
 }
 
 .info-card h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -245,7 +245,7 @@ export default {
 .role,
 .degree {
   font-weight: 600;
-  color: #000;
+  color: #292524;
 }
 
 .company,
@@ -256,13 +256,13 @@ export default {
 
 .skills-section {
   padding: 6rem 0;
-  background: #f8f8f8;
+  background: #fff0df;
 }
 
 .skills-section h2 {
   text-align: center;
   margin-bottom: 4rem;
-  color: #000;
+  color: #292524;
 }
 
 .skills-categories {
@@ -274,7 +274,7 @@ export default {
 .skill-group h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #000;
+  color: #292524;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -290,12 +290,12 @@ export default {
   color: #666;
   font-size: 0.95rem;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #666;
   transition: color 0.2s ease;
 }
 
 .skill-list span:hover {
-  color: #000;
+  color: #292524;
 }
 
 @media (max-width: 768px) {
