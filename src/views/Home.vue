@@ -59,6 +59,9 @@
     <section class="skills-section">
       <div class="container">
         <h2 class="section-title reveal text-center">Expertise</h2>
+        <p class="section-subtitle">The skill bars are not indicative of actual proficiency levels. They are randomized. You'll have to
+          explore my projects to see what I can really do :)
+        </p>
         <div class="skills-grid">
           <div 
             class="skill-category reveal-scale hover-lift" 
@@ -68,6 +71,7 @@
           >
             <div class="skill-icon">{{ category.icon }}</div>
             <h3>{{ category.title }}</h3>
+            <p class="skill-description">{{ category.description }}</p>
             <ul>
               <li v-for="skill in category.skills" :key="skill" class="skill-item">
                 <span class="skill-text">{{ skill }}</span>
@@ -103,17 +107,17 @@ export default {
       {
         icon: '💻',
         title: 'Frontend',
-        skills: ['Vue / Vite', 'Typescript', 'Modern CSS', 'WebGL / Three.js']
+        skills: ['Vue / Vite', 'Typescript', 'Modern CSS', 'WebGL / Three.js'],
       },
       {
         icon: '⚙️',
         title: 'Coding Skills',
-        skills: ['Python', 'C#', 'HTML/CSS', 'JavaScript']
+        skills: ['Python', 'C#', 'HTML/CSS', 'JavaScript'],
       },
       {
         icon: '🎨',
         title: 'Design',
-        skills: ['Figma / Adobe XD', 'Adobe After Effects', 'Premiere Pro', 'Touch Designer']
+        skills: ['Figma / Adobe XD', 'Adobe After Effects', 'Premiere Pro', 'Touch Designer'],
       }
     ])
 
@@ -500,6 +504,14 @@ export default {
   margin-bottom: 4rem;
 }
 
+.section-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -547,11 +559,17 @@ export default {
   margin-bottom: 1.5rem;
   animation: bounce 2s ease-in-out infinite;
 }
-
 .skill-category h3 {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   color: #292524;
   font-weight: 600;
+}
+
+.skill-description {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
 }
 
 .skill-category ul {
