@@ -213,6 +213,23 @@ export default {
     
     const projects = ref([
       {
+        id: 24,
+        title: 'Everything Became a Memory',
+        description: 'A stress test project just to test my limits of my computer',
+        technologies: ["Premiere Pro", "My Camcorder", "Friends"],
+        year: '2025',
+        type: 'Videos',
+        status: '',
+        featured: false,
+        media: {
+          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
+          src: 'Cueuojq0cnE', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
+          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
+        },
+        liveUrl: '#',
+        githubUrl: 'https://github.com/Sint-Lucas/sd4-p13-ambitieproject-2526-Scripty2k'
+      },
+      {
         id: 23,
         title: 'Musixx (a music sharing platform)',
         description: 'A music sharing platform made for musicians to share their music with others.',
@@ -425,13 +442,13 @@ export default {
         title: 'First ever video trailer',
         description: 'I was pursuing my passion to be a Youtuber. So I made a trailer for my channel. This was my first ever video project.',
         technologies: ['Premiere Pro',],
-        year: '2025',
+        year: '2024',
         type: 'Videos',
         status: '',
         featured: false,
         media: {
           type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'vbX9A6Mg', // image URL, YouTube video ID, or Behance project ID
+          src: 'Dt-vbX9A6Mg', // image URL, YouTube video ID, or Behance project ID
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
         liveUrl: '#',
