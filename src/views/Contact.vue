@@ -147,7 +147,7 @@
             <div class="status-dot"></div>
             <span>Current status: Open to collaboration</span>
           </div>
-          <p>Currently looking for collabs and jobs in 2025!</p>
+          <p>Currently looking for collabs and jobs in the future!</p>
         </div>
       </div>
     </section>

@@ -219,7 +219,7 @@ export default {
         technologies: ["Vue.js", "SQLite", "Node.js"],
         year: '2025',
         type: 'Software',
-        status: 'Work in progress',
+        status: '',
         featured: false,
         media: {
           type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
