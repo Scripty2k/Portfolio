@@ -4,7 +4,7 @@
       <div class="container">
         <div class="hero-content fade-in-up">
           <h1>About</h1>
-          <p class="hero-subtitle">Developer, Designer, Creative</p>
+          <p class="hero-subtitle">Developer, Designer, Artist</p>
         </div>
       </div>
     </section>

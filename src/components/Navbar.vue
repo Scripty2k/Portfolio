@@ -2,7 +2,12 @@
   <nav class="navbar" :class="{ 'navbar-scrolled': isScrolled }">
     <div class="nav-container">
       <router-link to="/" class="nav-logo hover-target">
-        <span class="logo-text" data-text="Scripty2k">Scripty2k</span>
+        <span class="logo-text" data-text="Scripty2k">
+          Scripty2k
+          <span class="sparkle sparkle-1">★</span>
+          <span class="sparkle sparkle-2">★</span>
+          <span class="sparkle sparkle-3">★</span>
+        </span>
       </router-link>
       
       <div class="nav-menu" :class="{ active: isMenuOpen }">
@@ -161,6 +166,57 @@ export default {
 
 .nav-logo:hover .logo-text::before {
   width: 100%;
+}
+
+/* Sparkle Animation */
+.sparkle {
+  position: absolute;
+  color: #292524;
+  font-size: 0.6rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-logo:hover .sparkle-1 {
+  animation: sparkle-fade 0.5s ease-out;
+}
+
+.nav-logo:hover .sparkle-2 {
+  animation: sparkle-fade 0.5s ease-out 0.1s;
+}
+
+.nav-logo:hover .sparkle-3 {
+  animation: sparkle-fade 0.5s ease-out 0.15s;
+}
+
+.sparkle-1 {
+  top: -5px;
+  left: 20%;
+}
+
+.sparkle-2 {
+  top: -8px;
+  right: 25%;
+}
+
+.sparkle-3 {
+  bottom: -5px;
+  left: 60%;
+}
+
+@keyframes sparkle-fade {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(360deg);
+  }
 }
 
 .nav-menu {
