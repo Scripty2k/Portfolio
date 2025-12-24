@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { nextTick } from 'vue'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
@@ -35,7 +36,19 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory('/'),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return new Promise((resolve) => {
+      if (savedPosition) {
+        resolve(savedPosition)
+      } else {
+        nextTick(() => {
+          window.scrollTo(0, 0)
+          resolve({ top: 0 })
+        })
+      }
+    })
+  }
 })
 
 export default router
