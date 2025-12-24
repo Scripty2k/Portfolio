@@ -46,8 +46,7 @@
             <div class="info-card">
               <h3>What I'm busy with right now</h3>
               <ul>
-                <li>Producing my next album</li>
-                <li>Musixx project development</li>
+                <li>-</li>
               </ul>
             </div>
 

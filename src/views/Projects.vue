@@ -4,7 +4,7 @@
       <div class="container">
         <div class="hero-content reveal">
           <h1 class="glitch-title" data-text="Work">Work</h1>
-          <p class="hero-subtitle animate-fade-in-up animate-delay-300">Selected projects and experiments</p>
+          <p class="hero-subtitle animate-fade-in-up">Selected projects and experiments</p>
         </div>
       </div>
     </section>
@@ -22,6 +22,14 @@
           >
             {{ filter }}
           </button>
+        </div>
+
+        <!-- Music Filter Message -->
+        <div v-if="activeFilter === 'Music'" class="music-section reveal">
+          <h2 class="music-title">About that...</h2>
+          <div class="music-message">
+            <p>I don't think adding every single song without any cool timelapses or descriptions would work. At this point, just go to my <a href="https://open.spotify.com/artist/7bc3TWzNRWbVICIjVvGoac" target="_blank" rel="noopener noreferrer" class="music-link spotify-link">Spotify</a> or <a href="https://soundcloud.com/Scripty2k" target="_blank" rel="noopener noreferrer" class="music-link soundcloud-link">SoundCloud</a>! :)</p>
+          </div>
         </div>
 
         <div class="projects-grid">
@@ -213,6 +221,23 @@ export default {
     
     const projects = ref([
       {
+        id: 25,
+        title: 'The Living Alone App',
+        description: 'A student portal for students, by students. A portal made for students to help them with their daily life as a student.',
+        technologies: ["Vue.js", "Typescript", "Supabase"],
+        year: '2025',
+        type: 'Software',
+        status: '',
+        featured: false,
+        media: {
+          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
+          src: 'vK1bwyFzyU4', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
+          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
+        },
+        liveUrl: '#',
+        githubUrl: 'https://github.com/Sint-Lucas/sd4-p14-schoolproject-2526-quinten-samed-amal'
+      },
+      {
         id: 24,
         title: 'Everything Became a Memory',
         description: 'A stress test project just to test my limits of my computer',
@@ -316,7 +341,7 @@ export default {
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
         liveUrl: '#',
-        githubUrl: '#'
+        githubUrl: 'https://github.com/Scripty2k/LABS-Threejs'
       },
       {
         id: 2,
@@ -333,7 +358,7 @@ export default {
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
         liveUrl: '#',
-        githubUrl: '#'
+        githubUrl: 'https://github.com/Sint-Lucas/sd3-p12-md-project-2425-kotcha'
       },
       {
         id: 3,
@@ -503,7 +528,7 @@ export default {
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail for YouTube
         },
         liveUrl: '#',
-        githubUrl: '#'
+        githubUrl: 'https://github.com/Sint-Lucas/final-project-p8-thedreamybulls'
       },
       {
         id: 13,
@@ -773,6 +798,76 @@ export default {
   color: #fff0df;
   border-color: #292524;
   transform: translateY(-1px);
+}
+
+.music-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.music-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #292524;
+  margin: 0;
+  animation: slideIn 0.5s ease-out;
+}
+
+.music-message {
+  text-align: center;
+  padding: 2rem;
+  background: #f5e5d4;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  animation: slideIn 0.5s ease-out;
+}
+
+.music-message p {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.music-link {
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid;
+}
+
+.spotify-link {
+  color: #1DB954;
+  border-bottom-color: #1DB954;
+}
+
+.spotify-link:hover {
+  color: #1ed760;
+  border-bottom-color: #1ed760;
+}
+
+.soundcloud-link {
+  color: #FF5500;
+  border-bottom-color: #FF5500;
+}
+
+.soundcloud-link:hover {
+  color: #FF7722;
+  border-bottom-color: #FF7722;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .projects-grid {

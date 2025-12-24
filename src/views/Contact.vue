@@ -9,8 +9,11 @@
     <section class="hero-section">
       <div class="container">
         <div class="hero-content fade-in-up">
-          <h1>Contact</h1>
-          <p class="hero-subtitle">Let's create something together</p>
+          <img src="/./src/assets/anime.png" alt="Avatar" class="hero-avatar">
+          <div class="hero-text">
+            <h1>Contact</h1>
+            <p class="hero-subtitle">Let's create something together</p>
+          </div>
         </div>
       </div>
     </section>
@@ -67,6 +70,14 @@
                 </a>
                 <a href="https://www.instagram.com/scripty2k/" target="_blank" rel="noopener noreferrer" class="social-link">
                   <span>Instagram</span>
+                  <span>→</span>
+                </a>
+                <a href="https://open.spotify.com/artist/7bc3TWzNRWbVICIjVvGoac?si=BlpiWRiNQ5K2eEik3wrPbA" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <span>Spotify</span>
+                  <span>→</span>
+                </a>
+                <a href="https://soundcloud.com/Scripty2k" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <span>SoundCloud</span>
                   <span>→</span>
                 </a>
               </div>
@@ -296,9 +307,54 @@ export default {
   }
 }
 
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .hero-section {
   padding: 8rem 0 4rem;
   background: #fff0df;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  justify-content: space-between;
+}
+
+.hero-avatar {
+  width: 380px;
+  height: 380px;
+  object-fit: contain;
+  flex-shrink: 0;
+  order: -1;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: slideInRight 0.8s ease-out;
 }
 
 .hero-content h1 {
@@ -517,6 +573,25 @@ export default {
 @media (max-width: 768px) {
   .hero-section {
     padding: 6rem 0 3rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-avatar {
+    width: 240px;
+    height: 240px;
+    order: 0;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
   }
 
   .contact-section {
