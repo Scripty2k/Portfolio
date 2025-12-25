@@ -43,6 +43,8 @@
 
 <script>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import animepfp1 from '../assets/animepfp1.png'
+import animepfp2 from '../assets/animepfp2.png'
 
 export default {
   name: 'Navbar',
@@ -80,7 +82,7 @@ export default {
     }
 
     const currentImage = computed(() => {
-      const images = ['/src/assets/animepfp1.png', '/src/assets/animepfp2.png']
+      const images = [animepfp1, animepfp2]
       return images[imageIndex.value]
     })
 

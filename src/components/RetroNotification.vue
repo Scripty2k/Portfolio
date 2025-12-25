@@ -68,7 +68,7 @@ defineEmits(['close'])
 }
 
 .notification-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3e291a 0%, #3e291a 100%);
   color: white;
   padding: 8px 12px;
   font-size: 12px;
@@ -99,6 +99,8 @@ defineEmits(['close'])
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  padding: 0;
+  min-width: unset;
 }
 
 .minimize {

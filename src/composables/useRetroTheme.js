@@ -103,7 +103,9 @@ export function useRetroTheme() {
       document.documentElement.classList.add('retro-theme')
       notificationMessage.value = 'Changed to retro mode'
       
-      // Audio removed - no longer plays when entering retro mode
+      // Play easter egg sound when switching to retro theme
+      const easterEggAudio = new Audio('/src/assets/easteregg.wav')
+      easterEggAudio.play().catch(err => console.log('Easter egg sound not available:', err))
     } else {
       document.documentElement.classList.remove('retro-theme')
       notificationMessage.value = 'EXITED RETRO MODE'

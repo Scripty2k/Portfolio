@@ -167,6 +167,8 @@
 
 <script>
 import emailjs from '@emailjs/browser'
+import anime from '../assets/anime.png'
+import anime3 from '../assets/anime3.png'
 
 export default {
   name: 'Contact',
@@ -189,7 +191,7 @@ export default {
   },
   computed: {
     currentImage() {
-      const images = ['/src/assets/anime.png', '/src/assets/anime3.png']
+      const images = [anime, anime3]
       return images[this.imageIndex]
     }
   },
