@@ -186,20 +186,29 @@ export default {
       notificationMessage: '',
       notificationType: 'success',
       imageIndex: 0,
-      imageInterval: null
+      imageInterval: null,
+      images: [anime, anime3]
     }
   },
   computed: {
     currentImage() {
-      const images = [anime, anime3]
-      return images[this.imageIndex]
+      return this.images[this.imageIndex]
     }
   },
+  beforeMount() {
+    // Preload images to avoid white flash
+    this.images.forEach(img => {
+      const preload = new Image()
+      preload.src = img
+    })
+  },
   mounted() {
+    // Set initial image immediately to avoid white flash
+    this.imageIndex = 0
     // Start image switching interval every 1.5 seconds
     this.imageInterval = setInterval(() => {
       this.imageIndex = (this.imageIndex + 1) % 2
-    }, 1000)
+    }, 1500)
   },
   beforeUnmount() {
     // Clean up interval when component is destroyed
