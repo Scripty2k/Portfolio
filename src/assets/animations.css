@@ -192,6 +192,44 @@
   }
 }
 
+/* Text Animation Effects */
+@keyframes binaryFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) translateX(0);
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px) translateX(20px);
+  }
+}
+
+@keyframes sparklesBurst {
+  0%, 100% { 
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes underlineReveal {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 /* Utility Classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out;

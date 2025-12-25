@@ -8,7 +8,7 @@
           </h1>
           <p class="hero-subtitle animate-fade-in-up animate-delay-400">Creative Developer</p>
           <div class="hero-description animate-fade-in-up animate-delay-600">
-            <p>Software Developer, Designer, Artist and Hacking Enthusiast.</p>
+            <p><AnimatedDescription /></p>
           </div>
           <div class="hero-actions animate-fade-in-up animate-delay-800">
             <router-link to="/projects" class="btn btn-primary hover-lift">
@@ -93,9 +93,13 @@
 <script>
 import { onMounted, onActivated, reactive, nextTick } from 'vue'
 import { useScrollAnimations } from '../composables/useAnimations.js'
+import AnimatedDescription from '../components/AnimatedDescription.vue'
 
 export default {
   name: 'Home',
+  components: {
+    AnimatedDescription
+  },
   setup() {
     const stats = reactive([
       { number: 20, label: 'Songs produced' },
