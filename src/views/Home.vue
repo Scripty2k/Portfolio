@@ -8,7 +8,7 @@
           </h1>
           <p class="hero-subtitle animate-fade-in-up animate-delay-400">Creative Developer</p>
           <div class="hero-description animate-fade-in-up animate-delay-600">
-            <p>Crafting digital experiences with precision and creativity. Specializing in modern web development and user interface design. But I do more than that :)</p>
+            <p>Software Developer, Designer, Artist and Hacking Enthusiast.</p>
           </div>
           <div class="hero-actions animate-fade-in-up animate-delay-800">
             <router-link to="/projects" class="btn btn-primary hover-lift">
