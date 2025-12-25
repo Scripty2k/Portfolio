@@ -9,7 +9,7 @@
     <section class="hero-section">
       <div class="container">
         <div class="hero-content fade-in-up">
-          <img src="/./src/assets/anime.png" alt="Avatar" class="hero-avatar">
+          <img :src="currentImage" alt="Avatar" class="hero-avatar">
           <div class="hero-text">
             <h1>Contact</h1>
             <p class="hero-subtitle">Let's create something together</p>
@@ -182,7 +182,27 @@ export default {
       isSubmitting: false,
       showNotification: false,
       notificationMessage: '',
-      notificationType: 'success'
+      notificationType: 'success',
+      imageIndex: 0,
+      imageInterval: null
+    }
+  },
+  computed: {
+    currentImage() {
+      const images = ['/src/assets/anime.png', '/src/assets/anime3.png']
+      return images[this.imageIndex]
+    }
+  },
+  mounted() {
+    // Start image switching interval every 1.5 seconds
+    this.imageInterval = setInterval(() => {
+      this.imageIndex = (this.imageIndex + 1) % 2
+    }, 1000)
+  },
+  beforeUnmount() {
+    // Clean up interval when component is destroyed
+    if (this.imageInterval) {
+      clearInterval(this.imageInterval)
     }
   },
   methods: {
@@ -346,15 +366,14 @@ export default {
   height: 380px;
   object-fit: contain;
   flex-shrink: 0;
-  order: -1;
-  animation: slideInLeft 0.8s ease-out;
+  animation: slideInRight 0.8s ease-out;
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  animation: slideInRight 0.8s ease-out;
+  animation: slideInLeft 0.8s ease-out;
 }
 
 .hero-content h1 {
@@ -583,7 +602,7 @@ export default {
   .hero-avatar {
     width: 240px;
     height: 240px;
-    order: 0;
+    order: -1;
   }
 
   .hero-text {

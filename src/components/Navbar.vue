@@ -2,6 +2,7 @@
   <nav class="navbar" :class="{ 'navbar-scrolled': isScrolled }">
     <div class="nav-container">
       <router-link to="/" class="nav-logo hover-target">
+        <img :src="currentImage" alt="Logo" class="logo-image">
         <span class="logo-text" data-text="Scripty2k">
           Scripty2k
           <span class="sparkle sparkle-1">★</span>
@@ -41,13 +42,15 @@
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 export default {
   name: 'Navbar',
   setup() {
     const isMenuOpen = ref(false)
     const isScrolled = ref(false)
+    const imageIndex = ref(0)
+    let imageInterval = null
     
     const navLinks = [
       { name: 'Home', path: '/' },
@@ -76,8 +79,18 @@ export default {
       isScrolled.value = window.scrollY > 50
     }
 
+    const currentImage = computed(() => {
+      const images = ['/src/assets/animepfp1.png', '/src/assets/animepfp2.png']
+      return images[imageIndex.value]
+    })
+
     onMounted(() => {
       window.addEventListener('scroll', handleScroll, { passive: true })
+      
+      // Start image switching interval every 1.5 seconds
+      imageInterval = setInterval(() => {
+        imageIndex.value = (imageIndex.value + 1) % 2
+      }, 1000)
       
       // Close menu on escape key
       document.addEventListener('keydown', (e) => {
@@ -90,6 +103,10 @@ export default {
     onUnmounted(() => {
       window.removeEventListener('scroll', handleScroll)
       document.body.style.overflow = 'auto'
+      // Clean up interval when component is destroyed
+      if (imageInterval) {
+        clearInterval(imageInterval)
+      }
     })
 
     return {
@@ -97,7 +114,9 @@ export default {
       isScrolled,
       navLinks,
       toggleMenu,
-      closeMenu
+      closeMenu,
+      imageIndex,
+      currentImage
     }
   }
 }
@@ -145,6 +164,17 @@ export default {
   text-transform: uppercase;
   position: relative;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-image {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 0.2rem;
+  flex-shrink: 0;
 }
 
 .logo-text {
