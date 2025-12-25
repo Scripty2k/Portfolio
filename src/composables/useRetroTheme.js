@@ -1,4 +1,5 @@
 import { ref, watch, onMounted, onUnmounted } from 'vue'
+import retroSound from '../assets/easteregg.wav'
 
 // Reactive state for theme
 const isRetroMode = ref(false)
@@ -16,7 +17,7 @@ export function useRetroTheme() {
   // Initialize audio
   const initializeAudio = () => {
     if (!retroAudio) {
-      retroAudio = new Audio('/EWTRTW.wav')
+      retroAudio = new Audio(retroSound)
       retroAudio.loop = true
       retroAudio.volume = 0.2 // 20% volume
     }
