@@ -950,3 +950,56 @@
   border: 1px inset #c0c0c0 !important;
   background: #a0a0a0 !important;
 }
+
+/* VHS Overlay Effect */
+.retro-theme::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.03),
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.02),
+      rgba(255, 0, 0, 0.02) 2px,
+      rgba(0, 255, 255, 0.02) 4px,
+      rgba(0, 255, 255, 0.02) 6px
+    );
+  animation: vhs-distort 0.15s infinite;
+}
+
+@keyframes vhs-distort {
+  0% {
+    transform: translateX(0) scaleX(1);
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    transform: translateX(2px) scaleX(1.001);
+  }
+  40% {
+    transform: translateX(-1px) scaleX(0.999);
+    filter: hue-rotate(2deg);
+  }
+  60% {
+    transform: translateX(1px) scaleX(1.001);
+    filter: hue-rotate(-2deg);
+  }
+  80% {
+    transform: translateX(-2px) scaleX(0.999);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+    filter: hue-rotate(0deg);
+  }
+}
