@@ -9,7 +9,7 @@
     <section class="hero-section">
       <div class="container">
         <div class="hero-content fade-in-up">
-          <img :src="currentImage" alt="Avatar" class="hero-avatar">
+          <img :src="currentImage" alt="Avatar" class="hero-avatar" draggable="false">
           <div class="hero-text">
             <h1>Contact</h1>
             <p class="hero-subtitle">Let's create something together</p>
@@ -378,6 +378,8 @@ export default {
   object-fit: contain;
   flex-shrink: 0;
   animation: slideInRight 0.8s ease-out;
+  pointer-events: none;
+  user-select: none;
 }
 
 .hero-text {
