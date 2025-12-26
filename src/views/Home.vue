@@ -104,9 +104,9 @@ export default {
   },
   setup() {
     const stats = reactive([
-      { number: 20, label: 'Songs produced' },
+      { number: 50, label: 'Songs produced' },
       { number: 15, label: 'Videos edited' },
-      { number: 5, label: 'Github projects made' }
+      { number: 20, label: 'Github projects made' }
     ])
 
     const skillCategories = reactive([
