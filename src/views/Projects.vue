@@ -10,6 +10,9 @@
     </section>
 
     <section class="projects-section">
+      <!-- Notification Sticker -->
+      <img v-if="!isRetroMode" :src="notificationImage" alt="notification" class="notification-sticker" />
+      
       <div class="container">
         <!-- Filter Buttons -->
         <div class="filter-buttons reveal">
@@ -210,12 +213,15 @@
 <script>
 import { ref, computed, onMounted, onActivated, nextTick } from 'vue'
 import { useScrollAnimations } from '../composables/useAnimations.js'
+import { useRetroTheme } from '../composables/useRetroTheme.js'
+import notificationImage from '../assets/notification.png'
 
 export default {
   name: 'Projects',
   setup() {
     const activeFilter = ref('All')
     const activeProject = ref(null)
+    const { isRetroMode } = useRetroTheme()
     
     const filters = ['All', 'Software', 'Videos', 'Music', 'Extras']
     
@@ -252,7 +258,7 @@ export default {
           thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
         },
         liveUrl: '#',
-        githubUrl: 'https://github.com/Sint-Lucas/sd4-p13-ambitieproject-2526-Scripty2k'
+        githubUrl: '#'
       },
       {
         id: 23,
@@ -735,7 +741,9 @@ export default {
       onProjectHover,
       onProjectLeave,
       openModal,
-      closeModal
+      closeModal,
+      notificationImage,
+      isRetroMode
     }
   }
 }
@@ -768,6 +776,7 @@ export default {
 
 .projects-section {
   padding: 6rem 0;
+  position: relative;
 }
 
 .filter-buttons {
@@ -1357,6 +1366,32 @@ export default {
 @media (max-width: 480px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .notification-sticker {
+    display: none;
+  }
+}
+
+/* Notification Sticker Styles */
+.notification-sticker {
+  position: absolute;
+  top: -20rem;
+  right: -5rem;
+  max-width: 400px;
+  width: auto;
+  height: auto;
+  z-index: 50;
+  pointer-events: none;
+
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 </style>

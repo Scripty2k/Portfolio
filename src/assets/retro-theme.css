@@ -544,13 +544,41 @@
   }
   
   .retro-theme .nav-menu {
+    position: fixed !important;
+    left: -100% !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
     background: #c0c0c0 !important;
-    border: 2px outset #c0c0c0 !important;
+    border: none !important;
+    border-bottom: 2px inset #c0c0c0 !important;
     backdrop-filter: none !important;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    padding: 8rem 0 3rem !important;
+    z-index: 1000 !important;
+  }
+  
+  .retro-theme .nav-menu.active {
+    left: 0 !important;
+  }
+  
+  .retro-theme .nav-toggle {
+    display: flex !important;
+    z-index: 1001 !important;
   }
   
   .retro-theme .nav-toggle .bar {
     background: #000000 !important;
+  }
+  
+  .retro-theme .mobile-overlay {
+    display: block !important;
+    position: fixed !important;
+    z-index: 999 !important;
+  }
+  
+  .retro-theme .mobile-overlay.active {
+    display: block !important;
   }
   
   .retro-theme .hero {
@@ -678,6 +706,11 @@
   border: 2px inset #c0c0c0 !important;
   background: #a0a0a0 !important;
   transform: none !important;
+}
+
+.retro-theme .projects .project-image {
+  background: #c0c0c0 !important;
+  border: 2px inset #c0c0c0 !important;
 }
 
 .retro-theme .projects .project-window {

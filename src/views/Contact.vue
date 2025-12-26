@@ -38,12 +38,12 @@
                 </a>
               </div>
               
-              <div class="contact-method">
+              <!-- <div class="contact-method">
                 <span class="method-label">Phone</span>
                 <a href="tel:+15551234567" class="method-value">
                   +06 21 87 10 25
                 </a>
-              </div>
+              </div> -->
               
               <div class="contact-method">
                 <span class="method-label">Location</span>

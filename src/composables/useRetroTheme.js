@@ -13,6 +13,40 @@ const notificationMessage = ref('')
 // Audio instance
 let retroAudio = null
 
+// Create retro sparkles
+const createSparkles = () => {
+  const sparkleCount = 30
+  
+  for (let i = 0; i < sparkleCount; i++) {
+    const sparkle = document.createElement('div')
+    sparkle.className = 'retro-sparkle'
+    
+    // Random starting position
+    const startX = Math.random() * window.innerWidth
+    const startY = Math.random() * window.innerHeight
+    
+    // Random travel distance
+    const tx = (Math.random() - 0.5) * 200 + 'px'
+    const ty = (Math.random() - 0.5) * 200 + 'px'
+    
+    // Random delay for staggered effect
+    const delay = Math.random() * 0.3 + 's'
+    
+    sparkle.style.left = startX + 'px'
+    sparkle.style.top = startY + 'px'
+    sparkle.style.setProperty('--tx', tx)
+    sparkle.style.setProperty('--ty', ty)
+    sparkle.style.animationDelay = delay
+    
+    document.body.appendChild(sparkle)
+    
+    // Remove sparkle after animation completes
+    setTimeout(() => {
+      sparkle.remove()
+    }, 900)
+  }
+}
+
 export function useRetroTheme() {
   // Initialize audio
   const initializeAudio = () => {
@@ -96,16 +130,16 @@ export function useRetroTheme() {
     // Toggle theme
     isRetroMode.value = !isRetroMode.value
     
-    // Scroll to top when toggling retro mode
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    
     // Apply/remove retro theme class
     if (isRetroMode.value) {
       document.documentElement.classList.add('retro-theme')
       notificationMessage.value = 'Changed to retro mode'
       
+      // Create sparkles when entering retro mode
+      createSparkles()
+      
       // Play easter egg sound when switching to retro theme
-      const easterEggAudio = new Audio('/src/assets/easteregg.wav')
+      const easterEggAudio = new Audio(retroSound)
       easterEggAudio.play().catch(err => console.log('Easter egg sound not available:', err))
     } else {
       document.documentElement.classList.remove('retro-theme')
@@ -121,6 +155,9 @@ export function useRetroTheme() {
     
     // Wait a bit for theme to apply
     await new Promise(resolve => setTimeout(resolve, 100))
+    
+    // Scroll to top when theme changes
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     
     // Fade back in
     overlay.style.opacity = '0'

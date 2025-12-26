@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+
+
     <section class="hero">
       <div class="container">
         <div class="hero-content reveal">
