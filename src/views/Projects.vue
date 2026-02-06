@@ -128,18 +128,6 @@
                 ></div>
               </div>
               
-              <div class="project-overlay" v-if="project.media.type === 'image'">
-                <div class="project-links">
-                  <router-link :to="`/projects/${project.id}`" class="btn btn-primary project-btn hover-lift" v-if="project.media.type === 'image'">
-                    <span>Read More</span>
-                    <div class="btn-ripple"></div>
-                  </router-link>
-                  <a :href="project.githubUrl" target="_blank" class="btn btn-secondary project-btn hover-lift" v-if="project.githubUrl !== '#'">
-                    <span>View Code</span>
-                    <div class="btn-ripple"></div>
-                  </a>
-                </div>
-              </div>
               <div class="project-status" v-if="project.status">
                 <span class="status-badge" :class="project.status.toLowerCase()">{{ project.status }}</span>
               </div>
@@ -159,6 +147,13 @@
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
                 View on GitHub
+              </a>
+              
+              <a v-if="project.liveUrl && project.liveUrl !== '#'" :href="project.liveUrl" target="_blank" rel="noopener noreferrer" class="project-live-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                View Live Site
               </a>
               
               <a v-if="project.youtubeUrl && project.youtubeUrl !== '#'" :href="project.youtubeUrl" target="_blank" rel="noopener noreferrer" class="project-youtube-link">
@@ -226,6 +221,23 @@ export default {
     const filters = ['All', 'Software', 'Videos', 'Music', 'Extras']
     
     const projects = ref([
+      {
+        id: 26,
+        title: 'MixMatch - Professional Audio Mastering',
+        description: 'A modern web application that automatically masters audio tracks to match professional reference tracks. Built with React, FastAPI, and the Matchering library.',
+        technologies: ["React", "FastAPI", "Python", "Matchering", "Tailwind CSS", "Vite"],
+        year: '2025',
+        type: 'Software',
+        status: '',
+        featured: false,
+        media: {
+          type: 'image',
+          src: 'https://cdn.discordapp.com/attachments/1266172505379573773/1469329798290473035/attachment.gif?ex=69874382&is=6985f202&hm=0be70270a14c6468bc9ebeb122ae643e5bacb125f50880a0c40a10c9f3da4bbd&',
+          thumbnail: 'https://cdn.discordapp.com/attachments/1266172505379573773/1469329798290473035/attachment.gif?ex=69874382&is=6985f202&hm=0be70270a14c6468bc9ebeb122ae643e5bacb125f50880a0c40a10c9f3da4bbd&'
+        },
+        liveUrl: 'https://scripty2k.github.io/MixMatch/',
+        githubUrl: 'https://github.com/Scripty2k/MixMatch'
+      },
       {
         id: 25,
         title: 'The Living Alone App',
@@ -1135,6 +1147,9 @@ export default {
 
 .project-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-meta {
@@ -1170,17 +1185,18 @@ export default {
 }
 
 .project-github-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #292524;
+  color: #2A2524;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.5rem 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   transition: all 0.2s ease;
   border-bottom: 1px solid transparent;
+  width: fit-content;
 }
 
 .project-github-link:hover {
@@ -1196,8 +1212,36 @@ export default {
   transform: translateX(2px);
 }
 
+.project-live-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2A2524;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+}
+
+.project-live-link:hover {
+  color: #666;
+  border-bottom-color: #666;
+}
+
+.project-live-link svg {
+  transition: transform 0.2s ease;
+}
+
+.project-live-link:hover svg {
+  transform: translateX(2px);
+}
+
 .project-youtube-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
   color: #ff0000;
@@ -1208,6 +1252,7 @@ export default {
   margin-bottom: 1rem;
   transition: all 0.2s ease;
   border-bottom: 1px solid transparent;
+  width: fit-content;
 }
 
 .project-youtube-link:hover {
