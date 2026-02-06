@@ -43,14 +43,24 @@
           </div>
 
           <div class="content-sidebar">
-            <div class="info-card">
+            <div 
+              class="info-card parallax-card" 
+              @mousemove="handleMouseMove"
+              @mouseleave="handleMouseLeave"
+              ref="card1"
+            >
               <h3>What I'm busy with right now</h3>
               <ul>
                 <li>-</li>
               </ul>
             </div>
 
-            <div class="info-card">
+            <div 
+              class="info-card parallax-card" 
+              @mousemove="handleMouseMove"
+              @mouseleave="handleMouseLeave"
+              ref="card2"
+            >
               <h3>Experience</h3>
               <div class="experience-item">
                 <span class="year">2024 - 2025</span>
@@ -65,7 +75,12 @@
               </div>
             </div>
 
-            <div class="info-card">
+            <div 
+              class="info-card parallax-card" 
+              @mousemove="handleMouseMove"
+              @mouseleave="handleMouseLeave"
+              ref="card3"
+            >
               <h3>Education</h3>
               <div class="education-item">
                 <span class="degree">Software Developer ENG/NL</span>
@@ -129,7 +144,27 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+  methods: {
+    handleMouseMove(e) {
+      const card = e.currentTarget;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = ((y - centerY) / centerY) * -10;
+      const rotateY = ((x - centerX) / centerX) * 10;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    },
+    handleMouseLeave(e) {
+      const card = e.currentTarget;
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    }
+  }
 }
 </script>
 
@@ -177,7 +212,18 @@ export default {
 .text-block h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #292524;
+ 
+
+.parallax-card {
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.parallax-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+} color: #292524;
   margin-bottom: 1.5rem;
 }
 
