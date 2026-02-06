@@ -33,9 +33,15 @@
             <div class="contact-methods">
               <div class="contact-method">
                 <span class="method-label">Email</span>
-                <a href="mailto:your.email@example.com" class="method-value">
+                <span 
+                  class="method-value email-copy"
+                  @click="copyEmail"
+                  @mouseenter="showTooltip = true"
+                  @mouseleave="showTooltip = false"
+                >
                   scripty2k@gmail.com
-                </a>
+                  <span v-if="showTooltip" class="tooltip">{{ tooltipText }}</span>
+                </span>
               </div>
               
               <!-- <div class="contact-method">
@@ -187,7 +193,9 @@ export default {
       notificationType: 'success',
       imageIndex: 0,
       imageInterval: null,
-      images: [anime, anime3]
+      images: [anime, anime3],
+      showTooltip: false,
+      tooltipText: 'copy?'
     }
   },
   computed: {
@@ -278,6 +286,18 @@ export default {
       setTimeout(() => {
         this.showNotification = false
       }, 5000)
+    },
+    async copyEmail() {
+      try {
+        await navigator.clipboard.writeText('scripty2k@gmail.com')
+        this.tooltipText = 'Copied to clipboard!'
+        setTimeout(() => {
+          this.tooltipText = 'copy?'
+          this.showTooltip = false
+        }, 1500)
+      } catch (err) {
+        console.error('Failed to copy:', err)
+      }
     }
   }
 }
@@ -463,6 +483,50 @@ export default {
 
 .method-value:hover {
   opacity: 0.6;
+}
+
+.email-copy {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  padding: 6px 12px;
+  background: #292524;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 400;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: tooltipFadeIn 0.2s ease;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: #292524;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 4px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 .social-section h3 {

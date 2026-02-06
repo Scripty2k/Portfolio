@@ -11,7 +11,7 @@
 
     <section class="projects-section">
       <!-- Notification Sticker -->
-      <img v-if="!isRetroMode" :src="notificationImage" alt="notification" class="notification-sticker" />
+      <!-- <img v-if="!isRetroMode" :src="notificationImage" alt="notification" class="notification-sticker" /> -->
       
       <div class="container">
         <!-- Filter Buttons -->

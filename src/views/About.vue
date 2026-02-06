@@ -54,21 +54,21 @@
               <h3>Experience</h3>
               <div class="experience-item">
                 <span class="year">2024 - 2025</span>
-                <span class="role">Internship: Odoo Developer</span>
-                <span class="company">NHMB Software</span>
+                <span class="role">Internship: Odoo/Python Developer</span>
+                <span class="company">NHMB Software, Zevenaar</span>
               </div>
 
               <div class="experience-item">
                 <span class="year">2023</span>
                 <span class="role">Promotional video for Rhion</span>
-                <span class="company">Rhion</span>
+                <span class="company">Rhion, Eindhoven</span>
               </div>
             </div>
 
             <div class="info-card">
               <h3>Education</h3>
               <div class="education-item">
-                <span class="degree">Software Developer MBO Niveau 4 (ENG/NL)</span>
+                <span class="degree">Software Developer ENG/NL</span>
                 <span class="school">Sintlucas Eindhoven</span>
                 <span class="year">2022 - 2026</span>
               </div>
