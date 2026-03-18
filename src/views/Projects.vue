@@ -232,8 +232,8 @@ export default {
         featured: false,
         media: {
           type: 'image',
-          src: 'https://cdn.discordapp.com/attachments/1266172505379573773/1469329798290473035/attachment.gif?ex=69874382&is=6985f202&hm=0be70270a14c6468bc9ebeb122ae643e5bacb125f50880a0c40a10c9f3da4bbd&',
-          thumbnail: 'https://cdn.discordapp.com/attachments/1266172505379573773/1469329798290473035/attachment.gif?ex=69874382&is=6985f202&hm=0be70270a14c6468bc9ebeb122ae643e5bacb125f50880a0c40a10c9f3da4bbd&'
+          src: 'https://cdn.discordapp.com/attachments/1266172505379573773/1469329798290473035/attachment.gif?ex=69bbff82&is=69baae02&hm=a9437dd60fe06bb5a21f21e32455c3ba7acace6940bac645a3e9097e1dc40444&',
+          thumbnail: 'https://cdn.discordapp.com/attachments/1266172505379573773/1469329798290473035/attachment.gif?ex=69bbff82&is=69baae02&hm=a9437dd60fe06bb5a21f21e32455c3ba7acace6940bac645a3e9097e1dc40444&'
         },
         liveUrl: 'https://scripty2k.github.io/MixMatch/',
         githubUrl: 'https://github.com/Scripty2k/MixMatch'
@@ -769,6 +769,12 @@ export default {
 .hero-section {
   padding: 8rem 0 4rem;
   background: #fff0df;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero-content h1 {

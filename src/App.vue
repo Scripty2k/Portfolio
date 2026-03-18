@@ -97,7 +97,16 @@ body {
 }
 
 body.loaded {
-  animation: fadeInUp 0.8s ease-out;
+  animation: pageFadeIn 0.45s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #app {

@@ -255,6 +255,8 @@ export default {
 
 .hero-content {
   max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
   position: relative;
   z-index: 2;
 }
@@ -653,9 +655,28 @@ export default {
     min-height: 90vh;
   }
 
+  .hero-content {
+    width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-description {
+    max-width: 28rem;
+    margin: 0 auto 2.5rem;
+  }
+
+  .hero-description p {
+    text-align: center;
+  }
+
   .hero-actions {
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 20rem;
+    margin: 0 auto;
   }
 
   .btn {
@@ -693,6 +714,20 @@ export default {
 
   .floating-elements {
     display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero {
+    padding-top: 3.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 3.6rem);
+  }
+
+  .hero-subtitle {
+    margin-bottom: 2rem;
   }
 }
 

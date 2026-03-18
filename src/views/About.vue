@@ -2,7 +2,7 @@
   <div class="about">
     <section class="hero-section">
       <div class="container">
-        <div class="hero-content fade-in-up">
+        <div class="hero-content animate-fade-in-up">
           <h1>About</h1>
           <p class="hero-subtitle">Developer, Designer, Artist</p>
         </div>
@@ -44,19 +44,23 @@
 
           <div class="content-sidebar">
             <div 
-              class="info-card parallax-card" 
+              class="info-card parallax-card reveal-scale animate-delay-200" 
               @mousemove="handleMouseMove"
               @mouseleave="handleMouseLeave"
               ref="card1"
             >
               <h3>What I'm busy with right now</h3>
               <ul>
-                <li>-</li>
+                              <div class="experience-item">
+                <span class="year">2026</span>
+                <span class="role">Currently following an internship at Hyperconnected in Nijmegen as a web developer.</span>
+                <span class="company">Nijmegen</span>
+              </div>
               </ul>
             </div>
 
             <div 
-              class="info-card parallax-card" 
+              class="info-card parallax-card reveal-scale animate-delay-400" 
               @mousemove="handleMouseMove"
               @mouseleave="handleMouseLeave"
               ref="card2"
@@ -76,7 +80,7 @@
             </div>
 
             <div 
-              class="info-card parallax-card" 
+              class="info-card parallax-card reveal-scale animate-delay-600" 
               @mousemove="handleMouseMove"
               @mouseleave="handleMouseLeave"
               ref="card3"
@@ -143,26 +147,51 @@
 </template>
 
 <script>
+import { onMounted, onActivated, nextTick } from 'vue'
+import { useScrollAnimations } from '../composables/useAnimations.js'
+
 export default {
   name: 'About',
-  methods: {
-    handleMouseMove(e) {
-      const card = e.currentTarget;
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      const rotateX = ((y - centerY) / centerY) * -10;
-      const rotateY = ((x - centerX) / centerX) * 10;
-      
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-    },
-    handleMouseLeave(e) {
-      const card = e.currentTarget;
-      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+  setup() {
+    const { initScrollAnimations } = useScrollAnimations()
+
+    const handleMouseMove = (e) => {
+      const card = e.currentTarget
+      const rect = card.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+
+      const centerX = rect.width / 2
+      const centerY = rect.height / 2
+
+      const rotateX = ((y - centerY) / centerY) * -10
+      const rotateY = ((x - centerX) / centerX) * 10
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`
+    }
+
+    const handleMouseLeave = (e) => {
+      const card = e.currentTarget
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)'
+    }
+
+    const initializeAnimations = () => {
+      nextTick(() => {
+        initScrollAnimations()
+      })
+    }
+
+    onMounted(() => {
+      initializeAnimations()
+    })
+
+    onActivated(() => {
+      initializeAnimations()
+    })
+
+    return {
+      handleMouseMove,
+      handleMouseLeave
     }
   }
 }
@@ -176,6 +205,10 @@ export default {
 .hero-section {
   padding: 8rem 0 4rem;
   background: #fff0df;
+}
+
+.hero-content {
+  text-align: center;
 }
 
 .hero-content h1 {
@@ -212,7 +245,9 @@ export default {
 .text-block h2 {
   font-size: 1.5rem;
   font-weight: 600;
- 
+  color: #292524;
+  margin-bottom: 1.5rem;
+}
 
 .parallax-card {
   transition: transform 0.4s ease, box-shadow 0.3s ease;
@@ -223,8 +258,6 @@ export default {
 
 .parallax-card:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-} color: #292524;
-  margin-bottom: 1.5rem;
 }
 
 .text-block p {
