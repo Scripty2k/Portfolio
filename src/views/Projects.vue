@@ -232,8 +232,8 @@ export default {
         featured: false,
         media: {
           type: 'image',
-          src: 'https://cdn.discordapp.com/attachments/1266172505379573773/1469329798290473035/attachment.gif?ex=69bbff82&is=69baae02&hm=a9437dd60fe06bb5a21f21e32455c3ba7acace6940bac645a3e9097e1dc40444&',
-          thumbnail: 'https://cdn.discordapp.com/attachments/1266172505379573773/1469329798290473035/attachment.gif?ex=69bbff82&is=69baae02&hm=a9437dd60fe06bb5a21f21e32455c3ba7acace6940bac645a3e9097e1dc40444&'
+          src: 'https://i.imgur.com/aKfSPTb.gif',
+          thumbnail: 'https://i.imgur.com/aKfSPTb.gif'
         },
         liveUrl: 'https://scripty2k.github.io/MixMatch/',
         githubUrl: 'https://github.com/Scripty2k/MixMatch'
