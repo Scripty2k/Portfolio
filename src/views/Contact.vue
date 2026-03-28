@@ -66,10 +66,10 @@
                   <span>GitHub</span>
                   <span>→</span>
                 </a>
-                <a href="https://www.linkedin.com/in/amal-rahimli-46971226b/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <!-- <a href="https://www.linkedin.com/in/amal-rahimli-46971226b/" target="_blank" rel="noopener noreferrer" class="social-link">
                   <span>LinkedIn</span>
                   <span>→</span>
-                </a>
+                </a> -->
                 <a href="https://www.youtube.com/@scripty2k" target="_blank" rel="noopener noreferrer" class="social-link">
                   <span>Youtube</span>
                   <span>→</span>
