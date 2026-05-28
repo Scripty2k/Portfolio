@@ -41,9 +41,25 @@
         <div class="intro-grid">
           <div class="intro-text reveal-left">
             <h2 class="section-title">About me</h2>
-            <p class="intro-paragraph">I'm a passionate developer who loves to create 
-              stuff with my creativity and coding skills. I have a knack for developing but also designing online projects!
+            <p class="intro-paragraph">
+              I'm a passionate developer who loves to create stuff with my creativity and coding skills.
+              I have a knack for developing but also designing online projects!
               I enjoy making creative projects like music and videos in my free time.
+            </p>
+            <br>
+            <p>
+              Dynamic and solution-driven Full-Stack Developer with a strong foundation in digital media,
+              cybersecurity, webdeveloping, sound production and cinematography.
+            </p>
+            <br>
+            <p>
+              Combines technical expertise with a highly strategic mindset to build optimized, scalable web
+              applications and innovative digital content.
+            </p>
+            <br>
+            <p>
+              Recognized for excellent communication skills, collaborative problem-solving, and the ability to
+              proactively deliver strategic recommendations that elevate project outcomes.
             </p>
           </div>
           <div class="intro-stats reveal-right">
