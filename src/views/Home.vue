@@ -13,13 +13,11 @@
             <p><AnimatedDescription /></p>
           </div>
           <div class="hero-actions animate-fade-in-up animate-delay-800">
-            <router-link to="/projects" class="btn btn-primary hover-lift">
+            <router-link to="/projects" class="btn btn-primary">
               <span>View Work</span>
-              <div class="btn-ripple"></div>
             </router-link>
-            <router-link to="/contact" class="btn btn-secondary hover-lift">
+            <router-link to="/contact" class="btn btn-secondary">
               <span>Get In Touch</span>
-              <div class="btn-ripple"></div>
             </router-link>
           </div>
         </div>
@@ -111,19 +109,19 @@ export default {
 
     const skillCategories = reactive([
       {
-        icon: '💻',
-        title: 'Frontend',
-        skills: ['Vue / Vite', 'Typescript', 'Modern CSS', 'WebGL / Three.js'],
+        icon: '',
+        title: 'CLI & Systems',
+        skills: ['Linux', 'CLI', 'Git', 'Bash', 'SQL', 'SSH', 'Docker'],
       },
       {
-        icon: '⚙️',
-        title: 'Coding Skills',
-        skills: ['Python', 'C#', 'HTML/CSS', 'JavaScript'],
+        icon: '',
+        title: 'Frontend Architecture',
+        skills: ['Vue.js', 'Vite', 'Typescript', 'Three.js', 'Tailwind CSS', 'React'],
       },
       {
-        icon: '🎨',
-        title: 'Design',
-        skills: ['Figma / Adobe XD', 'Adobe After Effects', 'Premiere Pro', 'Touch Designer'],
+        icon: '',
+        title: 'Backend Architecture',
+        skills: ['PHP', 'Node.js', 'JavaScript', 'SQL'],
       }
     ])
 

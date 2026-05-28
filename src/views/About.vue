@@ -4,7 +4,7 @@
       <div class="container">
         <div class="hero-content animate-fade-in-up">
           <h1>About</h1>
-          <p class="hero-subtitle">Developer, Designer, Artist</p>
+          <p class="hero-subtitle">What am I doing at the moment?</p>
         </div>
       </div>
     </section>
@@ -15,6 +15,10 @@
           <div class="content-main">
             <div class="text-block">
               <h2>What I make</h2>
+              <p>
+                Dynamic and solution-driven Full-Stack Developer with a strong foundation in digital media, 
+                cybersecurity, webdeveloping, sound production and cinematography.</p>
+                <br>
               <p>
                 I make digital products like websites, web apps, and interactive experiences. 
                 I also create music and videos as a hobby. My goal is to blend creativity with technology
@@ -39,6 +43,8 @@
                 Every project starts with understanding the problem deeply, then crafting 
                 solutions that are both technically sound and visually compelling.
               </p>
+              <br>
+              <p>Recognized for excellent communication skills, collaborative problem-solving, and the ability to proactively deliver strategic recommendations that elevate project outcomes.</p>
             </div>
           </div>
 
@@ -51,9 +57,17 @@
             >
               <h3>What I'm busy with right now</h3>
               <ul>
-                              <div class="experience-item">
+                <div class="experience-item">
                 <span class="year">2026</span>
-                <span class="role">Currently following an internship at Hyperconnected in Nijmegen as a web developer.</span>
+                <span class="role">Wordpress Web-Developer at Hyperconnected</span>
+                <span class="company">Nijmegen</span>
+              </div>
+              </ul>
+              <br>
+                <ul>
+                <div class="experience-item">
+                <span class="year">2026</span>
+                <span class="role">Busy with my COMPTIA+ certification</span>
                 <span class="company">Nijmegen</span>
               </div>
               </ul>
@@ -68,14 +82,14 @@
               <h3>Experience</h3>
               <div class="experience-item">
                 <span class="year">2024 - 2025</span>
-                <span class="role">Internship: Odoo/Python Developer</span>
-                <span class="company">NHMB Software, Zevenaar</span>
+                <span class="role">Odoo/Python Developer at NHMB Software</span>
+                <span class="company">Arnhem</span>
               </div>
 
               <div class="experience-item">
                 <span class="year">2023</span>
-                <span class="role">Promotional video for Rhion</span>
-                <span class="company">Rhion, Eindhoven</span>
+                <span class="role">Promo Video for Rhion</span>
+                <span class="company">Eindhoven</span>
               </div>
             </div>
 
@@ -101,35 +115,45 @@
       <div class="container">
         <h2>Technical Expertise</h2>
         <div class="skills-categories">
+
+
           <div class="skill-group">
-            <h3>Languages</h3>
+            <h3>CLI & Systems</h3>
             <div class="skill-list">
-              <span>JavaScript</span>
-              <span>C#</span>
-              <span>Python</span>
-              <span>HTML/CSS</span>
+              <span>Linux</span>
+              <span>CLI</span>
+              <span>Git</span>
+              <span>Bash</span>
+              <span>SQL</span>
+              <span>SSH</span>
+              <span>Docker</span>
             </div>
           </div>
           
           <div class="skill-group">
-            <h3>Frontend</h3>
+            <h3>Frontend Architecture</h3>
             <div class="skill-list">
               <span>Vue.js</span>
-              <span>React</span>
+              <span>Vite</span>
+              <span>Typescript</span>
               <span>Three.js</span>
+              <span>Tailwind CSS</span>
+              <span>React</span>
             </div>
           </div>
           
           <div class="skill-group">
-            <h3>Backend</h3>
+            <h3>Backend Architecture</h3>
             <div class="skill-list">
+              <span>PHP</span>
               <span>Node.js</span>
-              <span>PostgreSQL</span>
+              <span>Javascript</span>
+              <span>SQL</span>
             </div>
           </div>
           
           <div class="skill-group">
-            <h3>Tools</h3>
+            <h3>Tools I'm familiar with</h3>
             <div class="skill-list">
               <span>Git</span>
               <span>Docker</span>
@@ -138,6 +162,11 @@
               <span>Premiere Pro</span>
               <span>Touch Designer</span>
               <span>FL Studio</span>
+              <span>Ableton Live</span>
+              <span>Davinci Resolve</span>
+              <span>Warp</span>
+              <span>TablePlus</span>
+              <span>Postman</span>
             </div>
           </div>
         </div>

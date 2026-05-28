@@ -450,7 +450,7 @@ export default {
 .info-block p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #666;
+  color: #292524;
 }
 
 .contact-methods {
