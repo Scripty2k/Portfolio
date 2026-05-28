@@ -4,7 +4,8 @@ import RetroToggleButton from './components/RetroToggleButton.vue'
 import RetroNotification from './components/RetroNotification.vue'
 import { useScrollAnimations, useScrollProgress } from './composables/useAnimations.js'
 import { useRetroTheme } from './composables/useRetroTheme.js'
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
+import { supabase } from './lib/supabase'
 
 // Initialize scroll animations
 useScrollAnimations()
@@ -14,6 +15,44 @@ const { scrollProgress } = useScrollProgress()
 
 // Retro theme functionality
 const { isRetroMode, showNotification, notificationMessage } = useRetroTheme()
+
+const globalNoticeMessage = ref('')
+const isNoticeDismissed = ref(false)
+const showGlobalNotice = computed(() => {
+  return globalNoticeMessage.value.trim().length > 0 && !isNoticeDismissed.value
+})
+
+let noticeChannel = null
+
+const applyGlobalNotice = (record) => {
+  if (record && record.is_active && record.message) {
+    globalNoticeMessage.value = record.message
+    isNoticeDismissed.value = false
+    return
+  }
+
+  globalNoticeMessage.value = ''
+  isNoticeDismissed.value = false
+}
+
+const fetchGlobalNotice = async () => {
+  const { data, error } = await supabase
+    .from('global_notifications')
+    .select('message, is_active')
+    .eq('id', 1)
+    .maybeSingle()
+
+  if (error) {
+    applyGlobalNotice(null)
+    return
+  }
+
+  applyGlobalNotice(data)
+}
+
+const dismissGlobalNotice = () => {
+  isNoticeDismissed.value = true
+}
 
 // Scroll to top function
 const scrollToTop = () => {
@@ -30,11 +69,31 @@ onMounted(() => {
   
   // Add loading animation to body
   document.body.classList.add('loaded')
+
+  fetchGlobalNotice()
+
+  noticeChannel = supabase
+    .channel('global-notifications')
+    .on(
+      'postgres_changes',
+      { event: '*', schema: 'public', table: 'global_notifications', filter: 'id=eq.1' },
+      (payload) => {
+        applyGlobalNotice(payload.new)
+      }
+    )
+    .subscribe()
+})
+
+onUnmounted(() => {
+  if (noticeChannel) {
+    supabase.removeChannel(noticeChannel)
+    noticeChannel = null
+  }
 })
 </script>
 
 <template>
-  <div id="app">
+  <div id="app" :class="{ 'has-global-notice': showGlobalNotice }">
     <!-- Retro Theme Notification -->
     <RetroNotification 
       :show="showNotification"
@@ -42,6 +101,17 @@ onMounted(() => {
       :is-retro-mode="isRetroMode"
       @close="showNotification = false"
     />
+
+    <transition name="global-notice">
+      <div v-if="showGlobalNotice" class="global-notice">
+        <div class="global-notice__content">
+          <span class="global-notice__text">{{ globalNoticeMessage }}</span>
+          <button class="global-notice__close" type="button" @click="dismissGlobalNotice">
+            ×
+          </button>
+        </div>
+      </div>
+    </transition>
     
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress">
@@ -112,22 +182,99 @@ body.loaded {
 #app {
   min-height: 100vh;
   position: relative;
+  --global-banner-height: 0px;
+}
+
+#app.has-global-notice {
+  --global-banner-height: 48px;
 }
 
 .main-content {
-  margin-top: 83px;
-  min-height: calc(100vh - 83px);
+  margin-top: calc(83px + var(--global-banner-height, 0px));
+  min-height: calc(100vh - 83px - var(--global-banner-height, 0px));
 }
 
 /* Scroll Progress Bar */
 .scroll-progress {
   position: fixed;
-  top: 0;
+  top: var(--global-banner-height, 0px);
   left: 0;
   width: 100%;
   height: 3px;
   background: rgba(0, 0, 0, 0.1);
   z-index: 9999;
+}
+
+/* Global notification banner */
+.global-notice {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11000;
+  background: #e2574c;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.global-notice__content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.global-notice__text {
+  line-height: 1.4;
+}
+
+.global-notice__close {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.global-notice__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.global-notice__close:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.global-notice-enter-active,
+.global-notice-leave-active {
+  transition: all 0.25s ease;
+}
+
+.global-notice-enter-from,
+.global-notice-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  #app.has-global-notice {
+    --global-banner-height: 60px;
+  }
+
+  .global-notice__content {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 .scroll-progress-bar {

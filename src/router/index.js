@@ -5,6 +5,9 @@ import About from '../views/About.vue'
 import Projects from '../views/Projects.vue'
 import ProjectDetail from '../views/ProjectDetail.vue'
 import Contact from '../views/Contact.vue'
+import SecretLogin from '../views/SecretLogin.vue'
+import SecretPanel from '../views/SecretPanel.vue'
+import { supabase } from '../lib/supabase'
 
 const routes = [
   {
@@ -31,6 +34,17 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/scripty2k-secret',
+    name: 'SecretLogin',
+    component: SecretLogin
+  },
+  {
+    path: '/scripty2k-secret/panel',
+    name: 'SecretPanel',
+    component: SecretPanel,
+    meta: { requiresAuth: true }
   }
 ]
 
@@ -49,6 +63,22 @@ const router = createRouter({
       }
     })
   }
+})
+
+router.beforeEach(async (to, from, next) => {
+  if (!to.meta.requiresAuth) {
+    next()
+    return
+  }
+
+  const { data: { session } } = await supabase.auth.getSession()
+
+  if (!session) {
+    next({ name: 'SecretLogin' })
+    return
+  }
+
+  next()
 })
 
 export default router
