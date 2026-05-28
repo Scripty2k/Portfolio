@@ -1,7 +1,7 @@
 <template>
   <section class="secret-login">
     <div class="secret-card">
-      <h1>Scripty2k Secret</h1>
+      <h1>Login</h1>
       <p class="hint">Admin access only</p>
       <form @submit.prevent="signIn">
         <label class="field">

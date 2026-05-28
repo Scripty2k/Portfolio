@@ -1,7 +1,7 @@
 <template>
   <section class="secret-panel">
     <div class="panel-card">
-      <h1>Scripty2k Secret</h1>
+      <h1>Super secret panel</h1>
       <p class="status">You are signed in.</p>
       <button class="btn btn-primary" type="button" @click="signOut">
         Logout

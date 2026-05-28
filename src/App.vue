@@ -192,6 +192,15 @@ body.loaded {
 .main-content {
   margin-top: calc(83px + var(--global-banner-height, 0px));
   min-height: calc(100vh - 83px - var(--global-banner-height, 0px));
+  transition: margin-top 0.25s ease;
+}
+
+#app .navbar {
+  position: fixed;
+  top: calc(var(--global-banner-height, 0px) + 3px) !important;
+  left: 0;
+  right: 0;
+  transition: top 0.25s ease;
 }
 
 /* Scroll Progress Bar */
@@ -203,6 +212,7 @@ body.loaded {
   height: 3px;
   background: rgba(0, 0, 0, 0.1);
   z-index: 9999;
+  transition: top 0.25s ease;
 }
 
 /* Global notification banner */
@@ -257,13 +267,13 @@ body.loaded {
 
 .global-notice-enter-active,
 .global-notice-leave-active {
-  transition: all 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .global-notice-enter-from,
 .global-notice-leave-to {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-100%);
 }
 
 @media (max-width: 768px) {
