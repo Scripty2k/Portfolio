@@ -29,6 +29,49 @@
           {{ noticeStatus }}
         </p>
       </div>
+
+      <div class="status-admin">
+        <h2>Availability status</h2>
+        <p class="notice-help">Update the current status text and the dot color.</p>
+        <div class="status-controls">
+          <input
+            v-model.trim="statusText"
+            class="notice-input"
+            type="text"
+            placeholder="Current status text"
+            :disabled="isStatusSaving"
+          />
+          <input
+            v-model.trim="statusDescription"
+            class="notice-input"
+            type="text"
+            placeholder="Status description"
+            :disabled="isStatusSaving"
+          />
+          <div class="status-toggle">
+            <span class="toggle-label">Dot color</span>
+            <div class="toggle-options">
+              <button
+                v-for="option in statusColorOptions"
+                :key="option"
+                type="button"
+                class="toggle-option"
+                :class="{ active: statusColor === option }"
+                :disabled="isStatusSaving"
+                @click="statusColor = option"
+              >
+                {{ option }}
+              </button>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="button" :disabled="isStatusSaving" @click="saveStatus">
+            Save status
+          </button>
+        </div>
+        <p v-if="statusStatus" class="notice-status" :class="{ error: statusStatusType === 'error' }">
+          {{ statusStatus }}
+        </p>
+      </div>
     </div>
   </section>
 </template>
@@ -43,6 +86,13 @@ const notificationText = ref('')
 const isSaving = ref(false)
 const noticeStatus = ref('')
 const noticeStatusType = ref('')
+const statusText = ref('Open to collaboration')
+const statusDescription = ref('Currently looking for collabs and jobs in the future!')
+const statusColor = ref('green')
+const statusColorOptions = ['green', 'yellow', 'red']
+const isStatusSaving = ref(false)
+const statusStatus = ref('')
+const statusStatusType = ref('')
 
 const signOut = async () => {
   await supabase.auth.signOut()
@@ -52,6 +102,11 @@ const signOut = async () => {
 const setStatus = (message, type = 'success') => {
   noticeStatus.value = message
   noticeStatusType.value = type
+}
+
+const setAvailabilityStatus = (message, type = 'success') => {
+  statusStatus.value = message
+  statusStatusType.value = type
 }
 
 const saveNotification = async () => {
@@ -102,6 +157,41 @@ const clearNotification = async () => {
   isSaving.value = false
 }
 
+const saveStatus = async () => {
+  const statusMessage = statusText.value.trim()
+  const statusDetail = statusDescription.value.trim()
+
+  if (!statusMessage || !statusDetail) {
+    setAvailabilityStatus('Please enter both status fields.', 'error')
+    return
+  }
+
+  if (!statusColorOptions.includes(statusColor.value)) {
+    setAvailabilityStatus('Please select a valid status color.', 'error')
+    return
+  }
+
+  isStatusSaving.value = true
+  const { error } = await supabase
+    .from('availability_status')
+    .upsert({
+      id: 1,
+      status_text: statusMessage,
+      status_description: statusDetail,
+      status_color: statusColor.value,
+      updated_at: new Date().toISOString()
+    })
+
+  if (error) {
+    console.error('Availability status update failed:', error)
+    setAvailabilityStatus(`Failed to update availability status: ${error.message}`, 'error')
+  } else {
+    setAvailabilityStatus('Availability status updated.')
+  }
+
+  isStatusSaving.value = false
+}
+
 onMounted(async () => {
   const { data } = await supabase
     .from('global_notifications')
@@ -111,6 +201,20 @@ onMounted(async () => {
 
   if (data && data.is_active && data.message) {
     notificationText.value = data.message
+  }
+
+  const { data: statusData } = await supabase
+    .from('availability_status')
+    .select('status_text, status_description, status_color')
+    .eq('id', 1)
+    .maybeSingle()
+
+  if (statusData) {
+    statusText.value = statusData.status_text || statusText.value
+    statusDescription.value = statusData.status_description || statusDescription.value
+    if (statusData.status_color && statusColorOptions.includes(statusData.status_color)) {
+      statusColor.value = statusData.status_color
+    }
   }
 })
 </script>
@@ -145,6 +249,14 @@ onMounted(async () => {
   gap: 1rem;
 }
 
+.status-admin {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(41, 37, 36, 0.1);
+  display: grid;
+  gap: 1rem;
+}
+
 .notice-admin h2 {
   font-size: 1.4rem;
   font-weight: 700;
@@ -158,6 +270,49 @@ onMounted(async () => {
 .notice-controls {
   display: grid;
   gap: 0.75rem;
+}
+
+.status-controls {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.status-toggle {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  color: #7a6f6a;
+}
+
+.toggle-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.toggle-option {
+  border: 1px solid rgba(41, 37, 36, 0.2);
+  background: #fff;
+  color: #292524;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-option.active {
+  background: #292524;
+  color: #fff;
+}
+
+.toggle-option:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .notice-input {

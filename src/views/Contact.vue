@@ -161,10 +161,10 @@
       <div class="container">
         <div class="availability-content">
           <div class="status-indicator">
-            <div class="status-dot"></div>
-            <span>Current status: Open to collaboration</span>
+            <div :class="['status-dot', `status-dot--${statusColor}`]"></div>
+            <span>Current status: {{ statusText }}</span>
           </div>
-          <p>Currently looking for collabs and jobs in the future!</p>
+          <p>{{ statusDescription }}</p>
         </div>
       </div>
     </section>
@@ -175,6 +175,7 @@
 import emailjs from '@emailjs/browser'
 import anime from '../assets/anime.png'
 import anime3 from '../assets/anime3.png'
+import { supabase } from '../lib/supabase'
 
 export default {
   name: 'Contact',
@@ -195,7 +196,10 @@ export default {
       imageInterval: null,
       images: [anime, anime3],
       showTooltip: false,
-      tooltipText: 'copy?'
+      tooltipText: 'copy?',
+      statusText: 'Open to collaboration',
+      statusDescription: 'Currently looking for collabs and jobs in the future!',
+      statusColor: 'green'
     }
   },
   computed: {
@@ -217,6 +221,8 @@ export default {
     this.imageInterval = setInterval(() => {
       this.imageIndex = (this.imageIndex + 1) % 2
     }, 1500)
+
+    this.loadAvailabilityStatus()
   },
   beforeUnmount() {
     // Clean up interval when component is destroyed
@@ -225,6 +231,23 @@ export default {
     }
   },
   methods: {
+    async loadAvailabilityStatus() {
+      const { data } = await supabase
+        .from('availability_status')
+        .select('status_text, status_description, status_color')
+        .eq('id', 1)
+        .maybeSingle()
+
+      if (!data) {
+        return
+      }
+
+      this.statusText = data.status_text || this.statusText
+      this.statusDescription = data.status_description || this.statusDescription
+      if (['green', 'yellow', 'red'].includes(data.status_color)) {
+        this.statusColor = data.status_color
+      }
+    },
     async submitForm() {
       this.isSubmitting = true
       
@@ -654,6 +677,18 @@ export default {
   background: #00ff00;
   border-radius: 50%;
   animation: pulse 2s infinite;
+}
+
+.status-dot--green {
+  background: #00c853;
+}
+
+.status-dot--yellow {
+  background: #fbbf24;
+}
+
+.status-dot--red {
+  background: #ef4444;
 }
 
 @keyframes pulse {
