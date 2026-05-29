@@ -677,18 +677,22 @@ export default {
   background: #00ff00;
   border-radius: 50%;
   animation: pulse 2s infinite;
+  box-shadow: 0 0 8px rgba(0, 200, 83, 0.55);
 }
 
 .status-dot--green {
   background: #00c853;
+  box-shadow: 0 0 10px rgba(0, 200, 83, 0.55);
 }
 
 .status-dot--yellow {
   background: #fbbf24;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.55);
 }
 
 .status-dot--red {
   background: #ef4444;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.55);
 }
 
 @keyframes pulse {

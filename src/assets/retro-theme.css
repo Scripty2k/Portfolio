@@ -893,19 +893,25 @@
 .retro-theme .contact .status-dot {
   background: #00ff00 !important;
   border: 1px solid #008000 !important;
-  box-shadow: 0 0 4px #00ff00 !important;
+  box-shadow: 0 0 8px #00ff00 !important;
 }
 
 .retro-theme .contact .status-dot--green {
   background: #00ff00 !important;
   border-color: #008000 !important;
-  box-shadow: 0 0 4px #00ff00 !important;
+  box-shadow: 0 0 10px #00ff00 !important;
 }
 
 .retro-theme .contact .status-dot--yellow {
   background: #ffff00 !important;
   border-color: #808000 !important;
-  box-shadow: 0 0 4px #ffff00 !important;
+  box-shadow: 0 0 10px #ffff00 !important;
+}
+
+.retro-theme .contact .status-dot--red {
+  background: #ff0000 !important;
+  border-color: #800000 !important;
+  box-shadow: 0 0 10px #ff0000 !important;
 }
 
 .retro-theme .contact .status-dot--red {
