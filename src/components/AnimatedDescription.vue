@@ -9,7 +9,6 @@
         currentActiveIndex === index ? 'active' : ''
       ]"
     >
-      <!-- Binary falling animation -->
       <span v-if="part.type === 'binary'" class="text-with-effect">
         {{ part.text }}
         <span 
@@ -29,7 +28,6 @@
         </span>
       </span>
 
-      <!-- Sparkles animation -->
       <span v-else-if="part.type === 'sparkles'" class="text-with-effect">
         {{ part.text }}
         <span 
@@ -49,20 +47,17 @@
         </span>
       </span>
 
-      <!-- Underline reveal animation -->
       <span v-else-if="part.type === 'underline'" class="text-with-underline">
         {{ part.text }}
         <span class="underline-mark"></span>
       </span>
 
-      <!-- Glitch animation -->
       <span v-else-if="part.type === 'glitch'" class="text-with-glitch">
         <span class="glitch-text">{{ part.text }}</span>
         <span class="glitch-text glitch-clone glitch-clone-1">{{ part.text }}</span>
         <span class="glitch-text glitch-clone glitch-clone-2">{{ part.text }}</span>
       </span>
 
-      <!-- Default text -->
       <span v-else>{{ part.text }}</span>
     </div>
   </div>

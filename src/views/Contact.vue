@@ -44,13 +44,6 @@
                 </span>
               </div>
               
-              <!-- <div class="contact-method">
-                <span class="method-label">Phone</span>
-                <a href="tel:+15551234567" class="method-value">
-                  +06 21 87 10 25
-                </a>
-              </div> -->
-              
               <div class="contact-method">
                 <span class="method-label">Location</span>
                 <span class="method-value">
@@ -208,16 +201,13 @@ export default {
     }
   },
   beforeMount() {
-    // Preload images to avoid white flash
     this.images.forEach(img => {
       const preload = new Image()
       preload.src = img
     })
   },
   mounted() {
-    // Set initial image immediately to avoid white flash
     this.imageIndex = 0
-    // Start image switching interval every 1.5 seconds
     this.imageInterval = setInterval(() => {
       this.imageIndex = (this.imageIndex + 1) % 2
     }, 1500)
@@ -225,7 +215,6 @@ export default {
     this.loadAvailabilityStatus()
   },
   beforeUnmount() {
-    // Clean up interval when component is destroyed
     if (this.imageInterval) {
       clearInterval(this.imageInterval)
     }

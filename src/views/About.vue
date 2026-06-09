@@ -16,8 +16,11 @@
             <div class="text-block">
               <h2>What I make</h2>
               <p>
-                Dynamic and solution-driven Full-Stack Developer with a strong foundation in digital media, 
-                cybersecurity, webdeveloping, sound production and cinematography.</p>
+                I'm a dynamic full-stack developer who thrives on solving tricky problems and building cool 
+                things online. Beyond coding, I’ve got a deep love for all things digital media. I'm always 
+                blending technical web development and cybersecurity with my creative sides, like sound production 
+                and cinematography. I love mixing logic with creativity to craft unique digital experiences from start 
+                to finish!</p>
                 <br>
               <p>
                 I make digital products like websites, web apps, and interactive experiences. 
