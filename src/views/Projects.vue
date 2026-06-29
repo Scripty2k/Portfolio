@@ -222,6 +222,21 @@ export default {
     
     const projects = ref([
       {
+        id: 27,
+        title: 'Look for the Light - A Short Film',
+        description: 'A short film I made on my free time. The clips I used was purely from the game "The Last of Us Part II". I made this film to show my love for the game and to show my skills in video editing. I used Premiere Pro and After Effects for this project.',
+        technologies: ["Premiere Pro", "After Effects", "FL Studio", "Touch Designer"],
+        year: '2026',
+        type: 'Videos',
+        status: '',
+        featured: false,
+        media: {
+          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
+          src: 'mfjHfZlRBg4', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
+          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
+        },
+      },
+      {
         id: 26,
         title: 'MixMatch - Professional Audio Mastering',
         description: 'A modern web application that automatically masters audio tracks to match professional reference tracks. Built with React, FastAPI, and the Matchering library.',
