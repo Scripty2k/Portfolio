@@ -222,6 +222,23 @@ export default {
     
     const projects = ref([
       {
+        id: 28,
+        title: 'Siobhan Moors Portfolio',
+        description: 'A portfolio website I made for a friend named Siobhan Moors. Mainly based on Vue.js and Tailwind CSS. Also equipped with a custom Admin Panel to manage the content of the website. I also made a custom CMS for this project.',
+        technologies: ["Vue.js", "Tailwind CSS", "Supabase", "Typescript"],
+        year: '2026',
+        type: 'Software',
+        status: '',
+        featured: false,
+        media: {
+          type: 'image',
+          src: 'https://i.postimg.cc/G90LRW7b/image.png',
+          thumbnail: 'https://i.postimg.cc/G90LRW7b/image.png'
+        },
+        liveUrl: 'https://scripty2k.github.io/VonniePorto/',
+        githubUrl: 'https://github.com/Scripty2k/VonniePorto'
+      },
+      {
         id: 27,
         title: 'Look for the Light - A Short Film',
         description: 'A short film I made on my free time. The clips I used was purely from the game "The Last of Us Part II". I made this film to show my love for the game and to show my skills in video editing. I used Premiere Pro and After Effects for this project.',
