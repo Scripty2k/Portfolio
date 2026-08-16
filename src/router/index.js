@@ -7,7 +7,7 @@ import ProjectDetail from '../views/ProjectDetail.vue'
 import Contact from '../views/Contact.vue'
 import SecretLogin from '../views/SecretLogin.vue'
 import SecretPanel from '../views/SecretPanel.vue'
-import { supabase } from '../lib/supabase'
+import { account } from '../lib/appwrite'
 
 const routes = [
   {
@@ -71,14 +71,12 @@ router.beforeEach(async (to, from, next) => {
     return
   }
 
-  const { data: { session } } = await supabase.auth.getSession()
-
-  if (!session) {
+  try {
+    await account.get()
+    next()
+  } catch {
     next({ name: 'SecretLogin' })
-    return
   }
-
-  next()
 })
 
 export default router

@@ -24,7 +24,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { supabase } from '../lib/supabase'
+import { account } from '../lib/appwrite'
 
 const router = useRouter()
 const email = ref('')
@@ -36,27 +36,30 @@ const signIn = async () => {
   error.value = ''
   isLoading.value = true
 
-  const { data, error: authError } = await supabase.auth.signInWithPassword({
-    email: email.value,
-    password: password.value
-  })
+  try {
+    try {
+      await account.deleteSession('current')
+    } catch {
+      // Ignore if no active session
+    }
 
-  isLoading.value = false
-
-  if (authError) {
-    error.value = authError.message
-    return
-  }
-
-  if (data.session) {
+    await account.createEmailPasswordSession(email.value, password.value)
     router.push('/scripty2k-secret/panel')
+  } catch (authError) {
+    error.value = authError.message || 'Login failed. Please check your credentials.'
+  } finally {
+    isLoading.value = false
   }
 }
 
 onMounted(async () => {
-  const { data: { session } } = await supabase.auth.getSession()
-  if (session) {
-    router.replace('/scripty2k-secret/panel')
+  try {
+    const sessionUser = await account.get()
+    if (sessionUser) {
+      router.replace('/scripty2k-secret/panel')
+    }
+  } catch {
+    // User is not logged in
   }
 })
 </script>

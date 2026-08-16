@@ -5,7 +5,7 @@ import RetroNotification from './components/RetroNotification.vue'
 import { useScrollAnimations, useScrollProgress } from './composables/useAnimations.js'
 import { useRetroTheme } from './composables/useRetroTheme.js'
 import { onMounted, onUnmounted, ref, computed } from 'vue'
-import { supabase } from './lib/supabase'
+import { client, databases, APPWRITE_DATABASE_ID, APPWRITE_COLLECTION_NOTIFICATIONS } from './lib/appwrite'
 
 // Initialize scroll animations
 useScrollAnimations()
@@ -22,7 +22,7 @@ const showGlobalNotice = computed(() => {
   return globalNoticeMessage.value.trim().length > 0 && !isNoticeDismissed.value
 })
 
-let noticeChannel = null
+let unsubscribeNotice = null
 
 const applyGlobalNotice = (record) => {
   if (record && record.is_active && record.message) {
@@ -36,18 +36,16 @@ const applyGlobalNotice = (record) => {
 }
 
 const fetchGlobalNotice = async () => {
-  const { data, error } = await supabase
-    .from('global_notifications')
-    .select('message, is_active')
-    .eq('id', 1)
-    .maybeSingle()
-
-  if (error) {
+  try {
+    const data = await databases.getDocument(
+      APPWRITE_DATABASE_ID,
+      APPWRITE_COLLECTION_NOTIFICATIONS,
+      '1'
+    )
+    applyGlobalNotice(data)
+  } catch {
     applyGlobalNotice(null)
-    return
   }
-
-  applyGlobalNotice(data)
 }
 
 const dismissGlobalNotice = () => {
@@ -72,22 +70,24 @@ onMounted(() => {
 
   fetchGlobalNotice()
 
-  noticeChannel = supabase
-    .channel('global-notifications')
-    .on(
-      'postgres_changes',
-      { event: '*', schema: 'public', table: 'global_notifications', filter: 'id=eq.1' },
-      (payload) => {
-        applyGlobalNotice(payload.new)
+  try {
+    unsubscribeNotice = client.subscribe(
+      `databases.${APPWRITE_DATABASE_ID}.collections.${APPWRITE_COLLECTION_NOTIFICATIONS}.documents`,
+      (response) => {
+        if (response.payload && (response.payload.$id === '1' || response.payload.id === 1)) {
+          applyGlobalNotice(response.payload)
+        }
       }
     )
-    .subscribe()
+  } catch (err) {
+    console.error('Appwrite subscription error:', err)
+  }
 })
 
 onUnmounted(() => {
-  if (noticeChannel) {
-    supabase.removeChannel(noticeChannel)
-    noticeChannel = null
+  if (unsubscribeNotice) {
+    unsubscribeNotice()
+    unsubscribeNotice = null
   }
 })
 </script>

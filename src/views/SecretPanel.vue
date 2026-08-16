@@ -79,7 +79,13 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { onMounted, ref } from 'vue'
-import { supabase } from '../lib/supabase'
+import {
+  account,
+  databases,
+  APPWRITE_DATABASE_ID,
+  APPWRITE_COLLECTION_NOTIFICATIONS,
+  APPWRITE_COLLECTION_STATUS
+} from '../lib/appwrite'
 
 const router = useRouter()
 const notificationText = ref('')
@@ -95,7 +101,11 @@ const statusStatus = ref('')
 const statusStatusType = ref('')
 
 const signOut = async () => {
-  await supabase.auth.signOut()
+  try {
+    await account.deleteSession('current')
+  } catch (err) {
+    console.error('Logout error:', err)
+  }
   router.push('/scripty2k-secret')
 }
 
@@ -109,6 +119,17 @@ const setAvailabilityStatus = (message, type = 'success') => {
   statusStatusType.value = type
 }
 
+const upsertDocument = async (colId, docId, data) => {
+  try {
+    return await databases.updateDocument(APPWRITE_DATABASE_ID, colId, docId, data)
+  } catch (error) {
+    if (error.code === 404) {
+      return await databases.createDocument(APPWRITE_DATABASE_ID, colId, docId, data)
+    }
+    throw error
+  }
+}
+
 const saveNotification = async () => {
   const message = notificationText.value.trim()
 
@@ -118,43 +139,35 @@ const saveNotification = async () => {
   }
 
   isSaving.value = true
-  const { error } = await supabase
-    .from('global_notifications')
-    .upsert({
-      id: 1,
+  try {
+    await upsertDocument(APPWRITE_COLLECTION_NOTIFICATIONS, '1', {
       message,
-      is_active: true,
-      updated_at: new Date().toISOString()
+      is_active: true
     })
-
-  if (error) {
-    setStatus('Failed to publish the notification.', 'error')
-  } else {
     setStatus('Notification published globally.')
+  } catch (error) {
+    console.error('Failed to save notification:', error)
+    setStatus('Failed to publish the notification: ' + (error.message || 'Error'), 'error')
+  } finally {
+    isSaving.value = false
   }
-
-  isSaving.value = false
 }
 
 const clearNotification = async () => {
   isSaving.value = true
   notificationText.value = ''
-  const { error } = await supabase
-    .from('global_notifications')
-    .upsert({
-      id: 1,
+  try {
+    await upsertDocument(APPWRITE_COLLECTION_NOTIFICATIONS, '1', {
       message: '',
-      is_active: false,
-      updated_at: new Date().toISOString()
+      is_active: false
     })
-
-  if (error) {
-    setStatus('Failed to remove the notification.', 'error')
-  } else {
     setStatus('Notification removed globally.')
+  } catch (error) {
+    console.error('Failed to clear notification:', error)
+    setStatus('Failed to remove the notification: ' + (error.message || 'Error'), 'error')
+  } finally {
+    isSaving.value = false
   }
-
-  isSaving.value = false
 }
 
 const saveStatus = async () => {
@@ -172,49 +185,50 @@ const saveStatus = async () => {
   }
 
   isStatusSaving.value = true
-  const { error } = await supabase
-    .from('availability_status')
-    .upsert({
-      id: 1,
+  try {
+    await upsertDocument(APPWRITE_COLLECTION_STATUS, '1', {
       status_text: statusMessage,
       status_description: statusDetail,
-      status_color: statusColor.value,
-      updated_at: new Date().toISOString()
+      status_color: statusColor.value
     })
-
-  if (error) {
-    console.error('Availability status update failed:', error)
-    setAvailabilityStatus(`Failed to update availability status: ${error.message}`, 'error')
-  } else {
     setAvailabilityStatus('Availability status updated.')
+  } catch (error) {
+    console.error('Availability status update failed:', error)
+    setAvailabilityStatus(`Failed to update availability status: ${error.message || 'Error'}`, 'error')
+  } finally {
+    isStatusSaving.value = false
   }
-
-  isStatusSaving.value = false
 }
 
 onMounted(async () => {
-  const { data } = await supabase
-    .from('global_notifications')
-    .select('message, is_active')
-    .eq('id', 1)
-    .maybeSingle()
-
-  if (data && data.is_active && data.message) {
-    notificationText.value = data.message
+  try {
+    const data = await databases.getDocument(
+      APPWRITE_DATABASE_ID,
+      APPWRITE_COLLECTION_NOTIFICATIONS,
+      '1'
+    )
+    if (data && data.is_active && data.message) {
+      notificationText.value = data.message
+    }
+  } catch {
+    // Document does not exist or fetch failed
   }
 
-  const { data: statusData } = await supabase
-    .from('availability_status')
-    .select('status_text, status_description, status_color')
-    .eq('id', 1)
-    .maybeSingle()
-
-  if (statusData) {
-    statusText.value = statusData.status_text || statusText.value
-    statusDescription.value = statusData.status_description || statusDescription.value
-    if (statusData.status_color && statusColorOptions.includes(statusData.status_color)) {
-      statusColor.value = statusData.status_color
+  try {
+    const statusData = await databases.getDocument(
+      APPWRITE_DATABASE_ID,
+      APPWRITE_COLLECTION_STATUS,
+      '1'
+    )
+    if (statusData) {
+      statusText.value = statusData.status_text || statusText.value
+      statusDescription.value = statusData.status_description || statusDescription.value
+      if (statusData.status_color && statusColorOptions.includes(statusData.status_color)) {
+        statusColor.value = statusData.status_color
+      }
     }
+  } catch {
+    // Document does not exist or fetch failed
   }
 })
 </script>

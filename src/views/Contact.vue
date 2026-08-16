@@ -168,7 +168,7 @@
 import emailjs from '@emailjs/browser'
 import anime from '../assets/anime.png'
 import anime3 from '../assets/anime3.png'
-import { supabase } from '../lib/supabase'
+import { databases, APPWRITE_DATABASE_ID, APPWRITE_COLLECTION_STATUS } from '../lib/appwrite'
 
 export default {
   name: 'Contact',
@@ -221,20 +221,22 @@ export default {
   },
   methods: {
     async loadAvailabilityStatus() {
-      const { data } = await supabase
-        .from('availability_status')
-        .select('status_text, status_description, status_color')
-        .eq('id', 1)
-        .maybeSingle()
+      try {
+        const data = await databases.getDocument(
+          APPWRITE_DATABASE_ID,
+          APPWRITE_COLLECTION_STATUS,
+          '1'
+        )
 
-      if (!data) {
-        return
-      }
+        if (!data) return
 
-      this.statusText = data.status_text || this.statusText
-      this.statusDescription = data.status_description || this.statusDescription
-      if (['green', 'yellow', 'red'].includes(data.status_color)) {
-        this.statusColor = data.status_color
+        this.statusText = data.status_text || this.statusText
+        this.statusDescription = data.status_description || this.statusDescription
+        if (['green', 'yellow', 'red'].includes(data.status_color)) {
+          this.statusColor = data.status_color
+        }
+      } catch (error) {
+        console.error('Failed to load availability status from Appwrite:', error)
       }
     },
     async submitForm() {
