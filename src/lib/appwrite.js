@@ -17,3 +17,4 @@ export const databases = new Databases(client)
 export const APPWRITE_DATABASE_ID = import.meta.env.VITE_APPWRITE_DATABASE_ID || 'portfolio_db'
 export const APPWRITE_COLLECTION_NOTIFICATIONS = import.meta.env.VITE_APPWRITE_COLLECTION_NOTIFICATIONS || 'global_notifications'
 export const APPWRITE_COLLECTION_STATUS = import.meta.env.VITE_APPWRITE_COLLECTION_STATUS || 'availability_status'
+export const APPWRITE_COLLECTION_PROJECTS = import.meta.env.VITE_APPWRITE_COLLECTION_PROJECTS || 'projects'

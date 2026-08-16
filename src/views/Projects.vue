@@ -129,7 +129,7 @@
               </div>
               
               <div class="project-status" v-if="project.status">
-                <span class="status-badge" :class="project.status.toLowerCase()">{{ project.status }}</span>
+                <span class="status-badge" :class="project.status.toLowerCase().replace(/[^a-z0-9]/g, '-')">{{ project.status }}</span>
               </div>
             </div>
             
@@ -210,6 +210,9 @@ import { ref, computed, onMounted, onActivated, nextTick } from 'vue'
 import { useScrollAnimations } from '../composables/useAnimations.js'
 import { useRetroTheme } from '../composables/useRetroTheme.js'
 import notificationImage from '../assets/notification.png'
+import { staticProjects } from '../data/staticProjects.js'
+import { databases, APPWRITE_DATABASE_ID, APPWRITE_COLLECTION_PROJECTS } from '../lib/appwrite.js'
+import { Query } from 'appwrite'
 
 export default {
   name: 'Projects',
@@ -220,504 +223,44 @@ export default {
     
     const filters = ['All', 'Software', 'Videos', 'Music', 'Extras']
     
-    const projects = ref([
-      {
-        id: 28,
-        title: 'Siobhan Moors Portfolio',
-        description: 'A portfolio website I made for a friend named Siobhan Moors. Mainly based on Vue.js and Tailwind CSS. Also equipped with a custom Admin Panel to manage the content of the website. I also made a custom CMS for this project.',
-        technologies: ["Vue.js", "Tailwind CSS", "Supabase", "Typescript"],
-        year: '2026',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'image',
-          src: 'https://i.postimg.cc/G90LRW7b/image.png',
-          thumbnail: 'https://i.postimg.cc/G90LRW7b/image.png'
-        },
-        liveUrl: 'https://scripty2k.github.io/VonniePorto/',
-        githubUrl: 'https://github.com/Scripty2k/VonniePorto'
-      },
-      {
-        id: 27,
-        title: 'Look for the Light - A Short Film',
-        description: 'A short film I made on my free time. The clips I used was purely from the game "The Last of Us Part II". I made this film to show my love for the game and to show my skills in video editing. I used Premiere Pro and After Effects for this project.',
-        technologies: ["Premiere Pro", "After Effects", "FL Studio", "Touch Designer"],
-        year: '2026',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: 'mfjHfZlRBg4', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-      },
-      {
-        id: 26,
-        title: 'MixMatch - Professional Audio Mastering',
-        description: 'A modern web application that automatically masters audio tracks to match professional reference tracks. Built with React, FastAPI, and the Matchering library.',
-        technologies: ["React", "FastAPI", "Python", "Matchering", "Tailwind CSS", "Vite"],
-        year: '2025',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'image',
-          src: 'https://i.imgur.com/aKfSPTb.gif',
-          thumbnail: 'https://i.imgur.com/aKfSPTb.gif'
-        },
-        liveUrl: 'https://scripty2k.github.io/MixMatch/',
-        githubUrl: 'https://github.com/Scripty2k/MixMatch'
-      },
-      {
-        id: 25,
-        title: 'The Living Alone App',
-        description: 'A student portal for students, by students. A portal made for students to help them with their daily life as a student.',
-        technologies: ["Vue.js", "Typescript", "Supabase"],
-        year: '2025',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: 'vK1bwyFzyU4', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: 'https://github.com/Sint-Lucas/sd4-p14-schoolproject-2526-quinten-samed-amal'
-      },
-      {
-        id: 24,
-        title: 'Everything Became a Memory',
-        description: 'A stress test project just to test my limits of my computer',
-        technologies: ["Premiere Pro", "My Camcorder", "Friends"],
-        year: '2025',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: 'Cueuojq0cnE', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 23,
-        title: 'Musixx (a music sharing platform)',
-        description: 'A music sharing platform made for musicians to share their music with others.',
-        technologies: ["Vue.js", "SQLite", "Node.js"],
-        year: '2025',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: '9U6u32QvY6s', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: 'https://github.com/Sint-Lucas/sd4-p13-ambitieproject-2526-Scripty2k'
-      },
-      {
-        id: 22,
-        title: 'Moving art collage',
-        description: 'Some experimental video I made.',
-        technologies: ["After Effects"],
-        year: '2025',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: 'C0b4vRg2Phc', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#',
-        youtubeUrl: 'https://www.youtube.com/watch?v=C724xlKPBAw',
-        youtubeText: 'See timelapse here'
-      },
-      {
-        id: 21,
-        title: 'Vonnie',
-        description: 'Another short video made for fun. This will have a remaster soon.',
-        technologies: ["After Effects", "My camcorder", "Friends"],
-        year: '2025',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: 'F69JaJSa11Q', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#',
-        youtubeUrl: 'https://www.youtube.com/watch?v=cDkq7Mj3o6k',
-        youtubeText: 'See timelapse here'
-      },
-      {
-        id: 20,
-        title: 'Hugging is Healthy',
-        description: 'This was a video I made just for fun.',
-        technologies: ["After Effects", "My camcorder", "Friends"],
-        year: '2025',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: 'n5809vp8osw', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 1,
-        title: 'Three.JS portfolio inspiration',
-        description: 'This was meant for school. But I was kinda proud of it really. This is just a simple portfolio website made with Three.JS. I looked into a lot of inspiration from other portfolios. But I made it all by myself. I used Three.JS, HTML and CSS for this project.',
-        technologies: ["HTML", "CSS", "Vue", "Three.js"],
-        year: '2025',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', 'behance', or 'soundcloud'
-          src: 'Pntq3SkYDwU', // image URL, YouTube video ID, Behance project ID, or SoundCloud track ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: 'https://github.com/Scripty2k/LABS-Threejs'
-      },
-      {
-        id: 2,
-        title: 'Albert Heijn Team Project',
-        description: 'This is somewhat of a team project I made for school. This was pretty hard to make since this was my first time working with threejs. I learned a lot from this project. I used Three.JS, HTML and CSS but also Vue.',
-        technologies: ["HTML", "CSS", "Vue", "Three.js"],
-        year: '2025',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'GpmbK_LvCYk', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: 'https://github.com/Sint-Lucas/sd3-p12-md-project-2425-kotcha'
-      },
-      {
-        id: 3,
-        title: 'Y2K Webshop template',
-        description: 'A template for a webshop inspired by Y2K aesthetics.',
-        technologies: ["HTML", "CSS", "JavaScript"],
-        year: '2025',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'hGOvk1YhLvw', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 4,
-        title: 'Python Youtube link downloader',
-        description: 'A Python script that downloads videos from YouTube.',
-        technologies: ["Python", "YouTube API"],
-        year: '2025',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: '7lFg5ilmqxs', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 5,
-        title: 'Siobhan',
-        description: 'A paper Y2K stop motion video I made for a friend named Siobhan!',
-        technologies: ["After Effects",],
-        year: '2025',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'hzeElRKMWtg', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 6,
-        title: 'Interlinked.',
-        description: 'Touch Designer project made for a school assignment.',
-        technologies: ['Premiere Pro', "After Effects", "Touch Designer"],
-        year: '2025',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'NzEBrPx4qJg', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 7,
-        title: 'Scrolling Addiction',
-        description: 'Short video about how people are addicted to scrolling on their phones.',
-        technologies: ['Premiere Pro', "After Effects"],
-        year: '2025',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'N_3nH3pBlOY', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 8,
-        title: 'Promo video Rhion',
-        description: 'First Promotional video I made for a company called Rhion. This was my first ever paid video project.',
-        technologies: ['Premiere Pro',],
-        year: '2022',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: '5WeISIkfJHk', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 9,
-        title: 'First ever video trailer',
-        description: 'I was pursuing my passion to be a Youtuber. So I made a trailer for my channel. This was my first ever video project.',
-        technologies: ['Premiere Pro',],
-        year: '2024',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'Dt-vbX9A6Mg', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 10,
-        title: 'Drug Abuse Awareness (School Project)',
-        description: 'A short video made to raise awareness about the dangers of drug abuse.',
-        technologies: ['Premiere Pro',],
-        year: '2022',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image', 'youtube', or 'behance'
-          src: 'Dm3Yw9ZEm_I', // image URL, YouTube video ID, or Behance project ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 11,
-        title: 'Stealing costs money (School Project)',
-        description: 'A short video made to raise awareness about the dangers of kleptomania.',
-        technologies: ['Adobe Creative Suite', 'Figma', 'UI/UX Design'],
-        year: '2022',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'behance', // 'image', 'youtube', or 'behance'
-          src: '169057961/Campagne-stelen#', // Behance project ID/slug (from URL: behance.net/gallery/98765432/creative-portfolio-showcase)
-          thumbnail: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop&crop=center' // Preview image
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 12,
-        title: 'VR Archery Game',
-        description: 'A virtual reality archery game developed for Oculus Quest.',
-        technologies: ['Unity', 'C#', 'Oculus SDK'],
-        year: '2024',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image' or 'youtube'
-          src: 'xCQke4C4oLg', // image URL or YouTube video ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail for YouTube
-        },
-        liveUrl: '#',
-        githubUrl: 'https://github.com/Sint-Lucas/final-project-p8-thedreamybulls'
-      },
-      {
-        id: 13,
-        title: 'Happy New Year 2023',
-        description: 'Another short clip with my friends',
-        technologies: ['Premiere Pro', 'My friends :3',],
-        year: '2023',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image' or 'youtube'
-          src: 'EczBldXtH3g', // image URL or YouTube video ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail for YouTube
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 14,
-        title: 'First cinematographify video',
-        description: 'I slowly leaned into this style of video making. Kinda liked it.',
-        technologies: ['Premiere Pro', 'My friends :3',],
-        year: '2022',
-        type: 'Videos',
-        status: '',
-        featured: true,
-        media: {
-          type: 'youtube', // 'image' or 'youtube'
-          src: 'GdFD5vfXDNo', // image URL or YouTube video ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail for YouTube
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 15,
-        title: 'Mobile top down game',
-        description: 'My first ever mobile game. This was just especially to aim to the functionality of the game ',
-        technologies: ['Game Development', 'C#',],
-        year: '2022',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image' or 'youtube'
-          src: 'XrxuqIFutug', // image URL or YouTube video ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail for YouTube
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 16,
-        title: 'Personality assignment',
-        description: 'I made a game for the subject called personality I had from previous year. This game was to show everything I was proud of.',
-        technologies: ['Game Development', 'C#', 'After Effects',],
-        year: '2022',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image' or 'youtube'
-          src: 'A4yL5Cy8NkI', // image URL or YouTube video ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail for YouTube
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-        {
-        id: 17,
-        title: 'Summer 2022',
-        description: 'Summer 2022 changed me. I made a video about it. I realized that friends are temporarily. So I made this video at first for myself to remind myself that I need to appreciate my time. A couple days later, my friends were upset about their enviorment, school, situations, etc. So I showed them this. They loved it.',
-        technologies: ['Premiere Pro',],
-        year: '2022',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image' or 'youtube'
-          src: 'hOtaf72imtg', // image URL or YouTube video ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail for YouTube
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 18,
-        title: 'Raspberry Pi Bad USB',
-        description: 'A tool that turns a Raspberry Pi into a Bad USB device for penetration testing and security research. But this time harmless.',
-        technologies: ['Raspberry Pi', 'Physical Computing', 'Python',],
-        year: '2022',
-        type: 'Software',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube', // 'image' or 'youtube'
-          src: '2hnbO9eQyyE', // image URL or YouTube video ID
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // fallback thumbnail for YouTube
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-      {
-        id: 19,
-        title: 'First video project',
-        description: 'My first ever video project with no plans, no experience, just looking back at life',
-        technologies: ['Video Editing', 'Premiere Pro'],
-        year: '2020',
-        type: 'Videos',
-        status: '',
-        featured: false,
-        media: {
-          type: 'youtube',
-          src: 'nQOleL_YGs0', // YouTube video ID (from URL: youtube.com/watch?v=dQw4w9WgXcQ)
-          thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg' // YouTube thumbnail
-        },
-        liveUrl: '#',
-        githubUrl: '#'
-      },
-    ])
+    const projects = ref(staticProjects)
 
-    const filteredProjects = computed(() => {
-      if (activeFilter.value === 'All') {
-        return projects.value
+    const mapDocumentToProject = (doc) => {
+      let techs = []
+      if (Array.isArray(doc.technologies)) {
+        techs = doc.technologies
+      } else if (typeof doc.technologies === 'string') {
+        techs = doc.technologies.split(',').map(t => t.trim()).filter(Boolean)
       }
-      return projects.value.filter(project => project.type === activeFilter.value)
-    })
 
-    const setFilter = (filter) => {
-      activeFilter.value = filter
-      // Reset animations when filter changes
+      return {
+        id: doc.$id || doc.id,
+        title: doc.title || '',
+        description: doc.description || '',
+        technologies: techs,
+        year: doc.year || '',
+        type: doc.type || 'Software',
+        status: doc.status || '',
+        featured: Boolean(doc.featured),
+        media: {
+          type: doc.media_type || 'image',
+          src: doc.media_src || '',
+          thumbnail: doc.media_thumbnail || doc.media_src || ''
+        },
+        liveUrl: doc.live_url || '#',
+        githubUrl: doc.github_url || '#',
+        youtubeUrl: doc.youtube_url || '',
+        youtubeText: doc.youtube_text || ''
+      }
+    }
+
+    const triggerReanimation = () => {
       nextTick(() => {
         resetAnimations()
         setTimeout(() => {
           const { initScrollAnimations } = useScrollAnimations()
           initScrollAnimations()
           
-          // Manually trigger revealed state for visible elements
           const revealElements = document.querySelectorAll('.projects-grid .reveal-scale')
           revealElements.forEach(el => {
             const rect = el.getBoundingClientRect()
@@ -730,12 +273,48 @@ export default {
       })
     }
 
+    const loadProjectsFromAppwrite = async () => {
+      try {
+        const response = await databases.listDocuments(
+          APPWRITE_DATABASE_ID,
+          APPWRITE_COLLECTION_PROJECTS,
+          [Query.limit(100)]
+        )
+
+        if (response && response.documents && response.documents.length > 0) {
+          const docs = [...response.documents]
+          docs.sort((a, b) => {
+            const valA = typeof a.order_num === 'number' ? a.order_num : 99999
+            const valB = typeof b.order_num === 'number' ? b.order_num : 99999
+            return valA - valB
+          })
+          projects.value = docs.map(mapDocumentToProject)
+        }
+      } catch (err) {
+        console.warn('Appwrite projects query note (using local list as fallback):', err.message || err)
+      } finally {
+        triggerReanimation()
+      }
+    }
+
+    const filteredProjects = computed(() => {
+      if (activeFilter.value === 'All') {
+        return projects.value
+      }
+      return projects.value.filter(project => project.type === activeFilter.value)
+    })
+
+    const setFilter = (filter) => {
+      activeFilter.value = filter
+      triggerReanimation()
+    }
+
     const onProjectHover = (projectId) => {
-      // Add hover effects here
+      // Add hover effects here if needed
     }
 
     const onProjectLeave = () => {
-      // Remove hover effects here
+      // Remove hover effects here if needed
     }
 
     const openModal = (project) => {
@@ -749,7 +328,6 @@ export default {
     }
 
     const resetAnimations = () => {
-      // Reset all reveal elements
       const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
       revealElements.forEach(el => {
         el.classList.remove('revealed')
@@ -758,9 +336,7 @@ export default {
 
     const initializeAnimations = () => {
       resetAnimations()
-      
       nextTick(() => {
-        // Re-initialize scroll animations
         const { initScrollAnimations } = useScrollAnimations()
         initScrollAnimations()
       })
@@ -768,11 +344,12 @@ export default {
 
     onMounted(() => {
       initializeAnimations()
+      loadProjectsFromAppwrite()
     })
 
-    // This hook is called every time the component is reactivated (when navigating back)
     onActivated(() => {
       initializeAnimations()
+      loadProjectsFromAppwrite()
     })
 
     return {
@@ -1349,48 +926,95 @@ export default {
 
 .project-status {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.25rem;
+  right: 1.25rem;
   z-index: 10;
+  pointer-events: none;
 }
 
 .status-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: #2d2d2d;
-  border-radius: 20px;
+  padding: 0.45rem 0.85rem;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .status-badge::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: currentColor;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot 1.8s ease-in-out infinite;
 }
 
-.status-badge.work.in.progress {
-  color: #10b981;
+/* Green dot & text for Live / Online / Active */
+.status-badge[class*="live"]::before,
+.status-badge[class*="online"]::before,
+.status-badge[class*="active"]::before {
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+.status-badge[class*="live"],
+.status-badge[class*="online"],
+.status-badge[class*="active"] {
+  color: #6ee7b7;
 }
 
-.status-badge.work.in.progress::before {
-  animation: blink 1.5s ease-in-out infinite;
+/* Amber/Orange dot & text for W.I.P / Work in progress */
+.status-badge[class*="wip"]::before,
+.status-badge[class*="w-i-p"]::before,
+.status-badge[class*="progress"]::before {
+  background: #fbbf24;
+  box-shadow: 0 0 8px #fbbf24;
+}
+.status-badge[class*="wip"],
+.status-badge[class*="w-i-p"],
+.status-badge[class*="progress"] {
+  color: #fde68a;
 }
 
-@keyframes blink {
+/* Blue dot & text for Completed / Done */
+.status-badge[class*="complete"]::before,
+.status-badge[class*="done"]::before {
+  background: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+}
+.status-badge[class*="complete"],
+.status-badge[class*="done"] {
+  color: #93c5fd;
+}
+
+/* Purple dot for Concept / Soon */
+.status-badge[class*="concept"]::before,
+.status-badge[class*="soon"]::before {
+  background: #a855f7;
+  box-shadow: 0 0 8px #a855f7;
+}
+.status-badge[class*="concept"],
+.status-badge[class*="soon"] {
+  color: #e9d5ff;
+}
+
+@keyframes pulse-dot {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
   }
   50% {
-    opacity: 0.3;
+    opacity: 0.4;
     transform: scale(0.8);
   }
 }
