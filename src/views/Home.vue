@@ -75,9 +75,9 @@
     <section class="skills-section">
       <div class="container">
         <h2 class="section-title reveal text-center">Expertise</h2>
-        <p class="section-subtitle">The skill bars are not indicative of actual proficiency levels. They are randomized. You'll have to
+        <!-- <p class="section-subtitle">The skill bars are not indicative of actual proficiency levels. They are randomized. You'll have to
           explore my projects to see what I can really do :)
-        </p>
+        </p> -->
         <div class="skills-grid">
           <div 
             class="skill-category reveal-scale hover-lift" 

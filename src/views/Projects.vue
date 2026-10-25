@@ -46,6 +46,11 @@
             @mouseleave="onProjectLeave"
           >
             <div class="project-image">
+              <!-- Featured Ribbon -->
+              <div v-if="project.featured" class="featured-ribbon" aria-label="Featured project">
+                <span class="featured-ribbon-text">Featured</span>
+              </div>
+
               <div class="project-number">{{ String(index + 1).padStart(2, '0') }}</div>
               
               <!-- Custom Media Background -->
@@ -922,6 +927,35 @@ export default {
   margin-bottom: 2rem;
   color: #666;
   font-size: 1.1rem;
+}
+
+/* Featured Badge (top-left, tilted) */
+.featured-ribbon {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 12;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.9rem;
+  background: #292524;
+  color: #fff0df;
+  border-radius: 10px;
+  transform: rotate(-8deg);
+  transform-origin: center;
+  box-shadow: 0 6px 18px rgba(41, 37, 36, 0.28);
+  pointer-events: none;
+}
+
+.featured-ribbon-text {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff0df;
 }
 
 .project-status {
