@@ -89,10 +89,13 @@
             <h3>{{ category.title }}</h3>
             <p class="skill-description">{{ category.description }}</p>
             <ul>
-              <li v-for="skill in category.skills" :key="skill" class="skill-item">
-                <span class="skill-text">{{ skill }}</span>
+              <li v-for="skill in category.skills" :key="skill.name" class="skill-item">
+                <span class="skill-text">{{ skill.name }}</span>
                 <div class="skill-bar">
-                  <div class="skill-progress"></div>
+                  <div
+                    class="skill-progress"
+                    :style="{ width: `${skill.level}%` }"
+                  ></div>
                 </div>
               </li>
             </ul>
@@ -117,27 +120,48 @@ export default {
     AnimatedDescription
   },
   setup() {
+    // Engineering-relevant stats. Edit these numbers to match reality.
     const stats = reactive([
-      { number: 50, label: 'Songs produced' },
-      { number: 15, label: 'Videos edited' },
-      { number: 20, label: 'Github projects made' }
+      { number: 4, label: 'Years building for the web' },
+      { number: 20, label: 'Projects shipped' },
+      { number: 3, label: 'Professional roles' }
     ])
 
+    // Skill levels are hand-set (0-100). Adjust freely — no randomization.
     const skillCategories = reactive([
       {
         icon: '',
         title: 'CLI & Systems',
-        skills: ['Linux', 'CLI', 'Git', 'Bash', 'SQL', 'SSH', 'Docker'],
+        skills: [
+          { name: 'Linux', level: 85 },
+          { name: 'Git', level: 90 },
+          { name: 'Bash', level: 80 },
+          { name: 'SQL', level: 80 },
+          { name: 'SSH', level: 75 },
+          { name: 'Docker', level: 70 }
+        ],
       },
       {
         icon: '',
         title: 'Frontend Architecture',
-        skills: ['Vue.js', 'Vite', 'Typescript', 'Three.js', 'Tailwind CSS', 'React'],
+        skills: [
+          { name: 'Vue.js', level: 92 },
+          { name: 'Vite', level: 88 },
+          { name: 'TypeScript', level: 80 },
+          { name: 'Tailwind CSS', level: 85 },
+          { name: 'React', level: 75 },
+          { name: 'Three.js', level: 70 }
+        ],
       },
       {
         icon: '',
         title: 'Backend Architecture',
-        skills: ['PHP', 'Node.js', 'JavaScript', 'SQL'],
+        skills: [
+          { name: 'Node.js', level: 85 },
+          { name: 'JavaScript', level: 90 },
+          { name: 'PHP', level: 75 },
+          { name: 'SQL', level: 80 }
+        ],
       }
     ])
 
@@ -165,19 +189,6 @@ export default {
       })
     }
 
-    const initSkillBars = () => {
-      const skillBars = document.querySelectorAll('.skill-progress')
-      
-      skillBars.forEach((bar, index) => {
-        // Reset width first
-        bar.style.width = '0%'
-        setTimeout(() => {
-          const randomWidth = Math.floor(Math.random() * 30) + 70 // 70-100%
-          bar.style.width = randomWidth + '%'
-        }, index * 200)
-      })
-    }
-
     const resetAnimations = () => {
       // Reset all reveal elements
       const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
@@ -191,12 +202,6 @@ export default {
         el.style.animation = 'none'
         el.offsetHeight // Trigger reflow
         el.style.animation = null
-      })
-
-      // Reset skill progress bars
-      const skillBars = document.querySelectorAll('.skill-progress')
-      skillBars.forEach(bar => {
-        bar.style.width = '0%'
       })
 
       // Reset stat numbers
@@ -229,8 +234,6 @@ export default {
           observer.observe(statsSection)
         }
 
-        // Initialize skill bars with delay
-        setTimeout(initSkillBars, 1000)
       })
     }
 

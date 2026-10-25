@@ -55,14 +55,14 @@
             <div class="social-section">
               <h3>Follow</h3>
               <div class="social-links">
+                <a href="https://www.linkedin.com/in/amal-rahimli-46971226b/" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <span>LinkedIn</span>
+                  <span>→</span>
+                </a>
                 <a href="https://github.com/Scripty2k" target="_blank" rel="noopener noreferrer" class="social-link">
                   <span>GitHub</span>
                   <span>→</span>
                 </a>
-                <!-- <a href="https://www.linkedin.com/in/amal-rahimli-46971226b/" target="_blank" rel="noopener noreferrer" class="social-link">
-                  <span>LinkedIn</span>
-                  <span>→</span>
-                </a> -->
                 <a href="https://www.youtube.com/@scripty2k" target="_blank" rel="noopener noreferrer" class="social-link">
                   <span>Youtube</span>
                   <span>→</span>
@@ -260,7 +260,7 @@ export default {
           company: this.form.company || 'Not specified',
           subject: this.form.subject,
           message: this.form.message,
-          to_email: 'amalrahimli06@gmail.com'
+          to_email: 'scripty2k@gmail.com'
         }
         
         // Send email using EmailJS

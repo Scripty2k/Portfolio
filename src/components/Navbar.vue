@@ -24,9 +24,17 @@
           <span class="nav-link-hover"></span>
         </router-link>
       </div>
+
+      <button
+        type="button"
+        class="nav-cv hover-target"
+        @click="openCv"
+      >
+        View CV
+      </button>
       
-      <div 
-        class="nav-toggle hover-target" 
+      <div
+        class="nav-toggle hover-target"
         :class="{ active: isMenuOpen }"
         @click="toggleMenu"
       >
@@ -38,6 +46,49 @@
     
     <!-- Mobile menu overlay -->
     <div class="mobile-overlay" :class="{ active: isMenuOpen }" @click="closeMenu"></div>
+
+    <!-- CV Viewer Overlay -->
+    <Teleport to="body">
+      <div
+        v-if="isCvOpen"
+        class="cv-overlay"
+        @click.self="closeCv"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Curriculum Vitae"
+      >
+        <div class="cv-window">
+          <div class="cv-window-bar">
+            <span class="cv-window-title">Curriculum Vitae</span>
+            <div class="cv-window-actions">
+              <a
+                :href="resumeUrl"
+                class="cv-window-btn"
+                download="Amal-Rahimli-CV.pdf"
+                title="Download CV"
+              >
+                Download
+              </a>
+              <button
+                type="button"
+                class="cv-window-close"
+                @click="closeCv"
+                aria-label="Close CV viewer"
+              >
+                &times;
+              </button>
+            </div>
+          </div>
+          <div class="cv-window-body">
+            <iframe
+              :src="`${resumeUrl}#view=FitH`"
+              class="cv-iframe"
+              title="CV document"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </Teleport>
   </nav>
 </template>
 
@@ -61,6 +112,20 @@ export default {
       { name: 'Contact', path: '/contact' }
     ]
 
+    // CV file lives in /public — replace public/resume.pdf with your real CV.
+    const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`
+    const isCvOpen = ref(false)
+
+    const openCv = () => {
+      isCvOpen.value = true
+      document.body.style.overflow = 'hidden'
+    }
+
+    const closeCv = () => {
+      isCvOpen.value = false
+      document.body.style.overflow = 'auto'
+    }
+
     const toggleMenu = () => {
       isMenuOpen.value = !isMenuOpen.value
       
@@ -81,6 +146,15 @@ export default {
       isScrolled.value = window.scrollY > 50
     }
 
+    const handleKeydown = (e) => {
+      if (e.key !== 'Escape') return
+      if (isCvOpen.value) {
+        closeCv()
+      } else if (isMenuOpen.value) {
+        closeMenu()
+      }
+    }
+
     const currentImage = computed(() => {
       const images = [animepfp1, animepfp2]
       return images[imageIndex.value]
@@ -94,16 +168,13 @@ export default {
         imageIndex.value = (imageIndex.value + 1) % 2
       }, 1000)
       
-      // Close menu on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && isMenuOpen.value) {
-          closeMenu()
-        }
-      })
+      // Close menu / CV viewer on escape key
+      document.addEventListener('keydown', handleKeydown)
     })
 
     onUnmounted(() => {
       window.removeEventListener('scroll', handleScroll)
+      document.removeEventListener('keydown', handleKeydown)
       document.body.style.overflow = 'auto'
       // Clean up interval when component is destroyed
       if (imageInterval) {
@@ -118,7 +189,11 @@ export default {
       toggleMenu,
       closeMenu,
       imageIndex,
-      currentImage
+      currentImage,
+      resumeUrl,
+      isCvOpen,
+      openCv,
+      closeCv
     }
   }
 }
@@ -274,6 +349,38 @@ export default {
   padding: 0.5rem 0;
 }
 
+.nav-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.1rem;
+  margin-left: 2rem;
+  background: #292524;
+  color: #fff0df;
+  border: none;
+  font-family: inherit;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-radius: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-cv:hover {
+  background: #3f3a38;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(41, 37, 36, 0.25);
+}
+
+.nav-cv:focus-visible {
+  outline: 2px solid rgba(41, 37, 36, 0.5);
+  outline-offset: 4px;
+}
+
 .nav-link-text {
   position: relative;
   z-index: 2;
@@ -371,6 +478,13 @@ export default {
   .nav-toggle {
     display: flex;
     z-index: 1001;
+  }
+
+  .nav-cv {
+    margin-left: auto;
+    margin-right: 0.75rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.7rem;
   }
 
   .nav-toggle.active {
@@ -482,5 +596,149 @@ export default {
   outline: 2px solid rgba(0, 0, 0, 0.5);
   outline-offset: 4px;
   border-radius: 2px;
+}
+</style>
+
+<style>
+/* CV Viewer Overlay — teleported to body, so intentionally not scoped */
+.cv-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(20, 18, 17, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: cvOverlayFade 0.25s ease-out;
+}
+
+.cv-window {
+  display: flex;
+  flex-direction: column;
+  width: min(1000px, 100%);
+  height: min(88vh, 1200px);
+  background: #fff0df;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  transform-origin: center;
+  animation: cvWindowScale 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cv-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  background: #292524;
+  color: #fff0df;
+  flex-shrink: 0;
+}
+
+.cv-window-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cv-window-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-window-btn {
+  padding: 0.4rem 0.85rem;
+  background: rgba(255, 240, 223, 0.12);
+  color: #fff0df;
+  border: 1px solid rgba(255, 240, 223, 0.25);
+  border-radius: 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.cv-window-btn:hover {
+  background: rgba(255, 240, 223, 0.22);
+  border-color: rgba(255, 240, 223, 0.45);
+}
+
+.cv-window-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  color: #fff0df;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cv-window-close:hover {
+  background: rgba(255, 240, 223, 0.15);
+}
+
+.cv-window-body {
+  flex: 1;
+  min-height: 0;
+  background: #e7d9c8;
+}
+
+.cv-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@keyframes cvOverlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cvWindowScale {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-overlay {
+    padding: 0.75rem;
+  }
+
+  .cv-window {
+    height: 92vh;
+    border-radius: 10px;
+  }
+
+  .cv-window-title {
+    font-size: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-overlay,
+  .cv-window {
+    animation: none;
+  }
 }
 </style>
