@@ -59,13 +59,6 @@
               ref="card1"
             >
               <h3>What I'm busy with right now</h3>
-              <ul>
-                <div class="experience-item">
-                <span class="year">2026</span>
-                <span class="role">Wordpress Web-Developer at Hyperconnected</span>
-                <span class="company">Nijmegen</span>
-              </div>
-              </ul>
               <br>
                 <ul>
                 <div class="experience-item">
@@ -83,6 +76,15 @@
               ref="card2"
             >
               <h3>Experience</h3>
+              <ul>
+                <div class="experience-item">
+                <span class="year">2026</span>
+                <span class="role">Wordpress Web-Developer at Hyperconnected</span>
+                <span class="company">Nijmegen</span>
+              </div>
+              </ul>
+              <br>
+              <br>
               <div class="experience-item">
                 <span class="year">2024 - 2025</span>
                 <span class="role">Odoo/Python Developer at NHMB Software</span>
